@@ -1,0 +1,49 @@
+// Import Bulma's core
+@import "./bootstrap";
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+$primary: #0db952; 
+$secondary: #39c74a; 
+$terciary: #1e88e5;
+$ong: #1e88e5;
+$service_provider: #1e88e5;
+$products_establishment: #1e88e5;
+$service_establishment: #1e88e5;
+$service_and_produts_establishment: #1e88e5;
+$positive: #1e88e5;
+$balanced : #39c74a;
+$danger : #f00;
+$energized: #ffa114;
+$light : #f4f4f4;
+$dark : #666;
+$white: #ffffff;
+$light-grey: #AAA;
+$almost-white: #dedede;
+$facebook : #3060c9;
+$pace-color: darken($primary, 10%);
+$status-bar-color: darken($primary, 20%);
+$text-input-highlight-color: #3ebfe2;
+// App global Variables
+// --------------------------------------------------
+// global platform Sass variables can go here
+$background-color: darken(white, 0%);
+$secondary-font-family: 'Roboto', sans-serif;
+$app-logo-src: "./assets/images/icon.png";
+$text-input-placeholder-color: $dark;
+$navbar-width: 280px;
+// App iOS Variables
+$ios-bar-height: 56px;
+$navbar-ios-height: $ios-bar-height;
+$searchbar-ios-min-height: $ios-bar-height;
+$primary: #2196F3;
+$section-header-color: #222;
+$secondary: #222;
+$gradient-color: adjust-hue($primary, -10);
+$balanced: rgb(21, 223, 85);
+$gradient-hue: 10;

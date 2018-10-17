@@ -1,0 +1,88 @@
+{
+  "name": "vuecan",
+  "version": "1.0.0",
+  "description": "Onsen UI + Vue + Vue Router PWA Starter Project Template",
+  "author": "@superpikar",
+  "private": true,
+  "scripts": {
+    "dev": "webpack-dev-server --content-base src --hot --inline",
+    "start": "npm run dev",
+    "build": "webpack",
+    "pwa": "node pwa.js"
+  },
+  "dependencies": {
+    "ajv": "^6.5.4",
+    "axios": "0.18.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "buefy": "0.7.0",
+    "chalk": "^2.4.1",
+    "colors": "^1.3.2",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "cordova": "^8.1.2",
+    "cordova-android": "^7.1.1",
+    "cordova-browser": "^5.0.3",
+    "cordova-ios": "^4.5.2",
+    "cordova-res-generator": "^0.4.2",
+    "cors": "^2.8.4",
+    "errorhandler": "^1.5.0",
+    "express-static-gzip": "^1.1.3",
+    "firebase": "^5.5.4",
+    "ip": "^1.1.5",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.0",
+    "swagger-es6": "^1.0.0",
+    "v-tooltip": "^2.0.0-rc.33",
+    "vue": "2.5.17",
+    "vue-router": "3.0.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "9.1.5",
+    "clean-webpack-plugin": "^0.1.19",
+    "compression-webpack-plugin": "1.1.0",
+    "connect-history-api-fallback": "1.5.0",
+    "copy-webpack-plugin": "^4.5.3",
+    "css-loader": "0.28.7",
+    "extract-text-webpack-plugin": "3.0.1",
+    "file-loader": "1.1.5",
+    "friendly-errors-webpack-plugin": "1.7.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "2.30.1",
+    "http-proxy-middleware": "0.19.0",
+    "inject-loader": "4.0.1",
+    "less": "2.3.1",
+    "less-loader": "4.0.5",
+    "node-sass": "4.9.3",
+    "optimize-css-assets-webpack-plugin": "3.2.0",
+    "sass-loader": "7.1.0",
+    "shelljs": "0.8.2",
+    "style-loader": "0.19.0",
+    "sw-precache-webpack-plugin": "0.11.5",
+    "uglifyjs-webpack-plugin": "^1.1.0",
+    "url-loader": "1.1.2",
+    "vue-loader": "15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "2.5.17",
+    "webpack": "3.7.1",
+    "webpack-bundle-analyzer": "3.0.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "2.9.1"
+  },
+  "engines": {
+    "node": ">= 4.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "cordova": {
+    "platforms": [
+      "ios",
+      "browser",
+      "android"
+    ]
+  }
+}

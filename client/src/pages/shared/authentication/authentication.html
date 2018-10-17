@@ -1,0 +1,40 @@
+<article view>
+    <!-- Main container -->
+    <nav header class="level is-mobile">
+        <div class="level-left">
+            <a text-color="light" @click="$router.go(-1);">
+                <i class="fa fa-la-arrow-left"></i>
+            </a>
+        </div>
+        <div class="level-item has-text-centered">
+            Amora
+        </div>
+    </nav>
+    <section class="padding">
+        <logo></logo>
+        <h4 text-color="primary">Que bom ver você por aqui!</h4>
+        <h5 text-color="dark">Insira suas credenciais abaixo ;)</h5>
+        <form class="padding">
+            <p class="control has-icons-left has-icons-right">
+                <input class="input is-rounded margin-bottom is-primary" name="user" placeholder="Seu e-mail" v-model="user.email"
+                    type="text">
+                <span class="icon is-small is-left">
+                    <i class="fa fa-la-user"></i>
+                </span>
+            </p>
+            <p class="control has-icons-left has-icons-right">
+                <input class="input is-rounded margin-bottom is-primary" name="user" placeholder="Sua senha" v-model="user.password"
+                    type="password">
+                <span class="icon is-small is-left">
+                    <i class="fa fa-la-unlock"></i>
+                </span>
+            </p>
+            <button type="button" class="button is-primary is-rounded is-fullwidth margin-bottom" @click="login(user)">
+                Entrar
+            </button>
+            <label>
+                Ainda não tem uma conta? <a @click="goToSignupPage()">Cadastre-se</a>
+            </label>
+        </form>
+    </section>
+</article>
