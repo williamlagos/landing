@@ -1,7 +1,7 @@
 const webpack = require("webpack");
 
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -10,7 +10,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CompressionPlugin = require("compression-webpack-plugin");
 
 const path = require("path");
-const extractPlugin = new ExtractTextPlugin("./assets/css/app.css");
+const extractPlugin = new ExtractTextPlugin("./assets/css/app.scss");
 const isProd = process.env.npm_config_prod;
 
 const config = {
@@ -112,22 +112,10 @@ const config = {
 };
 
 if (isProd) {
-    config.plugins.push(new OptimizeCssAssetsPlugin());
     // cleaning up only "public" folder
     config.plugins.push(new CleanWebpackPlugin(["public"]));
-    config.plugins.push(new CopyWebpackPlugin([{ from: 'assets', to: 'assets' }]));
-    config.plugins.push(new UglifyJsPlugin({
-        sourceMap: true,
-        uglifyOptions: {
-            exclude: [/\.min\.js$/gi], // skip pre-minified libs
-            mangle: true,
-            output: {
-                beautify: false,
-                comments: false,
-                webkit: true
-            }
-        }
-    }));
+    config.plugins.push(new OptimizeCssAssetsPlugin());
+    config.plugins.push(new CopyWebpackPlugin([{ from: 'assets/img', to: 'assets/img' }]));
 }
 
 module.exports = config;

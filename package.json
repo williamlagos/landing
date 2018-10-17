@@ -14,7 +14,9 @@
     "config": {},
     "main": "start",
     "scripts": {
+        "_landing": "Landing Page Scripts",
         "landing": "cd landing && npm run dev",
+        "landing:build": "cd landing && npm run build",
         "landing:deploy": "cd landing && npm run deploy"
     },
     "dependencies": {},

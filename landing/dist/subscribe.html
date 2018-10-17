@@ -1,0 +1,161 @@
+
+<!-- src/pages/subscribe.html -->
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  
+<!-- src/pages/components/head.html -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="description" content="Expertise em conteúdo de qualidade.">
+<meta property="og:title" content="Review Academics">
+<meta property="og:description" content="Expertise em conteúdo de qualidade.">
+<meta property="og:url" content="www.reviewacademics.com">
+<meta property="og:site_name" content="Review Academics">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="180">
+<meta property="og:image:height" content="180">
+<link rel="canonical" href="www.reviewacademics.com">
+
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="keywords" content="coworking, colaborativo, Porto Alegre, Centro Histórico, microempresas, empreendedorismo">
+<meta name="description" content="A Momentum é um espaço de coworking localizado no centro de Porto Alegre.">
+<title>Momentum</title>
+<link rel="shortcut icon" href="../../assets/img/fabricalogo.png">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+<meta name="theme-color" content="darker_primary_color_placeholder">
+<meta name="msapplication-navbutton-color" content="darker_primary_color_placeholder">
+<meta name="apple-mobile-web-app-status-bar-style" content="darker_primary_color_placeholder">
+<!--     Fonts and icons     -->
+<link rel="stylesheet" href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css">
+<link href="http://fonts.googleapis.com/css?family=Muli:300italic,400,300,800" rel="stylesheet" type="text/css" />
+
+<script>
+    function scrollToDiv(id) {
+        var div = $("#" + id);
+        $("html,body").animate({ scrollTop: div.offset().top }, 400);
+    }
+</script>
+<link href="./assets/css/app.css" rel="stylesheet"></head>
+
+<body class="landing-page landing-page1">
+  
+<!-- src/pages/components/navbar.html -->
+<nav class="navbar navbar-transparent navbar-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapse-container">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="sr-only">Toggle navigation</span>
+            </button>
+            <a href="http://website_placeholder">
+                <div class="logo-container">
+                    <h5 class="navbar-logo hidden-md hidden-lg hidden-xl">
+                        <label>Fábrica de Ideias</label>
+                    </h5>
+                </div>
+            </a>
+        </div>
+        </div>
+    </div>
+</nav>
+  <div class="wrapper">
+    <div class="parallax filter-gradient green section-colorful hero-image" data-color="green">
+      <div class="parallax-background banner-parallax-02"></div>
+      <div class="row">
+        <div class="container">
+          <div class="description">
+            <img class="hero-thumb" src="assets/img/landing-02.jpg">
+            <h1>
+              Faça como esta legião de brasileiros e venha crescer você também!
+            </h1>
+            <h3>Ficou interessado? <br />Então corre e vem saber como!</h3>
+            <br>
+            <section class="subscribe">
+              <input type="text" class="subscribe-input" id="subscribe-input" placeholder="Seu endereço de e-mail">
+            </section>
+            <button class="btn-subscribe" id="subscribe-btn">
+              Quero crescer!
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+<!-- src/pages/components/scripts.html -->
+<script src="https://unpkg.com/ionicons@4.2.4/dist/ionicons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script>
+    /**
+ * Listen to scroll to change header opacity class
+ */
+    function checkScroll() {
+        var startY = $(".navbar").height() * 2; //The point where the navbar changes in px
+
+        if ($(window).scrollTop() > startY) {
+            $(".navbar").addClass("scrolled");
+        } else {
+            $(".navbar").removeClass("scrolled");
+        }
+    }
+
+    if ($(".navbar").length > 0) {
+        $(window).on("scroll load resize", function () {
+            checkScroll();
+        });
+    }
+</script>
+
+<script>
+    let subscribeButton = $("#subscribe-btn");
+    let onError = () => {
+        subscribeButton.removeClass("loading");
+        subscribeButton.addClass("done");
+        subscribeButton.text("Pronto! Aguarde notícias nossas em breve ;)");
+    };
+    let onSuccess = () => {
+        subscribeButton.removeClass("loading");
+        subscribeButton.addClass("done");
+        subscribeButton.text("Pronto! Aguarde notícias nossas em breve ;)");
+    };
+    let subscribe = () => {
+        subscribeButton.addClass("loading");
+        let emailInput = document.getElementById("subscribe-input");
+        axios.post("SERVER_ADDRESS_PLACEHOLDER/api/lead", {
+            email: emailInput.value,
+        }).then(function (response) {
+            console.log(response);
+            onSuccess();
+        }).catch(function (error) {
+            console.log(error);
+            onError();
+        });
+    };
+    subscribeButton.click(() => { subscribe(); });
+</script>
+  
+<!-- src/pages/components/footer.html -->
+<footer class="footer">
+  <div class="container">
+      <div class="copyright">
+          © Momentum | 2018.
+      </div>
+  </div>
+</footer>
+<script type="text/javascript" src="./assets/js/main.bundle.js"></script></body>
+
+</html>

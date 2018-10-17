@@ -1,11 +1,15 @@
-
+const path = require("path");
+const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const StringReplacePlugin = require("string-replace-webpack-plugin");
+const args = require("yargs").argv;
 
-const path = require("path");
-const extractPlugin = new ExtractTextPlugin("./assets/css");
+const extractPlugin = new ExtractTextPlugin("./assets/css/app.css");
+const isProd = args.p;
 const htmlTemplates = ["subscribe"];
 const htmlPlugins = htmlTemplates.map((template) => new HtmlWebpackPlugin({ filename: `${template}.html`, template: `./pages/${template}.html` }));
 
@@ -16,9 +20,14 @@ const config = {
     entry: ["./main.js"],
     output: {
         // absolute path declaration
-        publicPath: "/",
+        publicPath: "",
         path: path.resolve(__dirname, "dist"),
         filename: "./assets/js/[name].bundle.js"
+    },
+    resolve: {
+        alias: {
+            assets: path.resolve(__dirname, 'src/assets/'),
+        }
     },
     module: {
         rules: [
@@ -31,19 +40,20 @@ const config = {
             },
             { // sass-loader with sourceMap activated
                 test: /\.(scss|css)$/,
-                include: [path.resolve(__dirname, "src", "assets", "css")],
                 use: extractPlugin.extract({
                     use: [
                         {
                             loader: "css-loader",
                             options: {
-                                sourceMap: true
+                                url: false,
+                                sourceMap: false
                             }
                         },
                         {
                             loader: "sass-loader",
                             options: {
-                                sourceMap: true
+                                url: false,
+                                sourceMap: false
                             }
                         }
                     ],
@@ -51,21 +61,42 @@ const config = {
                 })
             },
             // file-loader(for images)
-            { test: /\.(jpg|png|gif)$/, use: [{ loader: "file-loader", options: { name: "[path][name].[ext]" } }] },
+            {
+                test: /\.(jpg|png|gif|svg)$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: "[path][name].[ext]"
+                    }
+                }]
+            },
             // file-loader(for fonts)
-            { test: /\.(woff|woff2|eot|ttf|otf|svg)$/, use: [{ loader: "file-loader", options: { name: "[path][name].[ext]" } }] },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: "[path][name].[ext]"
+                    }
+                }]
+            },
             // file-loader(for favicon)
-            { test: /\.(ico)$/, use: [{ loader: "file-loader", options: { name: "[path][name].[ext]" } }] },
+            {
+                test: /\.(ico)$/,
+                use: [{
+                    loader: "file-loader",
+                    options: {
+                        name: "[path][name].[ext]"
+                    }
+                }]
+            }
         ]
     },
     plugins: [
-        // cleaning up only "public" folder
-        new CleanWebpackPlugin(["dist"]),
         new HtmlWebpackPlugin({
             template: "index.html",
             minify: true
         }),
-        // extract-text-webpack-plugin instance
         extractPlugin
     ],
     devServer: {
@@ -76,9 +107,15 @@ const config = {
         port: 8400,
         stats: "errors-only",
         open: true
-    },
-    devtool: "inline-source-map"
+    }
 };
+
+if (isProd) {
+    config.plugins.push(new OptimizeCssAssetsPlugin());
+    // cleaning up only "public" folder
+    config.plugins.push(new CleanWebpackPlugin(["dist"]));
+    config.plugins.push(new CopyWebpackPlugin([{ from: 'assets', to: 'assets' }]));
+}
 
 config.plugins = config.plugins.concat(htmlPlugins);
 
