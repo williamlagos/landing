@@ -18,8 +18,8 @@ const remote = `https://git.heroku.com/momentum-${deployEnvironment}-landing.git
 const gitPath = path.resolve(__dirname, "../../.git");
 
 const build = async () => {
-	console.log((`♂ Mars Landing Page: Building...`.yellow));
-	await exec("npm run build:prod");
+	// console.log((`♂ Mars Landing Page: Building...`.yellow));
+	// await exec("npm run build");
 	// Use this for commit based deploys
 	console.log((`♂ Mars Landing Page: Generating commit...`.yellow));
 	const commitMsg = "update(landing-page): Updates landing page.";
