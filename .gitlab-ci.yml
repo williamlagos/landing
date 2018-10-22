@@ -1,0 +1,16 @@
+image: node
+
+pages:
+  script:
+    - cd landing
+    - npm install
+    - npm install gatsby-cli
+    - node_modules/.bin/gatsby build --prefix-paths
+  artifacts:
+    paths:
+      - public
+  cache:
+    paths:
+      - node_modules
+  only:
+    - master
