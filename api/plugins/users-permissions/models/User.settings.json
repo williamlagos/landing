@@ -44,10 +44,6 @@
       "via": "users",
       "plugin": "users-permissions",
       "configurable": false
-    },
-    "materiais": {
-      "collection": "material",
-      "via": "autor"
     }
   }
 }
