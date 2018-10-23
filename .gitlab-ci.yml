@@ -11,7 +11,7 @@ production:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
-    - dpl --provider=heroku --app-node=radiant-tundra-71470 --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app-node=murmuring-scrubland-91619 --api-key=$HEROKU_API_KEY
   only:
     - master
 
