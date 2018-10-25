@@ -6,6 +6,9 @@ import Layout from '../components/layout';
 
 import landing02 from "../assets/img/landing-02.jpg";
 
+import Background from "../assets/img/backgrounds/bg-02.jpg";
+const parallaxBackground = { backgroundImage: `url(${Background})` };
+
 class SubscribePage extends React.Component {
     render() {
         const siteTitle = "Momentum";
@@ -14,8 +17,8 @@ class SubscribePage extends React.Component {
             <Layout>
                 <Helmet title={siteTitle} />
                 <div className="wrapper">
-                    <div className="parallax filter-gradient green section-colorful hero-image" data-color="green">
-                        <div className="parallax-background banner-parallax-02"></div>
+                    <div className="parallax filter-gradient purple section-colorful hero-image">
+                        <div className="parallax-background banner-parallax" style={parallaxBackground}></div>
                         <div className="row">
                             <div className="container">
                                 <div className="description">
@@ -26,7 +29,7 @@ class SubscribePage extends React.Component {
                                     <section className="subscribe">
                                         <input type="text" className="subscribe-input" id="subscribe-input" placeholder="Seu endereço de e-mail" />
                                     </section>
-                                    <Link className="btn-section" to="/subscribe.html" >
+                                    <Link className="btn-section" to="subscription-confirmation/index.html" >
                                         Quero crescer!
                                      </Link>
                                 </div>
