@@ -25,6 +25,8 @@ pages:
   artifacts:
     paths:
       - public
+      - public/static
+      - public/subscribe
   cache:
     paths:
       - node_modules

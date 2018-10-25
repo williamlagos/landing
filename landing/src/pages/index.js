@@ -5,19 +5,19 @@ import { Link } from "gatsby"
 import Layout from '../components/layout';
 
 import landing01 from "../assets/img/landing-01.jpg";
-import Background from "../assets/img/backgrounds/bg-01.jpg";
 
+import Background from "../assets/img/backgrounds/bg-01.jpg";
 const parallaxBackground = { backgroundImage: `url(${Background})` };
 
-class HomePage extends React.Component {
+class IndexPage extends React.Component {
     render() {
         const siteTitle = "Momentum";
         return (
             <Layout>
                 <Helmet title={siteTitle} />
                 <div className="wrapper">
-                    <div className="parallax filter-gradient blue section-colorful hero-image" data-color="blue" style={ parallaxBackground }>
-                        <div className="parallax-background banner-parallax"></div>
+                    <div className="parallax filter-gradient blue section-colorful hero-image">
+                        <div className="parallax-background banner-parallax" style={parallaxBackground}></div>
                         <div className="container">
                             <div className="row">
                                 <div className="description">
@@ -37,4 +37,4 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+export default IndexPage;
