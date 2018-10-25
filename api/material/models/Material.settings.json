@@ -1,0 +1,28 @@
+{
+  "connection": "default",
+  "collectionName": "materials",
+  "info": {
+    "name": "material",
+    "description": "Material de ensino."
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Titulo": {
+      "default": "",
+      "type": "string"
+    },
+    "Texto": {
+      "default": "",
+      "type": "text"
+    },
+    "autor": {
+      "model": "user",
+      "via": "materiais",
+      "plugin": "users-permissions"
+    }
+  }
+}
