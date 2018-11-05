@@ -1038,6 +1038,10 @@ button.btn-primary {
     }
 }
 
+.no-padding {
+    padding: 0px !important;
+}
+
 @media (min-width: 768px) {
     .description {
         padding-top: 80px;

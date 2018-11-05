@@ -17,7 +17,7 @@ class SubscriptionConfirmationPage extends React.Component {
                     <div className="parallax filter-gradient green section-colorful hero-image">
                         <div className="parallax-background banner-parallax" style={parallaxBackground}></div>
                         <div className="container">
-                            <div className="description">
+                            <div className="description no-padding">
                                 <h1> Obrigado! Sua inscrição está confirmada.  </h1>
                                 <h3>Nos vemos nos dias 10, 12 de setembro às 20h e 14 de setembro, às 19h.</h3>
                                 <br />
