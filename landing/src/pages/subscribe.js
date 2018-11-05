@@ -22,7 +22,7 @@ class SubscribePage extends React.Component {
                         <div className="row">
                             <div className="container">
                                 <div className="description">
-                                    <img className="hero-thumb" src={landing02} />
+                                    {/* <img className="hero-thumb" src={landing02} /> */}
                                     <h1> Faça como esta legião de brasileiros e venha crescer você também!  </h1>
                                     <h3>Ficou interessado? <br />Então corre e vem saber como!</h3>
                                     <br />

@@ -970,6 +970,9 @@ button.btn-primary {
             color: #ff1e3c;
         }
     }
+    .description {
+        padding-top: 60px;
+    }
     .section-motivation {
         .description p {
             text-align: center;
@@ -1018,6 +1021,9 @@ button.btn-primary {
 }
 
 @media (max-width: 400px) {
+    .description {
+        padding-top: 40px;
+    }
     .hero-image {
         h1 {
             font-size: 20px;
@@ -1029,5 +1035,11 @@ button.btn-primary {
     .footer .copyright {
         margin: 0px;
         padding: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .description {
+        padding-top: 80px;
     }
 }

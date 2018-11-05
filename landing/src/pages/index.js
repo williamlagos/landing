@@ -21,7 +21,7 @@ class IndexPage extends React.Component {
                         <div className="container">
                             <div className="row">
                                 <div className="description">
-                                    <img className="hero-thumb" src={landing01} />
+                                    {/* <img className="hero-thumb" src={landing01} /> */}
                                     <h1>  Saiba o que mais de 5.000 brasileiros comuns estão fazendo para prosperar em 2018</h1>
                                     <h3>Pessoas como você, com determinação e vontade de crescimento: Saiba o que elas estão fazendopara crescer como nunca antes!</h3>
                                     <Link className="btn-section" to="subscribe/index.html" >
