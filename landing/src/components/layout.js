@@ -1,7 +1,9 @@
 import React from "react";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "../assets/scss/landing.scss";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import "../assets/css/normalize.css";
+import "../assets/css/skeleton.css";
+import './layout.css';
 
 import Header from "./Header";
 import Footer from "./Footer";
@@ -30,9 +32,9 @@ class Template extends React.Component {
         const { children } = this.props;
 
         return (
-            <div className={`body landing-page landing-page-1 ${this.state.loading}`}>
+            <div className={`body landing-page landing-page-1 text-center ${this.state.loading}`}>
                 {children}
-                <Footer />
+                {/*<Footer />*/}
             </div>
         );
     }

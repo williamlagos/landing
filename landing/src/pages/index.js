@@ -15,16 +15,16 @@ class IndexPage extends React.Component {
         return (
             <Layout>
                 <Helmet title={siteTitle} />
-                <div className="wrapper">
+                <div className="wrapper text-center">
                     <div className="parallax filter-gradient blue section-colorful hero-image">
                         <div className="parallax-background banner-parallax" style={parallaxBackground}></div>
-                        <div className="container">
+                        <div className="container box">
                             <div className="row">
                                 <div className="description">
-                                    <img className="hero-thumb" src={landing01} />
-                                    <h1>  Saiba o que mais de 5.000 brasileiros comuns estão fazendo para prosperar em 2018</h1>
-                                    <h3>Pessoas como você, com determinação e vontade de crescimento: Saiba o que elas estão fazendopara crescer como nunca antes!</h3>
-                                    <Link className="btn-section" to="subscribe/index.html" >
+                                    <img className="hero-img" src={landing01} />
+                                    <h3>  Saiba o que mais de 5.000 brasileiros comuns estão fazendo para prosperar em 2018</h3>
+                                    <h5>Pessoas como você, com determinação e vontade de crescimento: Saiba o que elas estão fazendopara crescer como nunca antes!</h5>
+                                    <Link className="button button-primary" to="subscribe/index.html" >
                                         Quero saber!
                                      </Link>
                                 </div>

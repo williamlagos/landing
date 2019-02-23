@@ -16,15 +16,15 @@ class SubscriptionConfirmationPage extends React.Component {
                 <div className="wrapper">
                     <div className="parallax filter-gradient green section-colorful hero-image">
                         <div className="parallax-background banner-parallax" style={parallaxBackground}></div>
-                        <div className="container">
+                        <div className="container box">
                             <div className="description">
-                                <h1> Obrigado! Sua inscrição está confirmada.  </h1>
-                                <h3>Nos vemos nos dias 10, 12 de setembro às 20h e 14 de setembro, às 19h.</h3>
+                                <h3> Obrigado! Sua inscrição está confirmada.  </h3>
+                                <h5>Nos vemos nos dias 10, 12 de setembro às 20h e 14 de setembro, às 19h.</h5>
                                 <br />
                                 <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                                 </iframe>
                                 <br />
-                                <Link className="btn-facebook" to="/home/index.html" >
+                                <Link className="button button-primary" to="#" >
                                     <i className="fa fa-2x fa-facebook"></i>   Me lembre das aulas
                                      </Link>
                             </div>

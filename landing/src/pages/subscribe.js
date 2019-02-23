@@ -20,16 +20,16 @@ class SubscribePage extends React.Component {
                     <div className="parallax filter-gradient purple section-colorful hero-image">
                         <div className="parallax-background banner-parallax" style={parallaxBackground}></div>
                         <div className="row">
-                            <div className="container">
+                            <div className="container box">
                                 <div className="description">
-                                    <img className="hero-thumb" src={landing02} />
-                                    <h1> Faça como esta legião de brasileiros e venha crescer você também!  </h1>
-                                    <h3>Ficou interessado? <br />Então corre e vem saber como!</h3>
+                                    <img className="hero-img" src={landing02} />
+                                    <h3> Faça como esta legião de brasileiros e venha crescer você também!  </h3>
+                                    <h5>Ficou interessado? <br />Então corre e vem saber como!</h5>
                                     <br />
                                     <section className="subscribe">
-                                        <input type="text" className="subscribe-input" id="subscribe-input" placeholder="Seu endereço de e-mail" />
+                                        <input type="text" className="u-full-width subscribe-input" id="subscribe-input" placeholder="Seu endereço de e-mail" />
                                     </section>
-                                    <Link className="btn-section" to="subscription-confirmation/index.html" >
+                                    <Link className="button button-primary" to="subscription-confirmation/index.html" >
                                         Quero crescer!
                                      </Link>
                                 </div>
