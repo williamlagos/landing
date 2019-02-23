@@ -13,11 +13,11 @@ class IndexPage extends React.Component {
     render() {
         const siteTitle = "Momentum";
         return (
-            <Layout>
+            <Layout style={parallaxBackground}>
                 <Helmet title={siteTitle} />
                 <div className="wrapper text-center">
                     <div className="parallax filter-gradient blue section-colorful hero-image">
-                        <div className="parallax-background banner-parallax" style={parallaxBackground}></div>
+                        <div className="parallax-background banner-parallax"></div>
                         <div className="container box">
                             <div className="row">
                                 <div className="description">

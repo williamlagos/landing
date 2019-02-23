@@ -11,11 +11,11 @@ class SubscriptionConfirmationPage extends React.Component {
         const siteTitle = "Momentum";
 
         return (
-            <Layout>
+            <Layout style={parallaxBackground}>
                 <Helmet title={siteTitle} />
                 <div className="wrapper">
                     <div className="parallax filter-gradient green section-colorful hero-image">
-                        <div className="parallax-background banner-parallax" style={parallaxBackground}></div>
+                        <div className="parallax-background banner-parallax"></div>
                         <div className="container box">
                             <div className="description">
                                 <h3> Obrigado! Sua inscrição está confirmada.  </h3>
