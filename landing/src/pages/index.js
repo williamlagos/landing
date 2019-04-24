@@ -2,39 +2,45 @@ import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "gatsby"
 
+import Footer from "../components/Footer";
 import Layout from '../components/layout';
+import Background from "../assets/img/backgrounds/bg.png";
+import MohubLogo from "../assets/img/mohub.png";
+const parallaxBackground = {
+  backgroundImage: `url(${Background})`,
+  backgroundPosition: 'center',
+  backgroundSize: 'cover'
+};
 
-import landing01 from "../assets/img/landing-01.jpg";
-
-import Background from "../assets/img/backgrounds/bg-01.jpg";
-const parallaxBackground = { backgroundImage: `url(${Background})` };
-
-class IndexPage extends React.Component {
+class HomePage extends React.Component {
     render() {
-        const siteTitle = "Momentum";
+        const siteTitle = "MoHub";
         return (
             <Layout style={parallaxBackground}>
-                <Helmet title={siteTitle} />
-                <div className="wrapper text-center">
-                    <div className="parallax filter-gradient blue section-colorful hero-image">
-                        <div className="parallax-background banner-parallax"></div>
-                        <div className="container box">
-                            <div className="row">
-                                <div className="description">
-                                    <img className="hero-img" src={landing01} />
-                                    <h3>  Saiba o que mais de 5.000 brasileiros comuns estão fazendo para prosperar em 2018</h3>
-                                    <h5>Pessoas como você, com determinação e vontade de crescimento: Saiba o que elas estão fazendopara crescer como nunca antes!</h5>
-                                    <Link className="button button-primary" to="subscribe/index.html" >
-                                        Quero saber!
-                                     </Link>
-                                </div>
+                <Helmet title={siteTitle}>
+                  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
+                </Helmet>
+                {/*<Header></Header>*/}
+                <div className="page">
+                  <div className="container">
+                        <div className="row">
+                            <div className="six columns">
+                              <br/>
+                              <img style={{ "margin-top": "50px" }}src={MohubLogo}/>
+                              <h3 style={{ "margin": "50px 0px", "font-weight": "bolder" }}> Saiba o que mais de
+                              <div style={{ "color": "#0385e3", "text-transform": "uppercase" }}> 5.000 brasileiros </div> comuns estão fazendo para prosperar em 2019 </h3>
+                              <Link className="btn" to="home/" >
+                                  Quero saber
+                               </Link>
                             </div>
                         </div>
                     </div>
+                    <Footer/>
                 </div>
+
             </Layout>
         );
     }
 }
 
-export default IndexPage;
+export default HomePage;

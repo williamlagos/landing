@@ -32,7 +32,7 @@ class Template extends React.Component {
         const { children } = this.props;
 
         return (
-            <div className={`body landing-page landing-page-1 text-center ${this.state.loading}`} style={this.props.style}>
+            <div className={`body landing-page landing-page-1 ${this.state.loading}`} style={this.props.style}>
                 {children}
                 {/*<Footer />*/}
             </div>

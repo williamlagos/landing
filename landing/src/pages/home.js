@@ -2,26 +2,32 @@ import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "gatsby"
 
-import Header from "../components/Header";
 import Layout from '../components/layout';
-import Background from "../assets/img/backgrounds/bg-03.jpg";
+
+import landing01 from "../assets/img/landing-01.jpg";
+
+import Background from "../assets/img/backgrounds/bg-01.jpg";
 const parallaxBackground = { backgroundImage: `url(${Background})` };
 
-class HomePage extends React.Component {
+class IndexPage extends React.Component {
     render() {
-        const siteTitle = "Momentum";
+        const siteTitle = "MoHub";
         return (
-            <Layout>
+            <Layout style={parallaxBackground}>
                 <Helmet title={siteTitle} />
-                <Header></Header>
-                <div className="container">
-                    <div className="description">
-                        <div className="row">
-                            <div className="col col-6">
-                                <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                </iframe>
-                            </div>
-                            <div className="col col-6">
+                <div className="wrapper text-center">
+                    <div className="parallax filter-gradient blue section-colorful hero-image">
+                        <div className="parallax-background banner-parallax"></div>
+                        <div className="container box">
+                            <div className="row">
+                                <div className="description">
+                                    <img className="hero-img" src={landing01} />
+                                    <h3>  Saiba o que mais de 5.000 brasileiros comuns estão fazendo para prosperar em 2018</h3>
+                                    <h5>Pessoas como você, com determinação e vontade de crescimento: Saiba o que elas estão fazendopara crescer como nunca antes!</h5>
+                                    <Link className="button button-primary" to="subscribe/" >
+                                        Quero saber!
+                                     </Link>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -31,4 +37,4 @@ class HomePage extends React.Component {
     }
 }
 
-export default HomePage;
+export default IndexPage;

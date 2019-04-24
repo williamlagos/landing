@@ -13,7 +13,7 @@ class SubscriptionConfirmationPage extends React.Component {
         return (
             <Layout style={parallaxBackground}>
                 <Helmet title={siteTitle} />
-                <div className="wrapper">
+                <div className="wrapper text-center">
                     <div className="parallax filter-gradient green section-colorful hero-image">
                         <div className="parallax-background banner-parallax"></div>
                         <div className="container box">

@@ -41,6 +41,47 @@
   padding: 0em 1em;
 }
 
+.page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "Open Sans";
+}
+
+.footer {
+  border-top: 1px solid gray;
+  background: white;
+  width: 100%;
+  text-align: center;
+  padding: 1em 0em;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  flex-grow: 1;
+  text-align: left;
+  margin-top: 8px;
+}
+
+.page .container {
+  flex-grow: 1;
+}
+
+.btn, .btn:hover {
+  background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
+  padding: 1.1em 8em;
+  border-bottom: .3em solid #0266ae;
+  border-radius: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bolder;
+  color: white;
+}
+
 @media (max-width: 600px) {
   .box {
     background: transparent;

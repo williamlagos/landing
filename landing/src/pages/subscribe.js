@@ -16,7 +16,7 @@ class SubscribePage extends React.Component {
         return (
             <Layout style={parallaxBackground}>
                 <Helmet title={siteTitle} />
-                <div className="wrapper">
+                <div className="wrapper text-center">
                     <div className="parallax filter-gradient purple section-colorful hero-image">
                         <div className="parallax-background banner-parallax" ></div>
                         <div className="row">
@@ -29,7 +29,7 @@ class SubscribePage extends React.Component {
                                     <section className="subscribe">
                                         <input type="text" className="u-full-width subscribe-input" id="subscribe-input" placeholder="Seu endereço de e-mail" />
                                     </section>
-                                    <Link className="button button-primary" to="subscription-confirmation/index.html" >
+                                    <Link className="button button-primary" to="confirmation/" >
                                         Quero crescer!
                                      </Link>
                                 </div>
