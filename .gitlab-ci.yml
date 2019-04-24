@@ -11,11 +11,12 @@ production:
     - apt-get update -qy
     - apt-get install -y ruby-dev
     - gem install dpl
-    - dpl --provider=heroku --app-node=murmuring-scrubland-91619 --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app-node=mohub-central --api-key=$HEROKU_API_KEY
   only:
     - master
 
 pages:
+  stage: production
   script:
     - cd landing
     - npm install
