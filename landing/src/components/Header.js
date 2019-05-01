@@ -3,9 +3,9 @@ import React from 'react'
 import {
     Navbar,
     Nav,
-    NavDropdown,
+    // NavDropdown,
     NavItem,
-    MenuItem
+    // MenuItem
 } from "react-bootstrap"
 
 class Header extends React.Component {

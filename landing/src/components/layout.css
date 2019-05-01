@@ -64,16 +64,19 @@
 .copyright {
   flex-grow: 1;
   text-align: left;
-  margin-top: 8px;
 }
 
 .page .container {
   flex-grow: 1;
 }
 
+.page {
+  background: rgba(255, 255, 255, 0.5);
+}
+
 .btn, .btn:hover {
   background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-  padding: 1.1em 8em;
+  padding: 1.1em 3em;
   border-bottom: .3em solid #0266ae;
   border-radius: 3em;
   text-transform: uppercase;
@@ -82,7 +85,13 @@
   color: white;
 }
 
-@media (max-width: 600px) {
+@media (min-width: 769px) {
+  .page .container {
+    flex-grow: 1;
+  }
+  .page {
+    background: transparent;
+  }
   .box {
     background: transparent;
     color: white;
@@ -91,5 +100,25 @@
     border-radius: 1em;
     padding: .5em;
     width: 50vw;
+  }
+  .mohub-logo {
+    margin-top: 50px;
+  }
+  .copyright {
+    margin-top: 8px;
+    margin-left: 5px;
+  }
+  .copyright-logo {
+    margin-right: 5px;
+  }
+  .btn, .btn:hover {
+    background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
+    padding: 1.1em 8em;
+    border-bottom: .3em solid #0266ae;
+    border-radius: 3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
   }
 }

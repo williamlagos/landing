@@ -21,7 +21,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                 <h3> Obrigado! Sua inscrição está confirmada.  </h3>
                                 <h5>Nos vemos nos dias 10, 12 de setembro às 20h e 14 de setembro, às 19h.</h5>
                                 <br />
-                                <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
+                                <iframe title="YT" width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
                                 </iframe>
                                 <br />
                                 <Link className="button button-primary" to="#" >

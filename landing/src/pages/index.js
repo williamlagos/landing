@@ -26,7 +26,7 @@ class HomePage extends React.Component {
                         <div className="row">
                             <div className="six columns">
                               <br/>
-                              <img style={{ "margin-top": "50px" }}src={MohubLogo}/>
+                              <img alt="MoHub Logo" className="mohub-logo" src={MohubLogo}/>
                               <h3 style={{ "margin": "50px 0px", "font-weight": "bolder" }}> Saiba o que mais de
                               <div style={{ "color": "#0385e3", "text-transform": "uppercase" }}> 5.000 brasileiros </div> comuns estão fazendo para prosperar em 2019 </h3>
                               <Link className="btn" to="home/" >
