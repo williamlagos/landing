@@ -25,6 +25,7 @@
     "multer": "^1.4.1",
     "node-sass": "^4.9.3",
     "pretty-ms": "^5.0.0",
+    "sharp": "0.22.0",
     "react": "^16.6.0",
     "react-bootstrap": "^0.32.4",
     "react-dom": "^16.6.0",
