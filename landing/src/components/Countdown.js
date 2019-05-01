@@ -5,7 +5,7 @@ const isBrowser = typeof window !== `undefined`
 class Countdown extends React.Component {
   constructor(props) {
     super(props);
-    const seconds = isBrowser ? window.localStorage.getItem("accessed") : 604800
+    const seconds = isBrowser ? window.localStorage.getItem("accessed") || 604800 : 604800
     this.state = { time: {}, seconds: seconds };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
