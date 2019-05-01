@@ -1,9 +1,11 @@
 import React from "react";
 
+const isBrowser = typeof window !== `undefined`
+
 class Countdown extends React.Component {
   constructor(props) {
     super(props);
-    const seconds = 604800 || localStorage.getItem('accessed');
+    const seconds = isBrowser ? window.localStorage.getItem("accessed") : 604800
     this.state = { time: {}, seconds: seconds };
     this.timer = 0;
     this.startTimer = this.startTimer.bind(this);
@@ -42,7 +44,11 @@ class Countdown extends React.Component {
   countDown() {
     // Remove one second, set state so a re-render happens.
     let seconds = this.state.seconds - 1;
-    if (seconds % 5 === 0) localStorage.setItem('accessed', seconds);
+    if (seconds % 5 === 0) {
+      console.log(seconds);
+      isBrowser && window.localStorage.setItem("accessed", seconds);
+    }
+
 
     this.setState({
       time: this.secondsToTime(seconds),
