@@ -1,3 +1,186 @@
+#cover {
+  max-height:300px;
+}
+
+#background {
+  max-height: 200px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-left {
+  flex: 1 1 65%;
+}
+
+.flex-right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width:  100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay.green {
+  background-color: rgba(51, 155, 146, 0.5);
+}
+
+.overlay-content {
+  /* height: 100%; */
+  padding: 0.5em;
+  color: white;
+  text-align: center;
+}
+
+.overlay-content * {
+  font-size: 1.2em;
+  margin: 0px;
+}
+
+.block {
+  margin: 1em .5em 0em 0em;
+  flex: 1;
+}
+
+.last {
+  margin: 1em 0em 0em 0em;
+}
+
+.video {
+  width: 100%;
+  /* min-height: 5px; */
+  height: 100%;
+  /* max-height: 75px; */
+  background-size: cover;
+  background-position: center;
+}
+
+.full-width-container {
+  width: 100%;
+  max-width: 100%;
+  clear: both;
+  margin: 0 auto;
+}
+
+.buttons {
+  display:flex;
+  flex-direction:column;
+}
+
+.center {
+  text-align: center;
+}
+
+.spacing {
+  padding: 1.5em 0em;
+}
+
+.big {
+  display:none;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.white {
+  background: white;
+}
+
+.top {
+  margin-top: 2em;
+}
+
+.bottom {
+  margin-bottom: 2em;
+}
+
+.big-bottom {
+  margin-bottom: 10em;
+}
+
+.fluid {
+  width:100%;
+  height:100%;
+}
+
+.btn-mail, .btn-mail:hover {
+  margin: .5em 1em .5em 0em;
+  padding: .5em 3em;
+  border-radius: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bolder;
+  color: white;
+}
+
+.outlook {
+  background-color: #1d6fbf;
+  border-bottom: .3em solid #0c345b;
+}
+
+.gmail {
+  background-color: #e9443f;
+  border-bottom: .3em solid #6a1f1c;
+}
+
+.yahoo {
+  background-color: #3f008a;
+  border-bottom: .3em solid #270b48;
+}
+
+.btn-share {
+  padding: .6em 3em !important;
+  margin: 0em .5em;
+}
+
+.btn-share p {
+  display:none;
+}
+
+.btn-whatsapp, .btn-whatsapp:hover {
+  background-color: #3cbea5;
+  padding: .5em 2.5em;
+  border-bottom: .3em solid #1b5449;
+  border-radius: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bolder;
+  color: white;
+}
+
+.btn-facebook, .btn-facebook:hover {
+  background-color: #539cff;
+  padding: .5em 2.5em;
+  border-bottom: .3em solid #0266ae;
+  border-radius: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bolder;
+  color: white;
+}
+
+.description {
+  text-transform: uppercase;
+  background-color: red;
+  color: white;
+  padding: .25em 0em;
+  width: 100%;
+  font-size: 1.5em;
+  /* font-weight: bold; */
+  text-align: center;
+}
+
 .hero-img {
   border-radius: 2em;
   padding: 1em;
@@ -28,6 +211,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
 
 .wrapper {
@@ -49,7 +233,7 @@
 }
 
 .footer {
-  border-top: 1px solid gray;
+  border-top: 1px solid #c0c4cf;
   background: white;
   width: 100%;
   text-align: center;
@@ -62,8 +246,13 @@
 }
 
 .copyright {
+  color: #c0c4cf;
   flex-grow: 1;
   text-align: left;
+}
+
+.copyright-logo {
+  margin-top: 5px;
 }
 
 .page .container {
@@ -86,6 +275,76 @@
 }
 
 @media (min-width: 769px) {
+  /* Rules for flex boxes */
+  .flex {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .flex-left {
+    flex: 1 1 65%;
+  }
+
+  .flex-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width:  100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlay.green {
+    background-color: rgba(51, 155, 146, 0.5);
+  }
+
+  .overlay-content {
+    /* height: 100%; */
+    padding: 0.5em;
+    color: white;
+    text-align: center;
+  }
+
+  .overlay-content * {
+    font-size: 1.2em;
+    margin: 0px;
+  }
+
+  .block {
+    margin: 0em 0em .5em 1em;
+    flex: 1;
+  }
+
+  .last {
+    margin: 0em 0em 0em 1em;
+  }
+
+  .video {
+    width: 100%;
+    /* min-height: 5px; */
+    height: 100%;
+    /* max-height: 75px; */
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* General rules */
+
+  .buttons {
+    display:flex;
+    flex-direction:row;
+  }
+  .big {
+    display:block;
+    font-size: 9em;
+    color: #c0c4cf;
+  }
   .page .container {
     flex-grow: 1;
   }
@@ -120,5 +379,9 @@
     text-decoration: none;
     font-weight: bolder;
     color: white;
+  }
+
+  .btn-share p {
+    display:inline;
   }
 }

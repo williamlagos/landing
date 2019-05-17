@@ -27,7 +27,7 @@ class Header extends React.Component {
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#home">Momentum</a>
+                        <a href="#home">MoHub</a>
                     </Navbar.Brand>
                 </Navbar.Header>
                 <Nav>

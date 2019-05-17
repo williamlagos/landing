@@ -7,7 +7,7 @@ class Footer extends React.Component {
           <footer className="footer">
             <div className="container">
               <div className="copyright"> © MoHub. Todos os direitos reservados. </div>
-              <div> <img className="copyright" alt="Copyright Logo" src={MohubGray}/> </div>
+              <div> <img className="copyright-logo" alt="Copyright Logo" src={MohubGray}/> </div>
             </div>
           </footer>
         )

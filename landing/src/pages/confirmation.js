@@ -3,35 +3,120 @@ import Helmet from "react-helmet";
 import { Link } from "gatsby"
 
 import Layout from '../components/layout';
-import Background from "../assets/img/backgrounds/bg-03.jpg";
+import Countdown from '../components/Countdown';
+import Footer from '../components/Footer';
+
+import banner from "../assets/img/banner.png";
+import landing01 from "../assets/img/video_play.png";
+import mohublogo from "../assets/img/mohub_white.png";
+import Background from "../assets/img/backgrounds/bg-01.png";
 const parallaxBackground = { backgroundImage: `url(${Background})` };
+const videoplaBackground = { backgroundImage: `url(${landing01})` };
 
 class SubscriptionConfirmationPage extends React.Component {
     render() {
-        const siteTitle = "Momentum";
+        const siteTitle = "MoHub";
 
         return (
-            <Layout style={parallaxBackground}>
-                <Helmet title={siteTitle} />
-                <div className="wrapper text-center">
-                    <div className="parallax filter-gradient green section-colorful hero-image">
-                        <div className="parallax-background banner-parallax"></div>
-                        <div className="container box">
-                            <div className="description">
-                                <h3> Obrigado! Sua inscrição está confirmada.  </h3>
-                                <h5>Nos vemos nos dias 10, 12 de setembro às 20h e 14 de setembro, às 19h.</h5>
-                                <br />
-                                <iframe title="YT" width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY">
-                                </iframe>
-                                <br />
-                                <Link className="button button-primary" to="#" >
-                                    <i className="fa fa-2x fa-facebook"></i>   Me lembre das aulas
-                                     </Link>
-                            </div>
-                        </div>
+          <Layout>
+              <Helmet title={siteTitle}>
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
+                <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=153246718126522&autoLogAppEvents=1"></script>
+              </Helmet>
+              <div className="page">
+                  <div className="full-width-container" style={parallaxBackground}>
+                      <div className="container">
+                      <div className="row">
+                          <div className="offset-by-one ten columns">
+                              <div className="center spacing">
+                                <img src={mohublogo}/>
+                              </div>
+                              <div>
+                                {/*<div className="description">Importante! Assista ao vídeo abaixo!</div>*/}
+                                <div className="flex">
+                                  <div className="flex-left">
+                                    <img className="fluid" src={landing01} />
+                                  </div>
+                                  <div className="flex-right">
+                                    <a className="block">
+                                      <div className="video" style={videoplaBackground}>
+                                        <div className="overlay">
+                                          <div className="overlay-content">
+                                            <i class="fas fa-play"></i>
+                                            {/*<h1>07/05</h1>*/}
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a className="block">
+                                      <div className="video" style={videoplaBackground}>
+                                        <div className="overlay green">
+                                          <div className="overlay-content">
+                                            <i class="fas fa-lock"></i>
+                                            <h1>14/05</h1>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a className="block">
+                                      <div className="video" style={videoplaBackground}>
+                                        <div className="overlay green">
+                                          <div className="overlay-content">
+                                            <i class="fas fa-lock"></i>
+                                            <h1>21/05</h1>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    <a className="block last">
+                                      <div className="video" style={videoplaBackground}>
+                                        <div className="overlay green">
+                                          <div className="overlay-content">
+                                            <i class="fas fa-lock"></i>
+                                            <h1>28/05</h1>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </a>
+                                    {/*<h5>  Tempo para acessar o restante das landings:</h5>*/}
+                                    <div style={{ 'display': 'none' }}><Countdown/></div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <br/>
+                  </div>
+                  </div>
+                  <div className="full-width-container white">
+                    <div className="container">
+                  <div className="row top bottom">
+                    <div className="twelve columns center">
+                      <Link className="btn-share btn-facebook" to="subscribe/" >
+                          <i class="fab fa-facebook-square"></i>
+                          <p>&nbsp; Compartilhar</p>
+                      </Link>
+                      <Link className="btn-share btn-whatsapp" to="subscribe/" >
+                          <i class="fab fa-whatsapp"></i>
+                          <p>&nbsp; Compartilhar</p>
+                      </Link>
                     </div>
-                </div>
-            </Layout>
+                  </div>
+                  <div className="row bottom">
+                    <div className="twelve columns">
+                      <img className="fluid" src={banner}/>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="twelve columns fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
+                  </div>
+                  </div>
+                  </div>
+                  <Footer/>
+              </div>
+          </Layout>
         );
     }
 }

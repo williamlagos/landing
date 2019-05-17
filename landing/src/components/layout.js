@@ -6,7 +6,7 @@ import "../assets/css/skeleton.css";
 import './layout.css';
 
 // import Header from "./Header";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 
 class Template extends React.Component {
     constructor(props) {
@@ -32,7 +32,7 @@ class Template extends React.Component {
         const { children } = this.props;
 
         return (
-            <div className={`body landing-page landing-page-1 ${this.state.loading}`} style={this.props.style}>
+            <div id={this.props.id || 'layout'} className={`body landing-page landing-page-1 ${this.state.loading}`} style={this.props.style}>
                 {children}
                 {/*<Footer />*/}
             </div>
