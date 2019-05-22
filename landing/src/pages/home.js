@@ -27,7 +27,7 @@ class IndexPage extends React.Component {
                                 <div className="center spacing">
                                   <img src={mohublogo}/>
                                 </div>
-                                <div className="white">
+                                <div className="text white">
                                   <div className="description">Importante! Assista ao vídeo abaixo!</div>
                                   <img className="fluid" src={landing01} />
                                   {/*<h3>  Tempo para acessar o restante das landings:</h3>

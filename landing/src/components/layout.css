@@ -6,6 +6,15 @@
   max-height: 200px;
 }
 
+.text h4 {
+  color: #060a28;
+  margin-bottom: .25em;
+}
+
+.text p {
+  color: #060a28;
+}
+
 .flex {
   display: flex;
   flex-direction: column;
@@ -105,7 +114,7 @@
 }
 
 .big-bottom {
-  margin-bottom: 10em;
+  margin-bottom: 5em;
 }
 
 .fluid {
@@ -114,7 +123,7 @@
 }
 
 .btn-mail, .btn-mail:hover {
-  margin: .5em 1em .5em 0em;
+  margin: 0em 1em .5em 0em;
   padding: .5em 3em;
   border-radius: 3em;
   text-transform: uppercase;
@@ -122,6 +131,7 @@
   text-align: center;
   font-weight: bolder;
   color: white;
+  min-width: 100px;
 }
 
 .outlook {
