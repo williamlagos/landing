@@ -139,6 +139,10 @@
   border-bottom: .3em solid #0c345b;
 }
 
+.outlook:hover {
+  background-color: #1d6fbf;
+}
+
 .gmail {
   background-color: #e9443f;
   border-bottom: .3em solid #6a1f1c;
