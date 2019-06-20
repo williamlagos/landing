@@ -7,6 +7,7 @@
     "install": "cd cms && npm install",
     "start": "cd cms && npm start",
     "landing": "cd landing && npm run develop",
+    "deploy": "heroku container:push web -a mohub",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
