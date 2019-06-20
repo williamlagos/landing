@@ -94,11 +94,11 @@ class SubscriptionConfirmationPage extends React.Component {
                     <div className="container">
                   <div className="row top bottom">
                     <div className="twelve columns center">
-                      <Link className="btn-share btn-facebook" to="subscribe/" >
+                      <Link className="btn-share btn-facebook" to="#" >
                           <i class="fab fa-facebook-square"></i>
                           <p>&nbsp; Compartilhar</p>
                       </Link>
-                      <Link className="btn-share btn-whatsapp" to="subscribe/" >
+                      <Link className="btn-share btn-whatsapp" to="#" >
                           <i class="fab fa-whatsapp"></i>
                           <p>&nbsp; Compartilhar</p>
                       </Link>
