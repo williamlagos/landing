@@ -30,8 +30,6 @@ class IndexPage extends React.Component {
                                 <div className="text white">
                                   <div className="description">Importante! Assista ao vídeo abaixo!</div>
                                   <img className="fluid" src={landing01} />
-                                  {/*<h3>  Tempo para acessar o restante das landings:</h3>
-                                  <Countdown/>*/}
                                   <div className="row top">
                                     <h1 className="two columns big">1</h1>
                                     <div className="ten columns">

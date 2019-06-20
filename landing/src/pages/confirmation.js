@@ -114,6 +114,10 @@ class SubscriptionConfirmationPage extends React.Component {
                   </div>
                   </div>
                   </div>
+                  <div style={{ 'text-align': 'center', 'color': 'white', 'font-size': '1em' }}>
+                    <h3> Tempo para acessar o restante das landings:</h3>
+                    <Countdown/>
+                  </div>
                   <Footer/>
               </div>
           </Layout>
