@@ -31,16 +31,16 @@ class SubscriptionConfirmationPage extends React.Component {
                       <div className="row">
                           <div className="offset-by-one ten columns">
                               <div className="center spacing">
-                                <img src={mohublogo}/>
+                                <img src={mohublogo} alt="mohub logo"/>
                               </div>
                               <div>
                                 {/*<div className="description">Importante! Assista ao vídeo abaixo!</div>*/}
                                 <div className="flex">
                                   <div className="flex-left">
-                                    <img className="fluid" src={landing01} />
+                                    <img className="fluid" src={landing01} alt="video 1"/>
                                   </div>
                                   <div className="flex-right">
-                                    <a className="block">
+                                    <button className="block">
                                       <div className="video" style={videoplaBackground}>
                                         <div className="overlay">
                                           <div className="overlay-content">
@@ -49,8 +49,8 @@ class SubscriptionConfirmationPage extends React.Component {
                                           </div>
                                         </div>
                                       </div>
-                                    </a>
-                                    <a className="block">
+                                    </button>
+                                    <button className="block">
                                       <div className="video" style={videoplaBackground}>
                                         <div className="overlay green">
                                           <div className="overlay-content">
@@ -59,8 +59,8 @@ class SubscriptionConfirmationPage extends React.Component {
                                           </div>
                                         </div>
                                       </div>
-                                    </a>
-                                    <a className="block">
+                                    </button>
+                                    <button className="block">
                                       <div className="video" style={videoplaBackground}>
                                         <div className="overlay green">
                                           <div className="overlay-content">
@@ -69,8 +69,8 @@ class SubscriptionConfirmationPage extends React.Component {
                                           </div>
                                         </div>
                                       </div>
-                                    </a>
-                                    <a className="block last">
+                                    </button>
+                                    <button className="block last">
                                       <div className="video" style={videoplaBackground}>
                                         <div className="overlay green">
                                           <div className="overlay-content">
@@ -79,7 +79,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                           </div>
                                         </div>
                                       </div>
-                                    </a>
+                                    </button>
                                     {/*<h5>  Tempo para acessar o restante das landings:</h5>*/}
                                     <div style={{ 'display': 'none' }}><Countdown/></div>
                                   </div>
@@ -106,7 +106,7 @@ class SubscriptionConfirmationPage extends React.Component {
                   </div>
                   <div className="row bottom">
                     <div className="twelve columns">
-                      <img className="fluid" src={banner}/>
+                      <img className="fluid" src={banner} alt="banner"/>
                     </div>
                   </div>
                   <div className="row">

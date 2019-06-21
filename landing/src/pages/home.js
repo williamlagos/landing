@@ -25,11 +25,11 @@ class IndexPage extends React.Component {
                         <div className="row">
                             <div className="offset-by-one ten columns">
                                 <div className="center spacing">
-                                  <img src={mohublogo}/>
+                                  <img src={mohublogo} alt="mohub logo"/>
                                 </div>
                                 <div className="text white">
                                   <div className="description">Importante! Assista ao vídeo abaixo!</div>
-                                  <img className="fluid" src={landing01} />
+                                  <img className="fluid" src={landing01} alt="video 1"/>
                                   <div className="row top">
                                     <h1 className="two columns big">1</h1>
                                     <div className="ten columns">
@@ -48,9 +48,9 @@ class IndexPage extends React.Component {
                                       <h4 className="uppercase">Confirme o seu e-mail</h4>
                                       <p>Clique abaixo e cadastre-se para receber os avisos das aulas e atualizações do Workshop diretamente no seu e-mail correspondente.</p>
                                       <div className="buttons">
-                                        <a href="#" className="btn-mail outlook">Outlook</a>
-                                        <a href="#" className="btn-mail gmail">Gmail</a>
-                                        <a href="#" className="btn-mail yahoo">Yahoo</a>
+                                        <button className="btn-mail outlook">Outlook</button>
+                                        <button className="btn-mail gmail">Gmail</button>
+                                        <button className="btn-mail yahoo">Yahoo</button>
                                       </div>
                                     </div>
                                   </div>

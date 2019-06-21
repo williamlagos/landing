@@ -132,6 +132,10 @@
   font-weight: bolder;
   color: white;
   min-width: 100px;
+  height: auto;
+  font-size: inherit;
+  line-height: inherit;
+  border: 0px;
 }
 
 .outlook {
@@ -162,7 +166,7 @@
   display:none;
 }
 
-.btn-whatsapp, .btn-whatsapp:hover {
+.btn-whatsapp {
   background-color: #3cbea5;
   padding: .5em 2.5em;
   border-bottom: .3em solid #1b5449;
@@ -173,10 +177,32 @@
   color: white;
 }
 
-.btn-facebook, .btn-facebook:hover {
+.btn-facebook {
   background-color: #539cff;
   padding: .5em 2.5em;
   border-bottom: .3em solid #0266ae;
+  border-radius: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bolder;
+  color: white;
+}
+
+.btn-whatsapp:hover {
+  border: 0px;
+  background-color: #3cbea5;
+  padding: .5em 2.5em;
+  border-radius: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bolder;
+  color: white;
+}
+
+.btn-facebook:hover {
+  border: 0px;
+  background-color: #539cff;
+  padding: .5em 2.5em;
   border-radius: 3em;
   text-transform: uppercase;
   text-decoration: none;
@@ -277,10 +303,21 @@
   background: rgba(255, 255, 255, 0.5);
 }
 
-.btn, .btn:hover {
+.btn {
   background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
   padding: 1.1em 3em;
   border-bottom: .3em solid #0266ae;
+  border-radius: 3em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bolder;
+  color: white;
+}
+
+.btn:hover {
+  border: 0px;
+  background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
+  padding: 1.1em 3em;
   border-radius: 3em;
   text-transform: uppercase;
   text-decoration: none;
@@ -384,10 +421,21 @@
   .copyright-logo {
     margin-right: 5px;
   }
-  .btn, .btn:hover {
+  .btn {
     background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
     padding: 1.1em 8em;
     border-bottom: .3em solid #0266ae;
+    border-radius: 3em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+  }
+
+  .btn:hover {
+    background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
+    padding: 1.1em 8em;
+    border: 0px;
     border-radius: 3em;
     text-transform: uppercase;
     text-decoration: none;
