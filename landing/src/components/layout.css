@@ -58,6 +58,11 @@
 .block {
   margin: 1em .5em 0em 0em;
   flex: 1;
+  border: 0px;
+  padding: 0px;
+  line-height: inherit;
+  height: inherit;
+  font-size: inherit;
 }
 
 .last {
@@ -370,6 +375,11 @@
   .block {
     margin: 0em 0em .5em 1em;
     flex: 1;
+    border: 0px;
+    padding: 0px;
+    line-height: inherit;
+    height: inherit;
+    font-size: inherit;
   }
 
   .last {
