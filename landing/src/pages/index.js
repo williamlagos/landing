@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 
 import Footer from "../components/Footer";
 import Layout from '../components/layout';
+import Modal from '../components/Modal';
 import Background from "../assets/img/backgrounds/bg.png";
 import MohubLogo from "../assets/img/mohub.png";
 const parallaxBackground = {
@@ -13,6 +14,22 @@ const parallaxBackground = {
 };
 
 class HomePage extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        toggledModal: false
+      }
+    }
+
+    toggleModal(event) {
+      event.preventDefault()
+      this.setState({ toggledModal: true })
+    }
+
+    dismissModal() {
+      this.setState({ toggledModal: false })
+    }
+
     render() {
         const siteTitle = "MoHub";
         return (
@@ -35,8 +52,11 @@ class HomePage extends React.Component {
                             </div>
                         </div>
                     </div>
+                    <button style={{ 'border-radius': 0, 'border': 0, 'margin-bottom': 0 }} className="btn" onClick={e => this.toggleModal(e)}>Cadastrar e-mail</button>
+
                     <Footer/>
                 </div>
+                {this.state.toggledModal && <Modal onDismiss={() => this.dismissModal()}/>}
 
             </Layout>
         );

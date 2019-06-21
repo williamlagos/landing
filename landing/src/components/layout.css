@@ -6,6 +6,13 @@
   max-height: 200px;
 }
 
+button {
+  height: auto;
+  font-size: inherit;
+  line-height: inherit;
+  border: 0px;
+}
+
 .text h4 {
   color: #060a28;
   margin-bottom: .25em;
