@@ -2,6 +2,13 @@ import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "gatsby"
 
+/*import '@ionic/core/css/core.css'
+import '@ionic/core/css/ionic.bundle.css'
+import {
+  IonButton,
+  IonModal
+} from '@ionic/react'*/
+
 import Footer from "../components/Footer";
 import Layout from '../components/layout';
 import Modal from '../components/Modal';

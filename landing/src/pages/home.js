@@ -35,7 +35,7 @@ class IndexPage extends React.Component {
                                     <div className="ten columns">
                                       <h4 className="uppercase">Ative a notificação via Facebook</h4>
                                       <p>Clique abaixo e cadastre-se para receber os avisos das aulas e atualizações do Workshop diretamente no seu Facebook Messenger.</p>
-                                      <Link className="btn-facebook" to="confirmation/" >
+                                      <Link className="btn-facebook" to="videos/" >
                                           <i class="fab fa-facebook-square"></i>
                                           &nbsp; Ative seu Facebook
                                       </Link>

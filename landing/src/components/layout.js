@@ -1,12 +1,5 @@
 import React from "react";
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import "../assets/css/normalize.css";
-import "../assets/css/skeleton.css";
 import './layout.css';
-
-// import Header from "./Header";
-// import Footer from "./Footer";
 
 class Template extends React.Component {
     constructor(props) {

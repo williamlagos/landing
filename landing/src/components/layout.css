@@ -6,12 +6,22 @@
   max-height: 200px;
 }
 
+body {
+  margin: 0px;
+  height: 100%;
+  font-family: sans-serif;
+}
+
 button {
   height: auto;
   font-size: inherit;
   line-height: inherit;
   border: 0px;
 }
+
+/*ion-split-pane ion-nav {
+  max-width: unset !important;
+}*/
 
 .text h4 {
   color: #060a28;
@@ -224,8 +234,8 @@ button {
 
 .description {
   text-transform: uppercase;
-  background-color: red;
-  color: white;
+  background-color: white;
+  color: black;
   padding: .25em 0em;
   width: 100%;
   font-size: 1.5em;
@@ -234,7 +244,7 @@ button {
 }
 
 .hero-img {
-  border-radius: 2em;
+  border-radius: 1em;
   padding: 1em;
   width: 25vw;
 }
