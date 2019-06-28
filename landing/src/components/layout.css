@@ -9,7 +9,7 @@
 body {
   margin: 0px;
   height: 100%;
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 button {
@@ -243,6 +243,16 @@ button {
   text-align: center;
 }
 
+.red {
+  text-transform: uppercase;
+  background-color: red;
+  color: #fff;
+  padding: .25em 0;
+  width: 100%;
+  font-size: 1.5em;
+  text-align: center;
+}
+
 .hero-img {
   border-radius: 1em;
   padding: 1em;
@@ -327,24 +337,26 @@ button {
 
 .btn {
   background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-  padding: 1.1em 3em;
+  padding: .8em 3em;
   border-bottom: .3em solid #0266ae;
   border-radius: 3em;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bolder;
   color: white;
+  text-align:center;
 }
 
 .btn:hover {
   border: 0px;
   background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-  padding: 1.1em 3em;
+  padding: .8em 3em;
   border-radius: 3em;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bolder;
   color: white;
+  text-align: center;
 }
 
 @media (min-width: 769px) {
@@ -450,24 +462,26 @@ button {
   }
   .btn {
     background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-    padding: 1.1em 8em;
+    padding: .8em 6em;
     border-bottom: .3em solid #0266ae;
     border-radius: 3em;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bolder;
     color: white;
+    text-align: center;
   }
 
   .btn:hover {
     background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-    padding: 1.1em 8em;
+    padding: .8em 6em;
     border: 0px;
     border-radius: 3em;
     text-transform: uppercase;
     text-decoration: none;
     font-weight: bolder;
     color: white;
+    text-align: center;
   }
 
   .btn-share p {

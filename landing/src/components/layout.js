@@ -1,36 +1,39 @@
-import React from "react";
-import './layout.css';
+import React, { Component } from 'react'
+import { Grommet, ResponsiveContext } from 'grommet'
+import '../assets/css/normalize.css'
+import '../assets/css/skeleton.css'
+import './layout.css'
 
-class Template extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        loading: 'is-loading'
-      }
+class Template extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: 'is-loading'
     }
+  }
 
-    componentDidMount () {
-      this.timeoutId = setTimeout(() => {
-          this.setState({loading: ''});
-      }, 100);
+  componentDidMount () {
+    this.timeoutId = setTimeout(() => {
+        this.setState({loading: ''});
+    }, 100);
+  }
+
+  componentWillUnmount () {
+    if (this.timeoutId) {
+        clearTimeout(this.timeoutId);
     }
+  }
 
-    componentWillUnmount () {
-      if (this.timeoutId) {
-          clearTimeout(this.timeoutId);
-      }
-    }
-
-    render() {
-        const { children } = this.props;
-
-        return (
-            <div id={this.props.id || 'layout'} className={`body landing-page landing-page-1 ${this.state.loading}`} style={this.props.style}>
-                {children}
-                {/*<Footer />*/}
-            </div>
-        );
-    }
+  render() {
+    const { children } = this.props
+    return (
+      <Grommet full={true}>
+        <ResponsiveContext.Consumer>
+          {() => children}
+        </ResponsiveContext.Consumer>
+      </Grommet>
+    )
+  }
 }
 
 export default Template;

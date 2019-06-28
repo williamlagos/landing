@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "gatsby"
+import { Box } from 'grommet'
 
 import Layout from '../components/layout';
 // import Countdown from '../components/Countdown';
@@ -9,17 +10,17 @@ import Footer from '../components/Footer';
 import landing01 from "../assets/img/video.png";
 import mohublogo from "../assets/img/mohub_white.png";
 import Background from "../assets/img/backgrounds/bg-01.png";
-const parallaxBackground = { backgroundImage: `url(${Background})` };
 
 class IndexPage extends React.Component {
     render() {
         const siteTitle = "MoHub";
         return (
-            <Layout id="cover" style={parallaxBackground}>
+            <Layout>
                 <Helmet title={siteTitle}>
                   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
                   <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
                 </Helmet>
+                <Box id="cover" justify="between" background={`url(${Background})`} fill="true">
                 <div className="page">
                     <div className="container">
                         <div className="row">
@@ -28,7 +29,7 @@ class IndexPage extends React.Component {
                                   <img src={mohublogo} alt="mohub logo"/>
                                 </div>
                                 <div className="text white">
-                                  <div className="description">Importante! Assista ao vídeo abaixo!</div>
+                                  <div className="red">Importante! Assista ao vídeo abaixo!</div>
                                   <img className="fluid" src={landing01} alt="video 1"/>
                                   <div className="row top">
                                     <h1 className="two columns big">1</h1>
@@ -60,6 +61,7 @@ class IndexPage extends React.Component {
                     </div>
                     <Footer/>
                 </div>
+                </Box>
             </Layout>
         );
     }
