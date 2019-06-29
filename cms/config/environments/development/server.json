@@ -8,7 +8,6 @@
     "enabled": false
   },
   "admin": {
-    "autoOpen": false,
-    "path": "/dashboard"
+    "autoOpen": false
   }
 }

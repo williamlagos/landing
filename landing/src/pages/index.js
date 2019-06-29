@@ -57,18 +57,18 @@ class HomePage extends React.Component {
                 <Form>
                   <Heading level="2">Cadastre o seu e-mail agora!</Heading>
                   <FormField name="email" label="E-mail" />
-                  <Button style={{ width: '100%' }} plain type="submit" label="Cadastrar" onClick={(e) => this.dismissModal(e)} className="btn"/>
+                  <button style={{ width: '100%' }} onClick={(e) => this.dismissModal(e)} className="btn">Cadastrar</button>
                 </Form>
               </Box>
             </Layer>
           )}
           <Box>
-            <Button
-              plain
+            <button
               className="btn"
               style={{ 'border-radius': 0, 'border': 0, 'margin-bottom': 0 }}
-              onClick={e => this.toggleModal(e)}
-              label="Cadastrar e-mail"/>
+              onClick={e => this.toggleModal(e)}>
+              Cadastrar e-mail
+            </button>
             <Footer/>
           </Box>
         </Box>

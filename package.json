@@ -7,13 +7,10 @@
     "install": "cd cms && npm install",
     "start": "cd cms && npm start",
     "landing": "cd landing && npm run develop",
-    "deploy": "heroku container:push web -a mohub",
+    "package": "cd landing && npm run build",
+    "deploy": "heroku container:push web -a mohub && heroku container:release web -a mohub",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "sqlite3": "^4.0.8",
-    "strapi": "^3.0.0-beta.2"
-  }
+  "license": "ISC"
 }
