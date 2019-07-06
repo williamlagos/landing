@@ -1,9 +1,11 @@
-#cover {
-  max-height:300px;
-}
-
-#background {
-  max-height: 200px;
+#cover { max-height:300px; }
+#cover2 { max-height:200px; }
+#background { max-height: 200px; }
+#bigbutton { width: 80%; }
+#shadow {
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
 }
 
 body {
@@ -360,6 +362,8 @@ button {
 }
 
 @media (min-width: 769px) {
+  #cover2 { max-height:500px; }
+  #bigbutton { width: 40%; }
   /* Rules for flex boxes */
   .flex {
     display: flex;

@@ -94,7 +94,7 @@ class SubscriptionConfirmationPage extends React.Component {
                     <div className="container">
                   <div className="row top bottom">
                     <div className="twelve columns center">
-                      <Link className="btn-share btn-facebook" to="#" >
+                      <Link className="btn-share btn-facebook" to="/sales" >
                           <i class="fab fa-facebook-square"></i>
                           <p>&nbsp; Compartilhar</p>
                       </Link>
