@@ -42,21 +42,21 @@ button {
 }
 
 .title {
-  margin-left: 140px;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin-left: 140px !important;
+  margin-right: 10px !important;
+  margin-top: 10px !important;
 }
 
 .title-under {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 110px;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+  margin-top: 110px !important;
 }
 
 .text {
-  margin-top: 120px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-top: 120px !important;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
 }
 
 .blue-gradient {
