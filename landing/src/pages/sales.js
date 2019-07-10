@@ -21,6 +21,8 @@ import champ from "../assets/img/champ.png"
 import minus from "../assets/img/minus.png"
 import plus from "../assets/img/plus.png"
 
+import box1 from "../assets/img/box.png"
+
 /*const parallaxBackground = {
   backgroundImage: `url(${Background})`,
   backgroundPosition: 'center',
@@ -320,6 +322,10 @@ class SalesPage extends React.Component {
                   </Box>
                 </Box>
               </Box>
+              <Box margin="medium"></Box>
+            </Container>
+            <Image margin={{ "vertical": "medium" }} src={box1}/>
+            <Container>
               <Box margin="medium"></Box>
               <Box>
                 <Heading>PERGUNTAS FREQUENTES</Heading>
