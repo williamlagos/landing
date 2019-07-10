@@ -58,7 +58,7 @@ class SalesPage extends React.Component {
                           <img className="fluid" src={landing01} alt="video 1"/>
                           <Box align="center" pad="medium">
                             <br/>
-                            <Link id="bigbutton" className="btn" to="videos/" >
+                            <Link id="bigbutton" className="btn" to="/" >
                               &nbsp; Faça parte da MoHub
                             </Link>
                           </Box>
@@ -100,11 +100,11 @@ class SalesPage extends React.Component {
                   </div>
                 </Box>
                 <br/>
-                <Link id="bigbutton" className="btn" to="videos/" >
+                <a id="bigbutton" className="btn" href="#sales" >
                   &nbsp; Faça parte da MoHub
-                </Link>
+                </a>
               </Box>
-              <Box margin={{ "vertical": "medium" }}>
+              <Box id="sales" margin={{ "vertical": "medium" }}>
                 <Heading level={2} className="uppercase">O que você ganha ao entrar para a MoHub?</Heading>
                 <div className="row">
                   <Stack className="six columns blue" anchor="top-left">
@@ -256,9 +256,9 @@ class SalesPage extends React.Component {
                   </div>
                 </Box>
                 <br/>
-                <Link id="bigbutton" className="btn" to="videos/" >
+                <a id="bigbutton" className="btn" href="#sales" >
                   &nbsp; Faça parte da MoHub
-                </Link>
+                </a>
               </Box>
             </Container>
             <Box><Footer/></Box>

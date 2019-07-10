@@ -57,6 +57,7 @@ class HomePage extends React.Component {
               <Box pad="medium">
                 <Form>
                   <Heading level="2">Cadastre o seu e-mail agora!</Heading>
+                  <FormField name="name" label="Nome" />
                   <FormField name="email" label="E-mail" />
                   <button className="btn gradient" style={{ width: '100%' }} onClick={(e) => this.dismissModal(e)} >Cadastrar</button>
                 </Form>
