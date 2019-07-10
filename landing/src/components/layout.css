@@ -211,6 +211,8 @@ button {
 
 .outlook:hover {
   background-color: #1d6fbf;
+  /* transform: translateY(.3em); */
+  border-bottom: .3em solid transparent;
 }
 
 .gmail {
@@ -218,9 +220,19 @@ button {
   border-bottom: .3em solid #6a1f1c;
 }
 
+.gmail:hover {
+  /* transform: translateY(.3em); */
+  border-bottom: .3em solid transparent;
+}
+
 .yahoo {
   background-color: #3f008a;
   border-bottom: .3em solid #270b48;
+}
+
+.yahoo:hover {
+  /* transform: translateY(.3em); */
+  border-bottom: .3em solid transparent;
 }
 
 .btn-share {
@@ -255,25 +267,13 @@ button {
 }
 
 .btn-whatsapp:hover {
-  border: 0px;
-  background-color: #3cbea5;
-  padding: .5em 2.5em;
-  border-radius: 3em;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bolder;
-  color: white;
+  transform: translateY(.3em);
+  border-bottom: .3em solid transparent;
 }
 
 .btn-facebook:hover {
-  border: 0px;
-  background-color: #539cff;
-  padding: .5em 2.5em;
-  border-radius: 3em;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bolder;
-  color: white;
+  transform: translateY(.3em);
+  border-bottom: .3em solid transparent;
 }
 
 .description {
@@ -392,15 +392,8 @@ button {
 }
 
 .btn:hover {
-  border: 0px;
-  background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-  padding: .8em 3em;
-  border-radius: 3em;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bolder;
-  color: white;
-  text-align: center;
+  /* transform: translateY(.3em); */
+  border-bottom: .3em solid transparent;
 }
 
 @media (min-width: 769px) {
@@ -506,10 +499,11 @@ button {
   .copyright-logo {
     margin-right: 5px;
   }
+
   .btn {
     background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-    padding: .8em 6em;
     border-bottom: .3em solid #0266ae;
+    padding: .8em 6em;
     border-radius: 3em;
     text-transform: uppercase;
     text-decoration: none;
@@ -519,16 +513,13 @@ button {
   }
 
   .btn:hover {
-    background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-    padding: .8em 6em;
-    border: 0px;
-    border-radius: 3em;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bolder;
-    color: white;
-    text-align: center;
+    /* transform: translateY(.3em); */
+    border-bottom: .3em solid linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
   }
+
+  /*.btn:active {
+    transform: translateY(.3em);
+  }*/
 
   .btn-share p {
     display:inline;

@@ -45,7 +45,8 @@ class HomePage extends React.Component {
               <Image className="mohub-logo" alignSelf="start" fallback="MoHub Logo" fit="contain" src={MohubLogo}/>
               <Heading level="2" style={{ "margin": "50px 0px", "font-weight": "bolder" }}> Saiba o que mais de
               <div style={{ "color": "#0385e3", "text-transform": "uppercase" }}> 5.000 brasileiros </div> comuns estão fazendo para prosperar em 2019 </Heading>
-              <Button><Link className="btn" to="home/">Quero saber</Link></Button>
+              <Link className="btn gradient" to="home/">Quero saber</Link>
+              <br/>
             </Box>
           </Container>
           {this.state.toggledModal && (
@@ -57,14 +58,14 @@ class HomePage extends React.Component {
                 <Form>
                   <Heading level="2">Cadastre o seu e-mail agora!</Heading>
                   <FormField name="email" label="E-mail" />
-                  <button style={{ width: '100%' }} onClick={(e) => this.dismissModal(e)} className="btn">Cadastrar</button>
+                  <button className="btn gradient" style={{ width: '100%' }} onClick={(e) => this.dismissModal(e)} >Cadastrar</button>
                 </Form>
               </Box>
             </Layer>
           )}
           <Box>
             <button
-              className="btn"
+              className="btn gradient"
               style={{ 'border-radius': 0, 'border': 0, 'margin-bottom': 0 }}
               onClick={e => this.toggleModal(e)}>
               Cadastrar e-mail
