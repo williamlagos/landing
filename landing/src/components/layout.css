@@ -396,6 +396,34 @@ button {
   border-bottom: .3em solid transparent;
 }
 
+.right-gradient {
+  border-right: 2px solid;
+  border-image-source: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
+  border-image-slice: 1;
+}
+
+.gray-button, .gray-button:focus {
+  text-align: left;
+  border-radius: 0px;
+  background: #42434e;
+  color: white;
+  padding: 15px 25px;
+  font-weight: bold;
+}
+
+.gray-symbol {
+  margin-top: 5px;
+  margin-right: 25px;
+}
+
+.stack {
+  border: 1px solid #e1e1e7 !important;
+  color: white !important;
+  background: #42434e !important;
+  padding: 15px !important;
+  font-weight: bold !important;
+}
+
 @media (min-width: 769px) {
   #cover2 { max-height:500px; }
   #bigbutton { width: 40%; }
