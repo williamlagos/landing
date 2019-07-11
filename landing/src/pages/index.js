@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
-import { Box, Button, Image, Heading, Layer, Form, FormField } from 'grommet'
+import { Box, /*Button,*/ Image, Heading, Layer, Form, FormField } from 'grommet'
 
 import Footer from "../components/Footer";
 import Layout from '../components/layout';

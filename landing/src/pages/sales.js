@@ -13,14 +13,14 @@ import testimonial from "../assets/img/testimonial.png"
 import shield from "../assets/img/shield.png"
 import bulb from "../assets/img/bulb.png"
 import lock from "../assets/img/lock.png"
-import full from "../assets/img/full.png"
+import gray from "../assets/img/gray.png"
+import city from "../assets/img/city.png"
+import sperry from "../assets/img/sperry.png"
 import gift from "../assets/img/gift.png"
 import bag from "../assets/img/bag.png"
 import champ from "../assets/img/champ.png"
-
 import minus from "../assets/img/minus.png"
 import plus from "../assets/img/plus.png"
-
 import box1 from "../assets/img/box.png"
 
 /*const parallaxBackground = {
@@ -120,7 +120,27 @@ class SalesPage extends React.Component {
                     </div>
                   </div>
             </Container>
-            <Image margin={{ "vertical": "medium" }} src={full} fill={true}/>
+            <Box margin="large"/>
+            <Box className="founder" margin={{ "vertical": "medium" }} height="large">
+              <Stack anchor="bottom">
+                <div className="row">
+                  <div className="six columns founder-left">
+                    <Heading level={2} margin={{"left": "35%", "top": "440px"}} color="white">Sobre o Fundador</Heading>
+                  </div>
+                  <div className="six columns founder-right">
+                    <Box margin={{"left": "250px"}} pad={{"top":"120px","right":"75px"}}>
+                    <Heading level={1} color="white">Matheus <br/>Sperry</Heading>
+                    <Text size="small" color="white">
+                      Olá! Eu sou o Matheus Sperry, sou formado em engenharia civil pela PUCRS e pela ENISE (França), com certificação em urbanismo pela IHS (Holanda).
+                      Eu deixei tudo isso de lado porque eu tenho a missão de ajudar o máximo de pessoas a usar todo o seu potencial para iniciar o próprio negócio e alcançar liberdade financeira, tempo livre e qualidade de vida.
+                      Vamos juntos nessa!
+                    </Text>
+                    </Box>
+                  </div>
+                </div>
+                <Image className="the-founder" src={sperry}/>
+              </Stack>
+            </Box>
             <Container>
               <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
                 <Box direction="row" gap="medium">

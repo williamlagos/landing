@@ -424,6 +424,30 @@ button {
   font-weight: bold !important;
 }
 
+.founder {
+  min-height: 500px;
+}
+
+.founder-left {
+  min-height: 500px;
+  margin: 0px;
+  width: 50% !important;
+  background:url('../assets/img/city.png');
+  background-size: cover;
+}
+
+.founder-right {
+  min-height: 500px;
+  margin: 0px;
+  width: 50% !important;
+  background-color: #40414d;
+}
+
+.the-founder {
+  /* width: 80%; */
+  margin-bottom: -5px;
+}
+
 @media (min-width: 769px) {
   #cover2 { max-height:500px; }
   #bigbutton { width: 40%; }
