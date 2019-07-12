@@ -153,6 +153,7 @@ class SalesPage extends React.Component {
                 <Image className="the-founder" src={sperry}/>
               </Stack>
             </Box>
+            <Box margin="large"/>
             <Container>
               <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
                 <Box direction="row" gap="medium">
@@ -198,7 +199,7 @@ class SalesPage extends React.Component {
                       </Heading>
                     </Box>
                   </Stack>
-                  <Stack className="six columns blue" anchor="top-left">
+                  <Stack className="six columns running" anchor="top-left">
                     <Heading className="title" level={2}>O seu destino</Heading>
                     <Box pad={{ "vertical": "36px" }} className="blue-gradient">
                       <Heading textAlign="center" level={3}>Box 2</Heading>
@@ -221,7 +222,7 @@ class SalesPage extends React.Component {
                   </Stack>
                 </div>
                 <div className="row" style={{ "margin-top": "40px" }}>
-                  <Stack className="twelve columns blue" anchor="top-left">
+                  <Stack className="twelve columns mountain" anchor="top-left">
                     <Box pad={{ "vertical": "36px" }} className="blue-gradient">
                       <Heading textAlign="center" level={3}>Box 3</Heading>
                     </Box>
@@ -362,7 +363,7 @@ class SalesPage extends React.Component {
                 <Box className="blue-bar" background="#0266ae" pad={{"top":"15px"}}>
                   <Stack anchor="bottom">
                     <Heading textAlign="center" level={2}>MELHOR INVESTIMENTO</Heading>
-                    <Image className="triangle" src={triangle}/>
+                    <Image margin={{"bottom":"-20px"}} src={triangle}/>
                   </Stack>
                 </Box>
                 <Box pad="large">

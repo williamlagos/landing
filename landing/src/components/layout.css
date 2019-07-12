@@ -21,10 +21,6 @@ button {
   border: 0px;
 }
 
-/*ion-split-pane ion-nav {
-  max-width: unset !important;
-}*/
-
 .risked {
   text-decoration: line-through red;
 }
@@ -33,6 +29,26 @@ button {
   background: #0266ae;
   color: white;
   min-height: 340px;
+}
+
+.mountain {
+  background: url('../assets/img/mountain.png');
+  background-size: cover;
+  color: white;
+  min-height: 340px;
+}
+
+.running {
+  background: url('../assets/img/running.png');
+  background-size: cover;
+  color: white;
+  min-height: 340px;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .blue-high {
@@ -429,7 +445,8 @@ button {
 }
 
 .founder-left {
-  min-height: 500px;
+  min-height: 600px;
+  max-height: 600px;
   margin: 0px;
   width: 50% !important;
   background:url('../assets/img/city.png');
@@ -437,7 +454,8 @@ button {
 }
 
 .founder-right {
-  min-height: 500px;
+  min-height: 600px;
+  max-height: 600px;
   margin: 0px;
   width: 50% !important;
   background-color: #40414d;
@@ -459,6 +477,7 @@ button {
 
 .triangle {
   top: -15px;
+  margin-top: -15px;
 }
 
 .blue-bar {
