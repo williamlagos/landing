@@ -30,7 +30,12 @@ class IndexPage extends React.Component {
                                 </div>
                                 <div className="white">
                                   <div className="red">Importante! Assista ao vídeo abaixo!</div>
-                                  <img className="fluid" src={landing01} alt="video 1"/>
+                                  {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
+                                  <div className="fluid">
+                                  <iframe id="ytplayer" type="text/html" width="100%" height="400"
+                                    src="http://www.youtube.com/embed/fa5p19APgd8/?autoplay=0"
+                                    frameborder="0"/>
+                                  </div>
                                   <div className="row top">
                                     <h1 className="two columns big">1</h1>
                                     <div className="ten columns">
@@ -49,9 +54,9 @@ class IndexPage extends React.Component {
                                       <h4 className="uppercase">Confirme o seu e-mail</h4>
                                       <p>Clique abaixo e cadastre-se para receber os avisos das aulas e atualizações do Workshop diretamente no seu e-mail correspondente.</p>
                                       <div className="buttons">
-                                        <button className="btn-mail outlook">Outlook</button>
-                                        <button className="btn-mail gmail">Gmail</button>
-                                        <button className="btn-mail yahoo">Yahoo</button>
+                                        <a href="mailto:contato@mohub.com.br" className="btn-mail outlook">Outlook</a>
+                                        <a href="mailto:contato@mohub.com.br" className="btn-mail gmail">Gmail</a>
+                                        <a href="mailto:contato@mohub.com.br" className="btn-mail yahoo">Yahoo</a>
                                       </div>
                                     </div>
                                   </div>
