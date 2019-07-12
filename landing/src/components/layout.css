@@ -441,12 +441,12 @@ button {
 }
 
 .founder {
-  min-height: 500px;
+  min-height: 500px !important;
 }
 
 .founder-left {
-  min-height: 600px;
-  max-height: 600px;
+  min-height: 500px !important;
+  max-height: 500px !important;
   margin: 0px;
   width: 50% !important;
   background:url('../assets/img/city.png');
@@ -454,8 +454,8 @@ button {
 }
 
 .founder-right {
-  min-height: 600px;
-  max-height: 600px;
+  min-height: 500px !important;
+  max-height: 500px !important;
   margin: 0px;
   width: 50% !important;
   background-color: #40414d;
@@ -463,11 +463,11 @@ button {
 
 .the-founder {
   /* width: 80%; */
-  margin-bottom: -5px;
+  margin-bottom: -5px ;
 }
 
 .cover2 {
-  min-height: 600px;
+  min-height: 600px !important;
   background: url('../assets/img/backgrounds/bg-01.png')
 }
 
@@ -481,7 +481,7 @@ button {
 }
 
 .blue-bar {
-  margin-top: -20px;
+  margin-top: -20px !important;
 }
 
 @media (min-width: 769px) {

@@ -137,7 +137,7 @@ class SalesPage extends React.Component {
               <Stack anchor="bottom">
                 <div className="row">
                   <div className="six columns founder-left">
-                    <Heading level={2} margin={{"left": "35%", "top": "440px"}} color="white">Sobre o <br/>Fundador</Heading>
+                    <Heading level={2} margin={{"left": "35%", "top": "330px"}} color="white">Sobre o <br/>Fundador</Heading>
                   </div>
                   <div className="six columns founder-right">
                     <Box margin={{"left": "250px"}} pad={{"top":"120px","right":"75px"}}>
