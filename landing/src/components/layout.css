@@ -536,6 +536,7 @@ button {
     line-height: inherit;
     height: inherit;
     font-size: inherit;
+    height: 100% !important;
   }
 
   .last {

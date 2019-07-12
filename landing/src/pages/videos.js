@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "gatsby"
+import { Image } from 'grommet'
 
 import Layout from '../components/layout';
 import Countdown from '../components/Countdown';
@@ -9,6 +10,7 @@ import Footer from '../components/Footer';
 import banner from "../assets/img/banner.png";
 import landing01 from "../assets/img/video_play.png";
 import mohublogo from "../assets/img/mohub_white.png";
+import testimonial from "../assets/img/testimonial.png"
 import Background from "../assets/img/backgrounds/bg-01.png";
 const parallaxBackground = { backgroundImage: `url(${Background})` };
 const videoplaBackground = { backgroundImage: `url(${landing01})` };
@@ -110,7 +112,29 @@ class SubscriptionConfirmationPage extends React.Component {
                     </div>
                   </div>
                   <div className="row">
-                    <div className="twelve columns fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
+                    <div className="nine columns">
+                      <h3>Comente no Facebook</h3>
+                      <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"/>
+                    </div>
+                    <div className="three columns">
+                      <h3>Depoimentos</h3>
+                      <div className="row top">
+                        <div className="twelve columns">
+                          <Image fit="contain" width="100%" src={testimonial}/>
+                          <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
+                            eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
+                          <p>Guilherme Petrickicz</p>
+                        </div>
+                      </div>
+                      <div className="row top">
+                        <div className="twelve columns">
+                          <Image fit="contain" width="100%" src={testimonial}/>
+                          <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
+                            eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
+                          <p>Guilherme Petrickicz</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   </div>
                   </div>
