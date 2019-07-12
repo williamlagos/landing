@@ -14,7 +14,7 @@ import shield from "../assets/img/shield.png"
 import bulb from "../assets/img/bulb.png"
 import lock from "../assets/img/lock.png"
 import gray from "../assets/img/gray.png"
-import city from "../assets/img/city.png"
+import card from "../assets/img/card.png"
 import sperry from "../assets/img/sperry.png"
 import gift from "../assets/img/gift.png"
 import bag from "../assets/img/bag.png"
@@ -22,6 +22,7 @@ import champ from "../assets/img/champ.png"
 import minus from "../assets/img/minus.png"
 import plus from "../assets/img/plus.png"
 import box1 from "../assets/img/box.png"
+import triangle from "../assets/img/triangle.png"
 
 /*const parallaxBackground = {
   backgroundImage: `url(${Background})`,
@@ -91,8 +92,8 @@ class SalesPage extends React.Component {
                         <div className="center spacing">
                           <img src={MohubLogo} alt="mohub logo"/>
                         </div>
-                        <div className="text white">
-                          {/*<div className="red">Importante! Assista ao vídeo abaixo!</div>*/}
+                        <br/>
+                        <div className="white">
                           <img className="fluid" src={landing01} alt="video 1"/>
                           <Box align="center" pad="medium">
                             <br/>
@@ -100,23 +101,34 @@ class SalesPage extends React.Component {
                               &nbsp; Faça parte da MoHub
                             </Link>
                           </Box>
-                          <div className="row top">
-                            {/*<h1 className="two columns big">1</h1>*/}
-                            <div className="twelve columns">
-                              <h4 className="uppercase">Pessoas já impactadas</h4>
-                              <Box margin={{ "vertical": "medium" }} direction="row" gap="medium">
-                                <Image src={testimonial}/>
-                                <Image src={testimonial}/>
-                                <Image src={testimonial}/>
-                              </Box>
-                              <Box direction="row" gap="medium">
-                                <Image src={testimonial}/>
-                                <Image src={testimonial}/>
-                                <Image src={testimonial}/>
-                              </Box>
-                            </div>
-                          </div>
                         </div>
+                    </div>
+                  </div>
+                  <div className="row top">
+                    <div className="twelve columns">
+                      <Heading>PESSOAS JÁ IMPACTADAS</Heading>
+                    </div>
+                  </div>
+                  <div className="row top">
+                    <div className="four columns">
+                      <Image fit="contain" width="100%" src={testimonial}/>
+                    </div>
+                    <div className="four columns">
+                      <Image fit="contain" width="100%" src={testimonial}/>
+                    </div>
+                    <div className="four columns">
+                      <Image fit="contain" width="100%" src={testimonial}/>
+                    </div>
+                  </div>
+                  <div className="row top">
+                    <div className="four columns">
+                      <Image fit="contain" width="100%" src={testimonial}/>
+                    </div>
+                    <div className="four columns">
+                      <Image fit="contain" width="100%" src={testimonial}/>
+                    </div>
+                    <div className="four columns">
+                      <Image fit="contain" width="100%" src={testimonial}/>
                     </div>
                   </div>
             </Container>
@@ -125,7 +137,7 @@ class SalesPage extends React.Component {
               <Stack anchor="bottom">
                 <div className="row">
                   <div className="six columns founder-left">
-                    <Heading level={2} margin={{"left": "35%", "top": "440px"}} color="white">Sobre o Fundador</Heading>
+                    <Heading level={2} margin={{"left": "35%", "top": "440px"}} color="white">Sobre o <br/>Fundador</Heading>
                   </div>
                   <div className="six columns founder-right">
                     <Box margin={{"left": "250px"}} pad={{"top":"120px","right":"75px"}}>
@@ -344,7 +356,31 @@ class SalesPage extends React.Component {
               </Box>
               <Box margin="medium"></Box>
             </Container>
-            <Image margin={{ "vertical": "medium" }} src={box1}/>
+            {/*<Image margin={{ "vertical": "medium" }} src={box1}/>*/}
+            <Box direction="row" justify="center" className="cover2" fill={true}>
+              <Box background="white" alignSelf="start" basis="1/3">
+                <Box className="blue-bar" background="#0266ae" pad={{"top":"15px"}}>
+                  <Stack anchor="bottom">
+                    <Heading textAlign="center" level={2}>MELHOR INVESTIMENTO</Heading>
+                    <Image className="triangle" src={triangle}/>
+                  </Stack>
+                </Box>
+                <Box pad="large">
+                <Heading textAlign="center" level={2}>Plataforma Mohub</Heading>
+                <Text textAlign="center">Todos os 6 boxes</Text>
+                <Text textAlign="center">Todos os 2 bônus</Text>
+                <Text textAlign="center">6h de consultoria online</Text>
+                <Text textAlign="center">Mohub bot</Text>
+                <Box border="#e1e1e7" margin="small"/>
+                <Heading textAlign="center" color="#0266ae">R$ 55,00</Heading>
+                <a className="btn btn-block" href="#sales">
+                  Fazer parte da MoHub
+                </a>
+                <br/>
+                <Image fit="contain" src={card}/>
+                </Box>
+              </Box>
+            </Box>
             <Container>
               <Box margin="medium"></Box>
               <Box>

@@ -448,6 +448,23 @@ button {
   margin-bottom: -5px;
 }
 
+.cover2 {
+  min-height: 600px;
+  background: url('../assets/img/backgrounds/bg-01.png')
+}
+
+.btn-block {
+  padding: 20px 0px !important;
+}
+
+.triangle {
+  top: -15px;
+}
+
+.blue-bar {
+  margin-top: -20px;
+}
+
 @media (min-width: 769px) {
   #cover2 { max-height:500px; }
   #bigbutton { width: 40%; }
