@@ -38,7 +38,7 @@ class HomePage extends React.Component {
         <Helmet title={siteTitle}>
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
         </Helmet>
-        <Box justify="between" background={`url(${Background})`} fill="true">
+        <Box id="index" justify="between" background={`url(${Background})`} fill="true">
           <Container>
             <Box className="six columns" pad="medium">
               <br/>

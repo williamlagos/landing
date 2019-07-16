@@ -1,7 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { Link } from 'gatsby'
-import { Box, Image, Stack, Text, Heading, Collapsible, Button /*Layer, Form, FormField*/ } from 'grommet'
+import { Box, Image, Stack, Text, Heading, Collapsible, Button, ResponsiveContext } from 'grommet'
 
 import Footer from "../components/Footer";
 import Layout from '../components/layout';
@@ -152,29 +152,43 @@ class SalesPage extends React.Component {
                 </div>
                 <Image className="the-founder" src={sperry}/>
               </Stack>
+              <Box pad="large" className="founder-bottom">
+                <Heading level={1} color="white">Matheus <br/>Sperry</Heading>
+                <Text size="small" color="white">
+                  Olá! Eu sou o Matheus Sperry, sou formado em engenharia civil pela PUCRS e pela ENISE (França), com certificação em urbanismo pela IHS (Holanda).
+                  Eu deixei tudo isso de lado porque eu tenho a missão de ajudar o máximo de pessoas a usar todo o seu potencial para iniciar o próprio negócio e alcançar liberdade financeira, tempo livre e qualidade de vida.
+                  Vamos juntos nessa!
+                </Text>
+              </Box>
             </Box>
             <Box margin="large"/>
             <Container>
-              <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
-                <Box direction="row" gap="medium">
-                  <div style={{ textAlign: "center" }}>
-                    <Image src={lock}/>
-                    <h5>Acesso Imediato</h5>
-                  </div>
-                  <div style={{ textAlign: "center" }}>
-                    <Image src={bulb}/>
-                    <h5>Mentoria Exclusiva</h5>
-                  </div>
-                  <div style={{ textAlign: "center" }}>
-                    <Image src={shield}/>
-                    <h5>Investimento 100% seguro</h5>
-                  </div>
-                </Box>
-                <br/>
-                <a id="bigbutton" className="btn" href="#sales" >
-                  &nbsp; Faça parte da MoHub
-                </a>
-              </Box>
+              <ResponsiveContext.Consumer>
+                {(size) => (
+                  <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
+                    <Box direction="row" gap="medium">
+                      <Box align="center">
+                        <Image size={size} src={lock}/>
+                        <Heading margin={size} size={size} textAlign="center" level={4}>Acesso Imediato</Heading>
+                      </Box>
+                      <Box align="center">
+                        <Image size={size} src={bulb}/>
+                        <Heading margin={size} size={size} textAlign="center" level={4}>Mentoria Exclusiva</Heading>
+                      </Box>
+                      <Box align="center">
+                        <Image fit="contain" src={shield}/>
+                        <Heading margin={size} size={size} textAlign="center" level={4}>Investimento 100% seguro</Heading>
+                      </Box>
+                    </Box>
+                    <br/>
+                    <Box margin={size}>
+                      <a className="btn" href="#sales" >
+                        &nbsp; Faça parte da MoHub
+                      </a>
+                    </Box>
+                  </Box>
+                )}
+              </ResponsiveContext.Consumer>
               <Box id="sales" margin={{ "vertical": "medium" }}>
                 <Heading level={2} className="uppercase">O que você ganha ao entrar para a MoHub?</Heading>
                 <div className="row">
@@ -310,77 +324,87 @@ class SalesPage extends React.Component {
                   </Stack>
                 </div>
               </Box>
-              <Box pad="medium" direction="row" background="#42434e" fill="horizontal">
-                <Box className="right-gradient" alignSelf="center" pad="medium" basis="30%">
-                  <Image margin="medium" fit="contain" src={gift}/>
-                  <Heading textAlign="center">2 BÔNUS</Heading>
-                  <Heading textAlign="center" className="risked" level={2}>
-                    R$ 879,00
-                  </Heading>
-                </Box>
-                <Box alignSelf="center" basis="70%">
-                  <Box alignSelf="center" direction="row">
-                    <Box alignSelf="center" pad="medium" basis="30%">
-                      <Image margin="small" fit="contain" src={champ}/>
-                      <Heading textAlign="center" level={2}>Bônus 1</Heading>
+              <ResponsiveContext.Consumer>
+                {(size) => (
+                  <>
+                  <Box pad="medium" direction={size === 'small' ? 'column' : 'row'} background="#42434e" fill="horizontal">
+                    <Box className={size === 'small' ? 'bottom-gradient' : 'right-gradient'} alignSelf="center" pad="medium" basis="30%">
+                      <Image margin="medium" fit="contain" src={gift}/>
+                      <Heading textAlign="center">2 BÔNUS</Heading>
+                      <Heading textAlign="center" className="risked" level={2}>
+                        R$ 879,00
+                      </Heading>
                     </Box>
-                    <Box pad="medium" basis="70%">
-                      <Heading level={2}>Como Sair das Dívidas</Heading>
-                      <Text size="small">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                        arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                        quis lorem ut libero malesuada feugiat.
-                      </Text>
+                    <Box alignSelf="center" basis="70%">
+                      <Box alignSelf="center" direction="row">
+                        <Box alignSelf="center" pad="medium" basis="30%">
+                          <Image margin="small" fit="contain" src={champ}/>
+                          <Heading textAlign="center" level={2}>Bônus 1</Heading>
+                        </Box>
+                        <Box pad="medium" basis="70%">
+                          <Heading level={2}>Como Sair das Dívidas</Heading>
+                          <Text size="small">
+                            Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                            Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                            arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
+                            quis lorem ut libero malesuada feugiat.
+                          </Text>
+                        </Box>
+                      </Box>
+                      <Box alignSelf="center" direction="row">
+                        <Box alignSelf="center" pad="medium" basis="30%">
+                          <Image margin="small" fit="contain" src={bag}/>
+                          <Heading textAlign="center" level={2}>Bônus 2</Heading>
+                        </Box>
+                        <Box pad="medium" basis="70%">
+                          <Heading level={2}>Dicas de Renda Extra</Heading>
+                          <Text size="small">
+                            Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
+                            Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
+                            ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+                            arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
+                            quis lorem ut libero malesuada feugiat.
+                          </Text>
+                        </Box>
+                      </Box>
                     </Box>
                   </Box>
-                  <Box alignSelf="center" direction="row">
-                    <Box alignSelf="center" pad="medium" basis="30%">
-                      <Image margin="small" fit="contain" src={bag}/>
-                      <Heading textAlign="center" level={2}>Bônus 2</Heading>
-                    </Box>
-                    <Box pad="medium" basis="70%">
-                      <Heading level={2}>Dicas de Renda Extra</Heading>
-                      <Text size="small">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                        arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                        quis lorem ut libero malesuada feugiat.
-                      </Text>
-                    </Box>
-                  </Box>
-                </Box>
-              </Box>
-              <Box margin="medium"></Box>
+                  <Box margin="medium"></Box>
+                  </>
+                )}
+              </ResponsiveContext.Consumer>
             </Container>
             {/*<Image margin={{ "vertical": "medium" }} src={box1}/>*/}
             <Box direction="row" justify="center" className="cover2" fill={true}>
-              <Box background="white" alignSelf="start" basis="1/3">
-                <Box className="blue-bar" background="#0266ae" pad={{"top":"15px"}}>
-                  <Stack anchor="bottom">
-                    <Heading textAlign="center" level={2}>MELHOR INVESTIMENTO</Heading>
-                    <Image margin={{"bottom":"-20px"}} src={triangle}/>
-                  </Stack>
-                </Box>
-                <Box pad="large">
-                <Heading textAlign="center" level={2}>Plataforma Mohub</Heading>
-                <Text textAlign="center">Todos os 6 boxes</Text>
-                <Text textAlign="center">Todos os 2 bônus</Text>
-                <Text textAlign="center">6h de consultoria online</Text>
-                <Text textAlign="center">Mohub bot</Text>
-                <Box border="#e1e1e7" margin="small"/>
-                <Heading textAlign="center" color="#0266ae">R$ 55,00</Heading>
-                <a className="btn btn-block" href="#sales">
-                  Fazer parte da MoHub
-                </a>
-                <br/>
-                <Image fit="contain" src={card}/>
-                </Box>
-              </Box>
+              <ResponsiveContext.Consumer>
+                {(size) => (
+                  <Box background="white" alignSelf="start" basis={size === 'small' ? '1' : '1/3'}>
+                    <Box className="blue-bar" background="#0266ae" pad={{"top":"15px"}}>
+                      <Stack anchor="bottom">
+                        <Heading textAlign="center" level={2}>MELHOR INVESTIMENTO</Heading>
+                        <Image margin={{"bottom":"-20px"}} src={triangle}/>
+                      </Stack>
+                    </Box>
+                    <Box pad="large">
+                    <Heading textAlign="center" level={2}>Plataforma Mohub</Heading>
+                    <Text textAlign="center">Todos os 6 boxes</Text>
+                    <Text textAlign="center">Todos os 2 bônus</Text>
+                    <Text textAlign="center">6h de consultoria online</Text>
+                    <Text textAlign="center">Mohub bot</Text>
+                    <Box border="#e1e1e7" margin="small"/>
+                    <Heading textAlign="center" color="#0266ae">R$ 55,00</Heading>
+                    <a className="btn btn-block" href="#sales">
+                      Fazer parte da MoHub
+                    </a>
+                    <br/>
+                    <Image fit="contain" src={card}/>
+                    </Box>
+                  </Box>
+                )}
+              </ResponsiveContext.Consumer>
             </Box>
             <Container>
               <Box margin="medium"></Box>
@@ -495,26 +519,32 @@ class SalesPage extends React.Component {
                   </Box>
                 </Collapsible>
               </Box>
-              <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
-                <Box direction="row" gap="medium">
-                  <div style={{ textAlign: "center" }}>
-                    <Image src={lock}/>
-                    <h5>Acesso Imediato</h5>
-                  </div>
-                  <div style={{ textAlign: "center" }}>
-                    <Image src={bulb}/>
-                    <h5>Mentoria Exclusiva</h5>
-                  </div>
-                  <div style={{ textAlign: "center" }}>
-                    <Image src={shield}/>
-                    <h5>Investimento 100% seguro</h5>
-                  </div>
-                </Box>
-                <br/>
-                <a id="bigbutton" className="btn" href="#sales" >
-                  &nbsp; Faça parte da MoHub
-                </a>
-              </Box>
+              <ResponsiveContext.Consumer>
+                {(size) => (
+                  <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
+                    <Box direction="row" gap="medium">
+                      <Box align="center">
+                        <Image size={size} src={lock}/>
+                        <Heading margin={size} size={size} textAlign="center" level={4}>Acesso Imediato</Heading>
+                      </Box>
+                      <Box align="center">
+                        <Image size={size} src={bulb}/>
+                        <Heading margin={size} size={size} textAlign="center" level={4}>Mentoria Exclusiva</Heading>
+                      </Box>
+                      <Box align="center">
+                        <Image fit="contain" src={shield}/>
+                        <Heading margin={size} size={size} textAlign="center" level={4}>Investimento 100% seguro</Heading>
+                      </Box>
+                    </Box>
+                    <br/>
+                    <Box margin={size}>
+                      <a className="btn" href="#sales" >
+                        &nbsp; Faça parte da MoHub
+                      </a>
+                    </Box>
+                  </Box>
+                )}
+              </ResponsiveContext.Consumer>
             </Container>
             <Box><Footer/></Box>
           </Box>

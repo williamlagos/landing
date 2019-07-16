@@ -14,11 +14,21 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 button {
   height: auto;
   font-size: inherit;
   line-height: inherit;
   border: 0px;
+}
+
+#index .container {
+  background: rgba(255,255,255,0.6);
+  height: 100%;
 }
 
 .risked {
@@ -29,6 +39,7 @@ button {
   background: #0266ae;
   color: white;
   min-height: 340px;
+  margin-bottom: 1em;
 }
 
 .mountain {
@@ -36,6 +47,8 @@ button {
   background-size: cover;
   color: white;
   min-height: 340px;
+  margin-bottom: 1em;
+
 }
 
 .running {
@@ -43,9 +56,11 @@ button {
   background-size: cover;
   color: white;
   min-height: 340px;
+  margin-bottom: 1em;
 }
 
 .overlay {
+  min-height: 75px;
   background: rgba(0, 0, 0, 0.7);
   height: 100% !important;
   width: 100% !important;
@@ -55,6 +70,8 @@ button {
   background: #0266ae;
   color: white;
   min-height: 500px;
+  margin-bottom: 1em;
+  /* margin: 1em 0em; */
 }
 
 .title {
@@ -140,6 +157,7 @@ button {
   line-height: inherit;
   height: inherit;
   font-size: inherit;
+  height: 100% !important;
 }
 
 .last {
@@ -148,7 +166,7 @@ button {
 
 .video {
   width: 100%;
-  /* min-height: 5px; */
+  min-height: 75px;
   height: 100%;
   /* max-height: 75px; */
   background-size: cover;
@@ -418,6 +436,12 @@ button {
   border-image-slice: 1;
 }
 
+.bottom-gradient {
+  border-bottom: 2px solid;
+  border-image-source: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
+  border-image-slice: 1;
+}
+
 .gray-button, .gray-button:focus {
   text-align: left;
   border-radius: 0px;
@@ -441,7 +465,11 @@ button {
 }
 
 .founder {
-  min-height: 500px !important;
+  min-height: 840px !important;
+}
+
+.founder-bottom {
+  background-color: #40414d;
 }
 
 .founder-left {
@@ -460,6 +488,8 @@ button {
   width: 50% !important;
   background-color: #40414d;
 }
+
+
 
 .the-founder {
   /* width: 80%; */
@@ -485,6 +515,18 @@ button {
 }
 
 @media (min-width: 769px) {
+  .founder {
+    min-height: 500px !important;
+  }
+  .founder-bottom {
+    display:none;
+    background-color: #40414d;
+  }
+
+  #index .container {
+    background: transparent;
+    height: 100%;
+  }
   #cover2 { max-height:500px; }
   #bigbutton { width: 40%; }
   /* Rules for flex boxes */
@@ -505,6 +547,7 @@ button {
 
   .overlay {
     background-color: rgba(0, 0, 0, 0.5);
+    min-height: 75px;
     height: 100%;
     width:  100%;
     display:flex;
@@ -545,7 +588,7 @@ button {
 
   .video {
     width: 100%;
-    /* min-height: 5px; */
+    min-height: 75px;
     height: 100%;
     /* max-height: 75px; */
     background-size: cover;
@@ -612,5 +655,13 @@ button {
 
   .btn-share p {
     display:inline;
+  }
+
+  .running {
+    margin-bottom: 0em;
+  }
+
+  .blue {
+    margin-bottom: 0em;
   }
 }
