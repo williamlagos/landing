@@ -14,9 +14,17 @@ import Background from "../assets/img/backgrounds/bg-01.png";
 class IndexPage extends React.Component {
     render() {
         const siteTitle = "MoHub";
+        const title = "MoHub";
+        const summary = "Uma post teste para o Mohub";
+        const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
+        // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
+        /*&p[images][0]=${image}'*/
+        let shareUrl = `http://www.facebook.com/sharer.php?s=100&p[title]=${title}&p[summary]=${summary}&p[url]=${url},'sharer','toolbar=0,status=0,width=580,height=325`;
+        shareUrl = `https://www.facebook.com/sharer.php?u=${url}`
         return (
             <Layout>
                 <Helmet title={siteTitle}>
+                  <meta property="og:description" content="Your entertaining and descriptive copy here, if your meta description is good, use it." />
                   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
                   <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
                 </Helmet>
@@ -41,10 +49,15 @@ class IndexPage extends React.Component {
                                     <div className="ten columns">
                                       <h4 className="uppercase">Ative a notificação via Facebook</h4>
                                       <p>Clique abaixo e cadastre-se para receber os avisos das aulas e atualizações do Workshop diretamente no seu Facebook Messenger.</p>
-                                      <Link className="btn-facebook" to="videos/" >
-                                          <i class="fab fa-facebook-square"></i>
-                                          &nbsp; Ative seu Facebook
-                                      </Link>
+                                      <a id="fb-share"
+                                        className="btn-facebook"
+                                        style={{ textDecoration: 'none' }}
+                                        type="icon_link"
+                                        onClick={() => window.open(shareUrl)}
+                                        href="javascript: void(0)">
+                                        <i class="fab fa-facebook-square"></i>
+                                        &nbsp; Ative seu Facebook
+                                      </a>
                                     </div>
                                   </div>
                                   <hr/>
@@ -54,9 +67,9 @@ class IndexPage extends React.Component {
                                       <h4 className="uppercase">Confirme o seu e-mail</h4>
                                       <p>Clique abaixo e cadastre-se para receber os avisos das aulas e atualizações do Workshop diretamente no seu e-mail correspondente.</p>
                                       <div className="buttons">
-                                        <a href="mailto:contato@mohub.com.br" className="btn-mail outlook">Outlook</a>
-                                        <a href="mailto:contato@mohub.com.br" className="btn-mail gmail">Gmail</a>
-                                        <a href="mailto:contato@mohub.com.br" className="btn-mail yahoo">Yahoo</a>
+                                        <a href="https://www.outlook.com/" target="_blank" className="btn-mail outlook">Outlook</a>
+                                        <a href="https://mail.google.com/" target="_blank" className="btn-mail gmail">Gmail</a>
+                                        <a href="https://mail.yahoo.com/" target="_blank" className="btn-mail yahoo">Yahoo</a>
                                       </div>
                                     </div>
                                   </div>

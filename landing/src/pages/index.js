@@ -31,6 +31,23 @@ class HomePage extends React.Component {
     this.setState({ toggledModal: false })
   }
 
+  async getLead(event) {
+    console.log(document.querySelector('#email').value);
+    const rawResponse = await fetch('http://mohub-api.herokuapp.com/leads/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({email: 'william@icloud.com'})
+    });
+    const content = await rawResponse.json();
+
+    console.log(content);
+    alert('5d3797e1ddc1c200044e494d');
+    window.location = 'http://www.mohub.com.br/home?id=5d3797e1ddc1c200044e494d'
+  }
+
   render() {
     const siteTitle = "MoHub"
     return (
@@ -55,12 +72,12 @@ class HomePage extends React.Component {
               onClickOutside={(e) => this.dismissModal(e)}
             >
               <Box pad="medium">
-                <Form>
+                <Form id="email">
                   <Heading level="2">Cadastre o seu e-mail agora!</Heading>
                   <FormField name="name" label="Nome" />
                   <FormField name="email" label="E-mail" />
                   <button className="btn gradient" style={{ width: '100%' }}>
-                  <Link style={{ textDecoration: 'none', color: 'white' }} to="/home">Cadastrar</Link>
+                  <a style={{ textDecoration: 'none', color: 'white' }} onClick={(e) => this.getLead(e)} to="/home">Cadastrar</a>
                   </button>
                 </Form>
               </Box>
