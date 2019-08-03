@@ -33,7 +33,7 @@ class HomePage extends React.Component {
 
   async getLead(event) {
     const { email, name } = event.value;
-    const rawResponse = await fetch('http://localhost:5000/leads/', {
+    const rawResponse = await fetch('http://mohub-api.herokuapp.com/leads/', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
