@@ -94,12 +94,15 @@ class SalesPage extends React.Component {
                         </div>
                         <br/>
                         <div className="white">
-                          <img className="fluid" src={landing01} alt="video 1"/>
+                          {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
+                          <iframe id="ytplayer" type="text/html" width="100%" height="400"
+                            src="http://www.youtube.com/embed/HzZxcfVn_08/?autoplay=0"
+                            frameborder="0"/>
                           <Box align="center" pad="medium">
                             <br/>
-                            <Link id="bigbutton" className="btn" to="/" >
+                            <a id="bigbutton" className="btn" href="#investment" >
                               &nbsp; Faça parte da MoHub
-                            </Link>
+                            </a>
                           </Box>
                         </div>
                     </div>
@@ -111,24 +114,37 @@ class SalesPage extends React.Component {
                   </div>
                   <div className="row top">
                     <div className="four columns">
-                      <Image fit="contain" width="100%" src={testimonial}/>
+                      {/*<Image fit="contain" width="100%" src={testimonial}/>*/}
+                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                        src="http://www.youtube.com/embed/u4tq9Ef5czw/?autoplay=0"
+                        frameborder="0"/>
                     </div>
                     <div className="four columns">
-                      <Image fit="contain" width="100%" src={testimonial}/>
+                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                        src="http://www.youtube.com/embed/WVQe1ZE7FtU/?autoplay=0"
+                        frameborder="0"/>
                     </div>
                     <div className="four columns">
-                      <Image fit="contain" width="100%" src={testimonial}/>
+                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                        src="http://www.youtube.com/embed/2Hjodq3JdoI/?autoplay=0"
+                        frameborder="0"/>
                     </div>
                   </div>
                   <div className="row top">
                     <div className="four columns">
-                      <Image fit="contain" width="100%" src={testimonial}/>
+                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                        src="http://www.youtube.com/embed/vB5nTx5fUXM/?autoplay=0"
+                        frameborder="0"/>
                     </div>
                     <div className="four columns">
-                      <Image fit="contain" width="100%" src={testimonial}/>
+                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                        src="http://www.youtube.com/embed/Ei0no8s84EM/?autoplay=0"
+                        frameborder="0"/>
                     </div>
                     <div className="four columns">
-                      <Image fit="contain" width="100%" src={testimonial}/>
+                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                        src="http://www.youtube.com/embed/fD41AwgC_xM/?autoplay=0"
+                        frameborder="0"/>
                     </div>
                   </div>
             </Container>
@@ -182,7 +198,7 @@ class SalesPage extends React.Component {
                     </Box>
                     <br/>
                     <Box margin={size}>
-                      <a className="btn" href="#sales" >
+                      <a className="btn" href="#investment" >
                         &nbsp; Faça parte da MoHub
                       </a>
                     </Box>
@@ -378,7 +394,7 @@ class SalesPage extends React.Component {
               </ResponsiveContext.Consumer>
             </Container>
             {/*<Image margin={{ "vertical": "medium" }} src={box1}/>*/}
-            <Box direction="row" justify="center" className="cover2" fill={true}>
+            <Box id="investment" direction="row" justify="center" className="cover2" fill={true}>
               <ResponsiveContext.Consumer>
                 {(size) => (
                   <Box background="white" alignSelf="start" basis={size === 'small' ? '1' : '1/3'}>
@@ -396,7 +412,7 @@ class SalesPage extends React.Component {
                     <Text textAlign="center">Mohub bot</Text>
                     <Box border="#e1e1e7" margin="small"/>
                     <Heading textAlign="center" color="#0266ae">R$ 55,00</Heading>
-                    <a className="btn btn-block" href="#sales">
+                    <a className="btn btn-block" href="#investment">
                       Fazer parte da MoHub
                     </a>
                     <br/>
@@ -412,7 +428,7 @@ class SalesPage extends React.Component {
                 <Heading>PERGUNTAS FREQUENTES</Heading>
                 <Stack className="stack" anchor="right">
                   <Button fill={true} className="gray-button" plain={true} onClick={(e) => this.switchCollapsible1()} label='Será que isso funciona pra mim?'/>
-                  <Image className="gray-symbol" pad="medium" size="contain" src={this.state.collapsed1 ? minus : plus}/>
+                  <Image className="gray-symbol" onClick={(e) => this.switchCollapsible1()} pad="medium" size="contain" src={this.state.collapsed1 ? minus : plus}/>
                 </Stack>
                 <Collapsible direction="vertical" open={this.state.collapsed1}>
                   <Box pad="medium" background="#e1e1e7">
@@ -430,7 +446,7 @@ class SalesPage extends React.Component {
                 </Collapsible>
                 <Stack className="stack" anchor="right">
                   <Button fill={true} className="gray-button" plain={true} onClick={(e) => this.switchCollapsible2()} label='Como terei acesso aos Boxes?'/>
-                  <Image className="gray-symbol" pad="medium" size="contain" src={this.state.collapsed2 ? minus : plus}/>
+                  <Image className="gray-symbol" onClick={(e) => this.switchCollapsible2()} pad="medium" size="contain" src={this.state.collapsed2 ? minus : plus}/>
                 </Stack>
                 <Collapsible direction="vertical" open={this.state.collapsed2}>
                   <Box pad="medium" background="#e1e1e7">
@@ -448,7 +464,7 @@ class SalesPage extends React.Component {
                 </Collapsible>
                 <Stack className="stack" anchor="right">
                   <Button fill={true} className="gray-button" plain={true} onClick={(e) => this.switchCollapsible3()} label='Há algum custo de renovação ou pagamento mensal?'/>
-                  <Image className="gray-symbol" pad="medium" size="contain" src={this.state.collapsed3 ? minus : plus}/>
+                  <Image className="gray-symbol" onClick={(e) => this.switchCollapsible3()} pad="medium" size="contain" src={this.state.collapsed3 ? minus : plus}/>
                 </Stack>
                 <Collapsible direction="vertical" open={this.state.collapsed3}>
                   <Box pad="medium" background="#e1e1e7">
@@ -466,7 +482,7 @@ class SalesPage extends React.Component {
                 </Collapsible>
                 <Stack className="stack" anchor="right">
                   <Button fill={true} className="gray-button" plain={true} onClick={(e) => this.switchCollapsible4()} label='O conteúdo da Mohub é todo em vídeo?'/>
-                  <Image className="gray-symbol" pad="medium" size="contain" src={this.state.collapsed4 ? minus : plus}/>
+                  <Image className="gray-symbol" onClick={(e) => this.switchCollapsible4()} pad="medium" size="contain" src={this.state.collapsed4 ? minus : plus}/>
                 </Stack>
                 <Collapsible direction="vertical" open={this.state.collapsed4}>
                   <Box pad="medium" background="#e1e1e7">
@@ -484,7 +500,7 @@ class SalesPage extends React.Component {
                 </Collapsible>
                 <Stack className="stack" anchor="right">
                   <Button fill={true} className="gray-button" plain={true} onClick={(e) => this.switchCollapsible5()} label='Quando os boxes serão liberados?'/>
-                  <Image className="gray-symbol" pad="medium" size="contain" src={this.state.collapsed5 ? minus : plus}/>
+                  <Image className="gray-symbol" onClick={(e) => this.switchCollapsible5()} pad="medium" size="contain" src={this.state.collapsed5 ? minus : plus}/>
                 </Stack>
                 <Collapsible direction="vertical" open={this.state.collapsed5}>
                   <Box pad="medium" background="#e1e1e7">
@@ -502,7 +518,7 @@ class SalesPage extends React.Component {
                 </Collapsible>
                 <Stack className="stack" anchor="right">
                   <Button fill={true} className="gray-button" plain={true} onClick={(e) => this.switchCollapsible6()} label='Por que Mohub?'/>
-                  <Image className="gray-symbol" pad="medium" size="contain" src={this.state.collapsed6 ? minus : plus}/>
+                  <Image className="gray-symbol" onClick={(e) => this.switchCollapsible6()} pad="medium" size="contain" src={this.state.collapsed6 ? minus : plus}/>
                 </Stack>
                 <Collapsible direction="vertical" open={this.state.collapsed6}>
                   <Box pad="medium" background="#e1e1e7">
@@ -538,7 +554,7 @@ class SalesPage extends React.Component {
                     </Box>
                     <br/>
                     <Box margin={size}>
-                      <a className="btn" href="#sales" >
+                      <a className="btn" href="#investment" >
                         &nbsp; Faça parte da MoHub
                       </a>
                     </Box>

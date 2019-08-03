@@ -275,7 +275,7 @@ button {
 }
 
 .btn-share p {
-  display:none;
+  /* display:none; */
 }
 
 .btn-whatsapp {
@@ -291,7 +291,7 @@ button {
 
 .btn-facebook {
   background-color: #539cff;
-  padding: .5em 2.5em;
+  padding: .5em 1.5em;
   border-bottom: .3em solid #0266ae;
   border-radius: 3em;
   text-transform: uppercase;
@@ -392,13 +392,14 @@ button {
 
 .footer .container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
 .copyright {
   color: #c0c4cf;
   flex-grow: 1;
-  text-align: left;
+  text-align: center;
 }
 
 .copyright-logo {
@@ -454,6 +455,7 @@ button {
 .gray-symbol {
   margin-top: 5px;
   margin-right: 25px;
+  cursor: pointer;
 }
 
 .stack {
@@ -663,5 +665,19 @@ button {
 
   .blue {
     margin-bottom: 0em;
+  }
+
+  .btn-facebook {
+    padding: .5em 2.5em;
+  }
+
+  .footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .copyright {
+    text-align: left;
   }
 }

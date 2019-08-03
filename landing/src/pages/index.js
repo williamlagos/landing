@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import { Box, /*Button,*/ Image, Heading, Layer, Form, FormField } from 'grommet'
 
 import Footer from "../components/Footer";
@@ -32,20 +32,17 @@ class HomePage extends React.Component {
   }
 
   async getLead(event) {
-    console.log(document.querySelector('#email').value);
-    const rawResponse = await fetch('http://mohub-api.herokuapp.com/leads/', {
+    const { email, name } = event.value;
+    const rawResponse = await fetch('http://localhost:5000/leads/', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({email: 'william@icloud.com'})
+      body: JSON.stringify({ email, name })
     });
-    const content = await rawResponse.json();
-
-    console.log(content);
-    alert('5d3797e1ddc1c200044e494d');
-    window.location = 'http://www.mohub.com.br/home?id=5d3797e1ddc1c200044e494d'
+    const content = await rawResponse.json()
+    navigate(`/home?id=${content._id}`)
   }
 
   render() {
@@ -72,12 +69,12 @@ class HomePage extends React.Component {
               onClickOutside={(e) => this.dismissModal(e)}
             >
               <Box pad="medium">
-                <Form id="email">
+                <Form onSubmit={(e) => this.getLead(e)} id="email">
                   <Heading level="2">Cadastre o seu e-mail agora!</Heading>
                   <FormField name="name" label="Nome" />
                   <FormField name="email" label="E-mail" />
                   <button className="btn gradient" style={{ width: '100%' }}>
-                  <a style={{ textDecoration: 'none', color: 'white' }} onClick={(e) => this.getLead(e)} to="/home">Cadastrar</a>
+                  <input type="submit" style={{ textDecoration: 'none', color: 'white' }} value="Cadastrar" />
                   </button>
                 </Form>
               </Box>

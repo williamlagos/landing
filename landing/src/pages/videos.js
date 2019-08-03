@@ -13,12 +13,24 @@ import mohublogo from "../assets/img/mohub_white.png";
 import testimonial from "../assets/img/testimonial.png"
 import Background from "../assets/img/backgrounds/bg-01.png";
 const parallaxBackground = { backgroundImage: `url(${Background})` };
-const videoplaBackground = { backgroundImage: `url(${landing01})` };
+// const videoplaBackground = { backgroundImage: `url(${landing01})` };
 
 class SubscriptionConfirmationPage extends React.Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        ytid: '-it-OH7pxK4'
+      }
+    }
     render() {
         const siteTitle = "MoHub";
-
+        const title = "MoHub";
+        const summary = "Uma post teste para o Mohub";
+        const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
+        // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
+        /*&p[images][0]=${image}'*/
+        let shareUrl = `http://www.facebook.com/sharer.php?s=100&p[title]=${title}&p[summary]=${summary}&p[url]=${url},'sharer','toolbar=0,status=0,width=580,height=325`;
+        shareUrl = `https://www.facebook.com/sharer.php?u=${url}`
         return (
           <Layout>
               <Helmet title={siteTitle}>
@@ -39,11 +51,14 @@ class SubscriptionConfirmationPage extends React.Component {
                                 {/*<div className="description">Importante! Assista ao vídeo abaixo!</div>*/}
                                 <div className="flex">
                                   <div className="flex-left">
-                                    <img className="fluid" src={landing01} alt="video 1"/>
+                                    {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
+                                    <iframe id="ytplayer" type="text/html" width="100%" height="400"
+                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
+                                      frameborder="0"/>
                                   </div>
                                   <div className="flex-right">
-                                    <button className="block">
-                                      <div className="video" style={videoplaBackground}>
+                                    <button className="block" onClick={() => this.setState({ ytid: "IesIsKMjB4Y" })}>
+                                      <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/IesIsKMjB4Y/0.jpg')", backgroundSize: 'auto' }}>
                                         <div className="overlay">
                                           <div className="overlay-content">
                                             <i class="fas fa-play"></i>
@@ -52,8 +67,8 @@ class SubscriptionConfirmationPage extends React.Component {
                                         </div>
                                       </div>
                                     </button>
-                                    <button className="block">
-                                      <div className="video" style={videoplaBackground}>
+                                    <button className="block" onClick={() => this.setState({ ytid: "4dwjS_eI-lQ" })}>
+                                      <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/4dwjS_eI-lQ/0.jpg')", backgroundSize: 'auto' }}>
                                         <div className="overlay green">
                                           <div className="overlay-content">
                                             <i class="fas fa-lock"></i>
@@ -62,8 +77,8 @@ class SubscriptionConfirmationPage extends React.Component {
                                         </div>
                                       </div>
                                     </button>
-                                    <button className="block">
-                                      <div className="video" style={videoplaBackground}>
+                                    <button className="block" onClick={() => this.setState({ ytid: "RRuovINxpPc" })}>
+                                      <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/RRuovINxpPc/0.jpg')", backgroundSize: 'auto' }}>
                                         <div className="overlay green">
                                           <div className="overlay-content">
                                             <i class="fas fa-lock"></i>
@@ -72,8 +87,8 @@ class SubscriptionConfirmationPage extends React.Component {
                                         </div>
                                       </div>
                                     </button>
-                                    <button className="block last">
-                                      <div className="video" style={videoplaBackground}>
+                                    <button className="block last" onClick={() => this.setState({ ytid: "YgVyPwhkoJs" })}>
+                                      <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/YgVyPwhkoJs/0.jpg')", backgroundSize: 'auto' }}>
                                         <div className="overlay green">
                                           <div className="overlay-content">
                                             <i class="fas fa-lock"></i>
@@ -96,25 +111,30 @@ class SubscriptionConfirmationPage extends React.Component {
                     <div className="container">
                   <div className="row top bottom">
                     <div className="twelve columns center">
-                      <Link className="btn-share btn-facebook" to="/sales" >
-                          <i class="fab fa-facebook-square"></i>
-                          <p>&nbsp; Compartilhar</p>
-                      </Link>
-                      <Link className="btn-share btn-whatsapp" to="#" >
+                      <a id="fb-share"
+                        className="btn-facebook"
+                        style={{ textDecoration: 'none' }}
+                        type="icon_link"
+                        onClick={() => window.open(shareUrl)}
+                        href="javascript: void(0)">
+                        <i class="fab fa-facebook-square"></i>
+                        &nbsp; Compartilhar
+                      </a>
+                      {/*<Link className="btn-share btn-whatsapp" to="#" >
                           <i class="fab fa-whatsapp"></i>
                           <p>&nbsp; Compartilhar</p>
-                      </Link>
+                      </Link>*/}
                     </div>
                   </div>
-                  <div className="row bottom">
+                  {/*<div className="row bottom">
                     <div className="twelve columns">
                       <img className="fluid" src={banner} alt="banner"/>
                     </div>
-                  </div>
+                  </div>*/}
                   <div className="row">
                     <div className="nine columns">
                       <h3>Comente no Facebook</h3>
-                      <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"/>
+                      <div class="fb-comments" data-href="https://www.facebook.com/somosmohub" data-width="100%" data-numposts="5"></div>
                     </div>
                     <div className="three columns">
                       <h3>Depoimentos</h3>

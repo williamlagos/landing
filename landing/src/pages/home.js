@@ -21,9 +21,11 @@ class IndexPage extends React.Component {
         /*&p[images][0]=${image}'*/
         let shareUrl = `http://www.facebook.com/sharer.php?s=100&p[title]=${title}&p[summary]=${summary}&p[url]=${url},'sharer','toolbar=0,status=0,width=580,height=325`;
         shareUrl = `https://www.facebook.com/sharer.php?u=${url}`
+
         return (
             <Layout>
                 <Helmet title={siteTitle}>
+                  <script src="//widget.manychat.com/665860060544739.js" async="async"></script>
                   <meta property="og:description" content="Your entertaining and descriptive copy here, if your meta description is good, use it." />
                   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
                   <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
@@ -49,7 +51,8 @@ class IndexPage extends React.Component {
                                     <div className="ten columns">
                                       <h4 className="uppercase">Ative a notificação via Facebook</h4>
                                       <p>Clique abaixo e cadastre-se para receber os avisos das aulas e atualizações do Workshop diretamente no seu Facebook Messenger.</p>
-                                      <a id="fb-share"
+                                      <div class="mcwidget-embed" data-widget-id="6962601"></div>
+                                      {/*<a id="fb-share"
                                         className="btn-facebook"
                                         style={{ textDecoration: 'none' }}
                                         type="icon_link"
@@ -57,7 +60,7 @@ class IndexPage extends React.Component {
                                         href="javascript: void(0)">
                                         <i class="fab fa-facebook-square"></i>
                                         &nbsp; Ative seu Facebook
-                                      </a>
+                                      </a>*/}
                                     </div>
                                   </div>
                                   <hr/>
