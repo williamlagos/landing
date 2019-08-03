@@ -436,7 +436,10 @@ button {
 
 .btn:hover {
   /* transform: translateY(.3em); */
-  border-bottom: .3em solid transparent;
+  /* border-bottom: .3em solid transparent; */
+  background-image: linear-gradient( -140deg, rgba(2,209,192, 0.8) 0%, rgba(3,133,227, 0.8) 100%);
+  border-top: .3em solid #0266ae;
+  border-bottom: none;
 }
 
 .right-gradient {

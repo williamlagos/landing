@@ -76,7 +76,7 @@ class HomePage extends React.Component {
                   <FormField name="name" label="Nome" />
                   <FormField name="email" label="E-mail" />
                   <button className="btn gradient" style={{ width: '100%' }}>
-                  <input type="submit" style={{ textDecoration: 'none', color: 'white' }} value="Cadastrar" />
+                  <input type="submit" style={{ textDecoration: 'none', color: 'white', background: 'none', border: 'none'}} value="Cadastrar" />
                   </button>
                 </Form>
               </Box>
