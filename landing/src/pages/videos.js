@@ -111,7 +111,7 @@ class SubscriptionConfirmationPage extends React.Component {
                     <div className="container">
                   <div className="row top bottom">
                     <div className="twelve columns center">
-                      <a id="fb-share"
+                      <button id="fb-share"
                         className="btn-facebook"
                         style={{ textDecoration: 'none' }}
                         type="icon_link"
@@ -119,7 +119,8 @@ class SubscriptionConfirmationPage extends React.Component {
                         href="javascript: void(0)">
                         <i class="fab fa-facebook-square"></i>
                         &nbsp; Compartilhar
-                      </a>
+                      </button>
+                      <p/>
                       {/*<Link className="btn-share btn-whatsapp" to="#" >
                           <i class="fab fa-whatsapp"></i>
                           <p>&nbsp; Compartilhar</p>

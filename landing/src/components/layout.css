@@ -26,8 +26,12 @@ button {
   border: 0px;
 }
 
-#index .container {
+#index .container-fluid {
   background: rgba(255,255,255,0.6);
+  height: 100%;
+}
+
+#index .container {
   height: 100%;
 }
 
@@ -246,7 +250,7 @@ button {
 .outlook:hover {
   background-color: #1d6fbf;
   /* transform: translateY(.3em); */
-  border-bottom: .3em solid transparent;
+  border-top: .3em solid  #0c345b;
 }
 
 .gmail {
@@ -256,7 +260,7 @@ button {
 
 .gmail:hover {
   /* transform: translateY(.3em); */
-  border-bottom: .3em solid transparent;
+  border-top: .3em solid  #6a1f1c;
 }
 
 .yahoo {
@@ -266,7 +270,7 @@ button {
 
 .yahoo:hover {
   /* transform: translateY(.3em); */
-  border-bottom: .3em solid transparent;
+  border-top: .3em solid  #270b48;
 }
 
 .btn-share {
@@ -302,12 +306,16 @@ button {
 
 .btn-whatsapp:hover {
   transform: translateY(.3em);
-  border-bottom: .3em solid transparent;
+  opacity: 0.9;
+  border-top: .3em solid #1b5449;
+  border-bottom: none;
 }
 
 .btn-facebook:hover {
   transform: translateY(.3em);
-  border-bottom: .3em solid transparent;
+  opacity: 0.9;
+  border-top: .3em solid #0266ae;
+  border-bottom: none;
 }
 
 .description {
@@ -525,8 +533,13 @@ button {
     background-color: #40414d;
   }
 
-  #index .container {
+  #index .container-fluid {
     background: transparent;
+    height: 100%;
+  }
+
+  #index .container {
+    /* background: transparent; */
     height: 100%;
   }
   #cover2 { max-height:500px; }
@@ -636,7 +649,6 @@ button {
 
   .btn {
     background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
-    border-bottom: .3em solid #0266ae;
     padding: .8em 6em;
     border-radius: 3em;
     text-transform: uppercase;
@@ -648,7 +660,10 @@ button {
 
   .btn:hover {
     /* transform: translateY(.3em); */
-    border-bottom: .3em solid linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
+    background-image: linear-gradient( -140deg, rgba(2,209,192, 0.8) 0%, rgba(3,133,227, 0.8) 100%);
+    border-top: .3em solid #0266ae;
+    border-bottom: none;
+    /* border-bottom: .3em solid linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%); */
   }
 
   /*.btn:active {

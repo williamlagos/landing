@@ -53,6 +53,7 @@ class HomePage extends React.Component {
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
         </Helmet>
         <Box id="index" justify="between" background={`url(${Background})`} fill="true">
+          <div className="container-fluid">
           <Container>
             <Box className="six columns" pad="medium">
               <br/>
@@ -63,6 +64,7 @@ class HomePage extends React.Component {
               <br/>
             </Box>
           </Container>
+          </div>
           {this.state.toggledModal && (
             <Layer
               onEsc={(e) => this.dismissModal(e)}
