@@ -23,14 +23,17 @@ class SubscriptionConfirmationPage extends React.Component {
       }
     }
     render() {
+      const appId = "2267639403332673"
         const siteTitle = "MoHub";
         const title = "MoHub";
         const summary = "Uma post teste para o Mohub";
         const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
+        const quote = "Veja que vídeo interessante"
         // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
         /*&p[images][0]=${image}'*/
         let shareUrl = `http://www.facebook.com/sharer.php?s=100&p[title]=${title}&p[summary]=${summary}&p[url]=${url},'sharer','toolbar=0,status=0,width=580,height=325`;
         shareUrl = `https://www.facebook.com/sharer.php?u=${url}`
+        const shareDialog = `https://www.facebook.com/dialog/share?app_id=${appId}&display=popup&href=${url}&quote=${quote}`/*&redirect_uri=${url}`*/
         return (
           <Layout>
               <Helmet title={siteTitle}>
@@ -115,7 +118,7 @@ class SubscriptionConfirmationPage extends React.Component {
                         className="btn-facebook"
                         style={{ textDecoration: 'none' }}
                         type="icon_link"
-                        onClick={() => window.open(shareUrl)}
+                        onClick={() => window.open(shareDialog)}
                         href="javascript: void(0)">
                         <i class="fab fa-facebook-square"></i>
                         &nbsp; Compartilhar

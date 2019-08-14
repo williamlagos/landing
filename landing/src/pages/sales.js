@@ -215,17 +215,12 @@ class SalesPage extends React.Component {
                     </Box>
                     <Box className="text">
                       <Text size="small">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                        arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                        quis lorem ut libero malesuada feugiat.
+                        Análise sobre a sua situação pessoal e financeira atual.
                       </Text>
                     </Box>
                     <Box margin={{"left": "220px", "top": "270px"}} anchor="center">
                       <Heading className="risked" level={1}>
-                        R$ 879,00
+                        R$ 199,97
                       </Heading>
                     </Box>
                   </Stack>
@@ -236,17 +231,12 @@ class SalesPage extends React.Component {
                     </Box>
                     <Box className="text">
                       <Text size="small">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                        arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                        quis lorem ut libero malesuada feugiat.
+                        Ferramentas práticas para te ajudar a definir qual a direção que você deve seguir.
                       </Text>
                     </Box>
                     <Box margin={{"left": "220px", "top": "270px"}} anchor="center">
                       <Heading className="risked" level={1}>
-                        R$ 879,00
+                        R$ 399,97
                       </Heading>
                     </Box>
                   </Stack>
@@ -259,17 +249,12 @@ class SalesPage extends React.Component {
                     <Box className="text" width="70%">
                       <Heading level={2}>De Onde Vem o Dinheiro</Heading>
                       <Text size="small">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                        arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                        quis lorem ut libero malesuada feugiat.
+                        De onde vem o dinheiro? O que é dinheiro? Nesse módulo vamos mostrar chaves que podem te ajudar a ser mais próspero.
                       </Text>
                     </Box>
                     <Box margin={{"left": "720px", "top": "210px"}} anchor="center">
                       <Heading className="risked" level={1}>
-                        R$ 879,00
+                        R$ 199,97
                       </Heading>
                     </Box>
                   </Stack>
@@ -280,19 +265,14 @@ class SalesPage extends React.Component {
                       <Heading textAlign="center" level={3}>Box 4</Heading>
                     </Box>
                     <Box className="title-under">
-                      <Heading level={2}>Momentum Bot</Heading>
+                      <Heading level={2}>MoBot</Heading>
                       <Text size="small">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                        arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                        quis lorem ut libero malesuada feugiat.
+                        Apresentação do robô que vai te acompanhar no caminho da prosperidade. O MoBot otimiza operações de marketing te dando mais tempo para focar no que é mais importante.
                       </Text>
                     </Box>
                     <Box margin={{"left": "20px", "top": "430px"}} anchor="center">
                       <Heading className="risked" level={2}>
-                        R$ 879,00
+                        R$ 1.999,97
                       </Heading>
                     </Box>
                   </Stack>
@@ -303,17 +283,13 @@ class SalesPage extends React.Component {
                     <Box className="title-under">
                       <Heading level={2}>Escola de Negócios</Heading>
                       <Text size="small">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                        arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                        quis lorem ut libero malesuada feugiat.
+                        Escola com o ensino prático das habilidades necessárias para a criação do seu próprio negócio.
+                        Não se trata de faculdade, porque faculdade é teórico, aqui se bota a mão na massa!
                       </Text>
                     </Box>
                     <Box margin={{"left": "20px", "top": "430px"}} anchor="center">
                       <Heading className="risked" level={2}>
-                        R$ 879,00
+                        R$ 999,97
                       </Heading>
                     </Box>
                   </Stack>
@@ -324,17 +300,13 @@ class SalesPage extends React.Component {
                     <Box className="title-under">
                       <Heading level={2}>O Seu Próprio Negócio</Heading>
                       <Text size="small">
-                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                        Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                        Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                        ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                        arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                        quis lorem ut libero malesuada feugiat.
+                        O seu objetivo final deve ser construir o seu próprio negócio, porque nele que você colocará sua paixão e o seu sonho.
+                        Vamos te ajudar a dar esse passo na sua vida para que entendas que não estás sozinho.
                       </Text>
                     </Box>
                     <Box margin={{"left": "20px", "top": "430px"}} anchor="center">
                       <Heading className="risked" level={2}>
-                        R$ 879,00
+                        R$ 999,97
                       </Heading>
                     </Box>
                   </Stack>
@@ -348,7 +320,7 @@ class SalesPage extends React.Component {
                       <Image margin="medium" fit="contain" src={gift}/>
                       <Heading textAlign="center">2 BÔNUS</Heading>
                       <Heading textAlign="center" className="risked" level={2}>
-                        R$ 879,00
+                        R$ 399,94
                       </Heading>
                     </Box>
                     <Box alignSelf="center" basis="70%">
@@ -360,12 +332,7 @@ class SalesPage extends React.Component {
                         <Box pad="medium" basis="70%">
                           <Heading level={2}>Como Sair das Dívidas</Heading>
                           <Text size="small">
-                            Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                            Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                            ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                            arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                            quis lorem ut libero malesuada feugiat.
+                            Às vezes nos colocamos em situações indevidas. Vamos explorar soluções para corrigir essas situações para estarmos limpos.
                           </Text>
                         </Box>
                       </Box>
@@ -377,12 +344,7 @@ class SalesPage extends React.Component {
                         <Box pad="medium" basis="70%">
                           <Heading level={2}>Dicas de Renda Extra</Heading>
                           <Text size="small">
-                            Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
-                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
-                            Vivamus suscipit tortor eget felis porttitor volutpat. Lorem
-                            ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                            arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-                            quis lorem ut libero malesuada feugiat.
+                            Nesse bônus vamos te mostrar outras formas de se fazer renda, porque depender de uma só renda é um grande risco.
                           </Text>
                         </Box>
                       </Box>
