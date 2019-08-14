@@ -418,10 +418,6 @@ button {
   flex-grow: 1;
 }
 
-.page {
-  background: rgba(255, 255, 255, 0.5);
-}
-
 .btn {
   background-image: linear-gradient( -140deg, rgb(2,209,192) 0%, rgb(3,133,227) 100%);
   padding: .8em 3em;
