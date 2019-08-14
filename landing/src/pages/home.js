@@ -41,8 +41,8 @@ class IndexPage extends React.Component {
                                 <div className="white">
                                   <div className="red">Importante! Assista ao vídeo abaixo!</div>
                                   {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
-                                  <div className="fluid">
-                                  <iframe id="ytplayer" type="text/html" width="100%" height="400"
+                                  <div className="fluid video-container">
+                                  <iframe id="ytplayer" class="main-player" type="text/html" width="100%" height="100%"
                                     src="http://www.youtube.com/embed/fa5p19APgd8/?autoplay=0"
                                     frameborder="0"/>
                                   </div>
