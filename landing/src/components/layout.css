@@ -143,7 +143,6 @@ button {
 
 .overlay-content {
   /* height: 100%; */
-  padding: 0.5em;
   color: white;
   text-align: center;
 }
@@ -587,7 +586,6 @@ left: 0;
 
   .overlay-content {
     /* height: 100%; */
-    padding: 0.5em;
     color: white;
     text-align: center;
   }
