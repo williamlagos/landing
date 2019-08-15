@@ -151,12 +151,12 @@ class SalesPage extends React.Component {
             <Box margin="large"/>
             <Box className="founder" margin={{ "vertical": "medium" }} height="large">
               <Stack anchor="bottom">
-                <div className="row">
-                  <div className="six columns founder-left">
-                    <Heading level={2} margin={{"left": "35%", "top": "330px"}} color="white">Sobre o <br/>Fundador</Heading>
+                <div className="row apresentation">
+                  <div className="six columns founder-left hidden-mobile">
+                    <Heading level={2} margin={{"left": "20%", "top": "330px"}} color="white">Sobre o <br/>Fundador</Heading>
                   </div>
-                  <div className="six columns founder-right">
-                    <Box margin={{"left": "250px"}} pad={{"top":"120px","right":"75px"}}>
+                  <div className="six columns founder-right  hidden-mobile">
+                    <Box margin={{"left": "195px"}} pad={{"top":"30px","right":"20px"}}>
                     <Heading level={1} color="white">Matheus <br/>Sperry</Heading>
                     <Text size="small" color="white">
                       Olá! Eu sou o Matheus Sperry, sou formado em engenharia civil pela PUCRS e pela ENISE (França), com certificação em urbanismo pela IHS (Holanda).
@@ -168,7 +168,7 @@ class SalesPage extends React.Component {
                 </div>
                 <Image className="the-founder" src={sperry}/>
               </Stack>
-              <Box pad="large" className="founder-bottom">
+              <Box pad="large" className="founder-bottom hidden-desktop">
                 <Heading level={1} color="white">Matheus <br/>Sperry</Heading>
                 <Text size="small" color="white">
                   Olá! Eu sou o Matheus Sperry, sou formado em engenharia civil pela PUCRS e pela ENISE (França), com certificação em urbanismo pela IHS (Holanda).
