@@ -249,7 +249,7 @@ button {
 .outlook:hover {
   background-color: #1d6fbf;
   /* transform: translateY(.3em); */
-  border-top: .3em solid  #0c345b;
+  margin-top: .3em;
 }
 
 .gmail {
@@ -259,7 +259,7 @@ button {
 
 .gmail:hover {
   /* transform: translateY(.3em); */
-  border-top: .3em solid  #6a1f1c;
+  margin-top: .3em;
 }
 
 .yahoo {
@@ -269,7 +269,7 @@ button {
 
 .yahoo:hover {
   /* transform: translateY(.3em); */
-  border-top: .3em solid  #270b48;
+  margin-top: .3em;
 }
 
 .btn-share {
@@ -306,14 +306,14 @@ button {
 .btn-whatsapp:hover {
   transform: translateY(.3em);
   opacity: 0.9;
-  border-top: .3em solid #1b5449;
+  margin-top: .3em;
   border-bottom: none;
 }
 
 .btn-facebook:hover {
   transform: translateY(.3em);
   opacity: 0.9;
-  border-top: .3em solid #0266ae;
+  margin-top: .3em;
   border-bottom: none;
 }
 
