@@ -100,7 +100,7 @@ class SalesPage extends React.Component {
                             frameborder="0"/>
                           <Box align="center" pad="medium">
                             <br/>
-                            <a id="bigbutton" className="btn" href="#investment" >
+                            <a className="btn" href="#investment" >
                               &nbsp; Faça parte da MoHub
                             </a>
                           </Box>

@@ -1,7 +1,6 @@
 #cover { max-height:300px; }
 #cover2 { max-height:200px; }
 #background { max-height: 200px; }
-#bigbutton { width: 80%; }
 #shadow {
   -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
@@ -569,7 +568,6 @@ left: 0;
     height: 100%;
   }
   #cover2 { max-height:500px; }
-  #bigbutton { width: 40%; }
   /* Rules for flex boxes */
   .flex {
     display: flex;
