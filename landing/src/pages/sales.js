@@ -129,9 +129,7 @@ class SalesPage extends React.Component {
                         src="http://www.youtube.com/embed/2Hjodq3JdoI/?autoplay=0"
                         frameborder="0"/>
                     </div>
-                  </div>
-                  <div className="row top">
-                    <div className="four columns">
+                    <div style={{ "margin-left" : "0" }} className="four columns">
                       <iframe id="ytplayer" type="text/html" width="100%" height="200"
                         src="http://www.youtube.com/embed/vB5nTx5fUXM/?autoplay=0"
                         frameborder="0"/>
@@ -500,7 +498,7 @@ class SalesPage extends React.Component {
               <ResponsiveContext.Consumer>
                 {(size) => (
                   <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
-                    <Box direction="row" gap="medium">
+                    <Box direction="row-responsive" gap="medium">
                       <Box align="center">
                         <Image size={size} src={lock}/>
                         <Heading margin={size} size={size} textAlign="center" level={4}>Acesso Imediato</Heading>
