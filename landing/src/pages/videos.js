@@ -1,14 +1,15 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Link } from "gatsby"
+// import { Link } from "gatsby"
 import { Image } from 'grommet'
+// import { Location } from '@react/router';
 
 import Layout from '../components/layout';
-import Countdown from '../components/Countdown';
+// import Countdown from '../components/Countdown';
 import Footer from '../components/Footer';
 
-import banner from "../assets/img/banner.png";
-import landing01 from "../assets/img/video_play.png";
+// import banner from "../assets/img/banner.png";
+// import landing01 from "../assets/img/video_play.png";
 import mohublogo from "../assets/img/mohub_white.png";
 import testimonial from "../assets/img/testimonial.png"
 import Background from "../assets/img/backgrounds/bg-01.png";
@@ -19,20 +20,30 @@ class SubscriptionConfirmationPage extends React.Component {
     constructor(props) {
       super(props)
       this.state = {
-        ytid: '-it-OH7pxK4'
+        ytid: '-it-OH7pxK4',
+        step: 2
       }
     }
+
+    async componentDidMount() {
+      const id = window.location.search.slice(1).split("&")[0].split("=")[1];
+      const res = await fetch(`http://api.mohub.com.br/leads?id=${id}`);
+      this.setState({ step: 3 });
+      // console.log(res.json())
+      // console.log(id)
+    }
+
     render() {
       const appId = "2267639403332673"
         const siteTitle = "MoHub";
-        const title = "MoHub";
-        const summary = "Uma post teste para o Mohub";
+        // const title = "MoHub";
+        // const summary = "Uma post teste para o Mohub";
         const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
         const quote = "Veja que vídeo interessante"
         // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
         /*&p[images][0]=${image}'*/
-        let shareUrl = `http://www.facebook.com/sharer.php?s=100&p[title]=${title}&p[summary]=${summary}&p[url]=${url},'sharer','toolbar=0,status=0,width=580,height=325`;
-        shareUrl = `https://www.facebook.com/sharer.php?u=${url}`
+        // let shareUrl = `http://www.facebook.com/sharer.php?s=100&p[title]=${title}&p[summary]=${summary}&p[url]=${url},'sharer','toolbar=0,status=0,width=580,height=325`;
+        // shareUrl = `https://www.facebook.com/sharer.php?u=${url}`
         const shareDialog = `https://www.facebook.com/dialog/share?app_id=${appId}&display=popup&href=${url}&quote=${quote}`/*&redirect_uri=${url}`*/
         return (
           <Layout>
@@ -55,7 +66,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                 <div className="flex">
                                   <div className="flex-left">
                                     {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
-                                    <iframe id="ytplayer" type="text/html" width="100%" height="400"
+                                    <iframe title="player" id="ytplayer" type="text/html" width="100%" height="400"
                                       src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
                                       frameborder="0"/>
                                   </div>
@@ -72,36 +83,54 @@ class SubscriptionConfirmationPage extends React.Component {
                                     </button>
                                     <button className="block" onClick={() => this.setState({ ytid: "4dwjS_eI-lQ" })}>
                                       <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/4dwjS_eI-lQ/0.jpg')", backgroundSize: 'auto' }}>
-                                        <div className="overlay green">
+                                        <div className={this.state.step > 1 ? 'overlay' : 'overlay green'}>
                                           <div className="overlay-content">
-                                            <i class="fas fa-lock"></i>
-                                            <h1>14/05</h1>
+                                            {
+                                              this.state.step > 1 ? (<i class="fas fa-play"></i>) : (
+                                                <>
+                                                  <i class="fas fa-lock"></i>
+                                                  <h1>14/05</h1>
+                                                </>
+                                              )
+                                            }
                                           </div>
                                         </div>
                                       </div>
                                     </button>
                                     <button className="block" onClick={() => this.setState({ ytid: "RRuovINxpPc" })}>
                                       <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/RRuovINxpPc/0.jpg')", backgroundSize: 'auto' }}>
-                                        <div className="overlay green">
+                                        <div className={this.state.step > 2 ? 'overlay' : 'overlay green'}>
                                           <div className="overlay-content">
-                                            <i class="fas fa-lock"></i>
-                                            <h1>21/05</h1>
+                                            {
+                                              this.state.step > 2 ? (<i class="fas fa-play"></i>) : (
+                                                <>
+                                                  <i class="fas fa-lock"></i>
+                                                  <h1>21/05</h1>
+                                                </>
+                                              )
+                                            }
                                           </div>
                                         </div>
                                       </div>
                                     </button>
                                     <button className="block last" onClick={() => this.setState({ ytid: "YgVyPwhkoJs" })}>
                                       <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/YgVyPwhkoJs/0.jpg')", backgroundSize: 'auto' }}>
-                                        <div className="overlay green">
+                                        <div className={this.state.step > 3 ? 'overlay' : 'overlay green'}>
                                           <div className="overlay-content">
-                                            <i class="fas fa-lock"></i>
-                                            <h1>28/05</h1>
+                                            {
+                                              this.state.step > 3 ? (<i class="fas fa-play"></i>) : (
+                                                <>
+                                                  <i class="fas fa-lock"></i>
+                                                  <h1>28/05</h1>
+                                                </>
+                                              )
+                                            }
                                           </div>
                                         </div>
                                       </div>
                                     </button>
-                                    {/*<h5>  Tempo para acessar o restante das landings:</h5>*/}
-                                    <div style={{ 'display': 'none' }}><Countdown/></div>
+                                    {/*<h5>  Tempo para acessar o restante das landings:</h5>
+                                    <div style={{ 'display': 'none' }}><Countdown/></div>*/}
                                   </div>
                                 </div>
                               </div>
@@ -118,8 +147,7 @@ class SubscriptionConfirmationPage extends React.Component {
                         className="btn-facebook"
                         style={{ textDecoration: 'none' }}
                         type="icon_link"
-                        onClick={() => window.open(shareDialog)}
-                        href="javascript: void(0)">
+                        onClick={() => window.open(shareDialog)}>
                         <i class="fab fa-facebook-square"></i>
                         &nbsp; Compartilhar
                       </button>
@@ -162,10 +190,10 @@ class SubscriptionConfirmationPage extends React.Component {
                   </div>
                   </div>
                   </div>
-                  <div style={{ 'text-align': 'center', 'color': 'white', 'font-size': '1em' }}>
+                  {/*<div style={{ 'text-align': 'center', 'color': 'white', 'font-size': '1em' }}>
                     <h3> Tempo para acessar o restante das landings:</h3>
                     <Countdown/>
-                  </div>
+                  </div>*/}
                   <Footer/>
               </div>
           </Layout>

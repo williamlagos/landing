@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "mohub-starter-default",
+  "description": "Mohub default starter",
   "version": "1.0.0",
-  "author": "Efforia.io",
+  "author": "Efforia",
   "dependencies": {
     "body-parser": "^1.19.0",
     "chalk": "^2.4.1",
@@ -43,6 +43,7 @@
   "scripts": {
     "start": "npm run build && node app.js",
     "build": "gatsby build",
+    "dev": "gatsby develop",
     "develop": "gatsby develop",
     "deploy": "node .bin/deploy",
     "format": "prettier --write '**/*.js'",
