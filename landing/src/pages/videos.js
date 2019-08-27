@@ -28,6 +28,8 @@ class SubscriptionConfirmationPage extends React.Component {
     async componentDidMount() {
       const id = window.location.search.slice(1).split("&")[0].split("=")[1];
       const res = await fetch(`http://api.mohub.com.br/leads?id=${id}`);
+      // Controle por dias, comparativo entre datas
+      // Math.floor((Date.now()/1000 - res.json()[0]['created']/1000)/84600)
       this.setState({ step: 3 });
       console.log(res.json())
       // console.log(id)
