@@ -180,7 +180,9 @@ class SubscriptionConfirmationPage extends React.Component {
                       <h3>Depoimentos</h3>
                       <div className="row top">
                         <div className="twelve columns">
-                          <Image fit="contain" width="100%" src={testimonial}/>
+                             <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
+                                      frameborder="0"/>
                           <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
                             eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
                           <p>Guilherme Petrickicz</p>
@@ -188,7 +190,9 @@ class SubscriptionConfirmationPage extends React.Component {
                       </div>
                       <div className="row top">
                         <div className="twelve columns">
-                          <Image fit="contain" width="100%" src={testimonial}/>
+                             <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
+                                      frameborder="0"/>
                           <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
                             eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
                           <p>Guilherme Petrickicz</p>
