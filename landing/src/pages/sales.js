@@ -100,7 +100,7 @@ class SalesPage extends React.Component {
                             frameborder="0"/>
                           <Box align="center" pad="medium">
                             <br/>
-                            <a id="bigbutton" className="btn" href="#investment" >
+                            <a className="btn" href="#investment" >
                               &nbsp; Faça parte da MoHub
                             </a>
                           </Box>
@@ -129,9 +129,7 @@ class SalesPage extends React.Component {
                         src="http://www.youtube.com/embed/2Hjodq3JdoI/?autoplay=0"
                         frameborder="0"/>
                     </div>
-                  </div>
-                  <div className="row top">
-                    <div className="four columns">
+                    <div style={{ "margin-left" : "0" }} className="four columns">
                       <iframe id="ytplayer" type="text/html" width="100%" height="200"
                         src="http://www.youtube.com/embed/vB5nTx5fUXM/?autoplay=0"
                         frameborder="0"/>
@@ -151,12 +149,12 @@ class SalesPage extends React.Component {
             <Box margin="large"/>
             <Box className="founder" margin={{ "vertical": "medium" }} height="large">
               <Stack anchor="bottom">
-                <div className="row">
-                  <div className="six columns founder-left">
-                    <Heading level={2} margin={{"left": "35%", "top": "330px"}} color="white">Sobre o <br/>Fundador</Heading>
+                <div className="row apresentation">
+                  <div className="six columns founder-left hidden-mobile">
+                    <Heading level={2} margin={{"left": "20%", "top": "330px"}} color="white">Sobre o <br/>Fundador</Heading>
                   </div>
-                  <div className="six columns founder-right">
-                    <Box margin={{"left": "250px"}} pad={{"top":"120px","right":"75px"}}>
+                  <div className="six columns founder-right  hidden-mobile">
+                    <Box margin={{"left": "195px"}} pad={{"top":"30px","right":"20px"}}>
                     <Heading level={1} color="white">Matheus <br/>Sperry</Heading>
                     <Text size="small" color="white">
                       Olá! Eu sou o Matheus Sperry, sou formado em engenharia civil pela PUCRS e pela ENISE (França), com certificação em urbanismo pela IHS (Holanda).
@@ -168,7 +166,7 @@ class SalesPage extends React.Component {
                 </div>
                 <Image className="the-founder" src={sperry}/>
               </Stack>
-              <Box pad="large" className="founder-bottom">
+              <Box pad="large" className="founder-bottom hidden-desktop">
                 <Heading level={1} color="white">Matheus <br/>Sperry</Heading>
                 <Text size="small" color="white">
                   Olá! Eu sou o Matheus Sperry, sou formado em engenharia civil pela PUCRS e pela ENISE (França), com certificação em urbanismo pela IHS (Holanda).
@@ -182,7 +180,7 @@ class SalesPage extends React.Component {
               <ResponsiveContext.Consumer>
                 {(size) => (
                   <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
-                    <Box direction="row" gap="medium">
+                    <Box direction="row-responsive" gap="medium">
                       <Box align="center">
                         <Image size={size} src={lock}/>
                         <Heading margin={size} size={size} textAlign="center" level={4}>Acesso Imediato</Heading>
@@ -218,7 +216,7 @@ class SalesPage extends React.Component {
                         Análise sobre a sua situação pessoal e financeira atual.
                       </Text>
                     </Box>
-                    <Box margin={{"left": "220px", "top": "270px"}} anchor="center">
+                    <Box margin={{"left": "20px", "top": "220px"}} anchor="center">
                       <Heading className="risked" level={1}>
                         R$ 199,97
                       </Heading>
@@ -234,7 +232,7 @@ class SalesPage extends React.Component {
                         Ferramentas práticas para te ajudar a definir qual a direção que você deve seguir.
                       </Text>
                     </Box>
-                    <Box margin={{"left": "220px", "top": "270px"}} anchor="center">
+                    <Box margin={{"left": "20px", "top": "220px"}} anchor="center">
                       <Heading className="risked" level={1}>
                         R$ 399,97
                       </Heading>
@@ -252,7 +250,7 @@ class SalesPage extends React.Component {
                         De onde vem o dinheiro? O que é dinheiro? Nesse módulo vamos mostrar chaves que podem te ajudar a ser mais próspero.
                       </Text>
                     </Box>
-                    <Box margin={{"left": "720px", "top": "210px"}} anchor="center">
+                    <Box margin={{"left": "220px", "top": "260px"}} anchor="center">
                       <Heading className="risked" level={1}>
                         R$ 199,97
                       </Heading>
@@ -270,7 +268,7 @@ class SalesPage extends React.Component {
                         Apresentação do robô que vai te acompanhar no caminho da prosperidade. O MoBot otimiza operações de marketing te dando mais tempo para focar no que é mais importante.
                       </Text>
                     </Box>
-                    <Box margin={{"left": "20px", "top": "430px"}} anchor="center">
+                    <Box margin={{"left": "20px", "top": "450px"}} anchor="center">
                       <Heading className="risked" level={2}>
                         R$ 1.999,97
                       </Heading>
@@ -287,7 +285,7 @@ class SalesPage extends React.Component {
                         Não se trata de faculdade, porque faculdade é teórico, aqui se bota a mão na massa!
                       </Text>
                     </Box>
-                    <Box margin={{"left": "20px", "top": "430px"}} anchor="center">
+                    <Box margin={{"left": "20px", "top": "450px"}} anchor="center">
                       <Heading className="risked" level={2}>
                         R$ 999,97
                       </Heading>
@@ -304,7 +302,7 @@ class SalesPage extends React.Component {
                         Vamos te ajudar a dar esse passo na sua vida para que entendas que não estás sozinho.
                       </Text>
                     </Box>
-                    <Box margin={{"left": "20px", "top": "430px"}} anchor="center">
+                    <Box margin={{"left": "20px", "top": "450px"}} anchor="center">
                       <Heading className="risked" level={2}>
                         R$ 999,97
                       </Heading>
@@ -324,26 +322,26 @@ class SalesPage extends React.Component {
                       </Heading>
                     </Box>
                     <Box alignSelf="center" basis="70%">
-                      <Box alignSelf="center" direction="row">
-                        <Box alignSelf="center" pad="medium" basis="30%">
+                      <Box alignSelf="center" direction="column">
+                        <Box alignSelf="center"  basis="30%">
                           <Image margin="small" fit="contain" src={champ}/>
                           <Heading textAlign="center" level={2}>Bônus 1</Heading>
                         </Box>
                         <Box pad="medium" basis="70%">
-                          <Heading level={2}>Como Sair das Dívidas</Heading>
-                          <Text size="small">
+                          <Heading level={2} textAlign="center">Como Sair das Dívidas</Heading>
+                          <Text size="small" textAlign="center">
                             Às vezes nos colocamos em situações indevidas. Vamos explorar soluções para corrigir essas situações para estarmos limpos.
                           </Text>
                         </Box>
                       </Box>
-                      <Box alignSelf="center" direction="row">
-                        <Box alignSelf="center" pad="medium" basis="30%">
+                      <Box alignSelf="center" direction="column">
+                        <Box alignSelf="center"  basis="30%">
                           <Image margin="small" fit="contain" src={bag}/>
                           <Heading textAlign="center" level={2}>Bônus 2</Heading>
                         </Box>
                         <Box pad="medium" basis="70%">
-                          <Heading level={2}>Dicas de Renda Extra</Heading>
-                          <Text size="small">
+                          <Heading level={2} textAlign="center">Dicas de Renda Extra</Heading>
+                          <Text size="small" textAlign="center">
                             Nesse bônus vamos te mostrar outras formas de se fazer renda, porque depender de uma só renda é um grande risco.
                           </Text>
                         </Box>
@@ -500,7 +498,7 @@ class SalesPage extends React.Component {
               <ResponsiveContext.Consumer>
                 {(size) => (
                   <Box id="shadow" align="center" pad="large" margin={{ "vertical": "medium" }}>
-                    <Box direction="row" gap="medium">
+                    <Box direction="row-responsive" gap="medium">
                       <Box align="center">
                         <Image size={size} src={lock}/>
                         <Heading margin={size} size={size} textAlign="center" level={4}>Acesso Imediato</Heading>
