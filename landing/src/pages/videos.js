@@ -41,8 +41,8 @@ class SubscriptionConfirmationPage extends React.Component {
         // const title = "MoHub";
         // const summary = "Uma post teste para o Mohub";
         // const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
-        const url = "http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html";
-        const quote = "Veja que vídeo interessante"
+        const url = "http://www.mohub.com.br";
+        const quote = "Veja que negócio interessante"
         // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
         /*&p[images][0]=${image}'*/
         // let shareUrl = `http://www.facebook.com/sharer.php?s=100&p[title]=${title}&p[summary]=${summary}&p[url]=${url},'sharer','toolbar=0,status=0,width=580,height=325`;
@@ -54,11 +54,6 @@ class SubscriptionConfirmationPage extends React.Component {
                 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
                 <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
                 <div id="fb-root"></div>
-                <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
-                <meta property="og:type"               content="article" />
-                <meta property="og:title"              content="When Great Minds Don’t Think Alike" />
-                <meta property="og:description"        content="How much does culture influence creative thinking?" />
-                <meta property="og:image"              content="http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
                 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=153246718126522&autoLogAppEvents=1"></script>
               </Helmet>
               <div className="page">

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Momentum",
-    author: "Efforia.io",
+    author: "Efforia",
     description: "A Gatsby.js Starter based on Photon by HTML5 UP"
   },
   plugins: [
