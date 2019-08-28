@@ -53,19 +53,19 @@ class HomePage extends React.Component {
           <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
           <title>MoHub</title>
           <meta name="title" content="MoHub" />
-          <meta name="description" content="Saiba o que mais de 5.000 BRASILEIROS comuns estão fazendo para prosperar em 2019" />
+          <meta name="description" content="Saiba o que brasileiros comuns estão fazendo para prosperar esse ano" />
 
           <meta property="og:type" content="website"/>
           <meta property="og:url" content="http://www.mohub.com.br/"/>
           <meta property="og:title" content="MoHub"/>
-          <meta property="og:description" content="Saiba o que mais de 5.000 BRASILEIROS comuns estão fazendo para prosperar em 2019"/>
-          <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"/>
+          <meta property="og:description" content="Saiba o que brasileiros comuns estão fazendo para prosperar esse ano"/>
+          <meta property="og:image" content="https://ams3.digitaloceanspaces.com/efforia/mohub/sharing.jpg"/>
 
           <meta property="twitter:card" content="summary_large_image"/>
           <meta property="twitter:url" content="https://www.mohub.com.br/"/>
           <meta property="twitter:title" content="MoHub"/>
-          <meta property="twitter:description" content="Saiba o que mais de 5.000 BRASILEIROS comuns estão fazendo para prosperar em 2019"/>
-          <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"/>
+          <meta property="twitter:description" content="Saiba o que brasileiros comuns estão fazendo para prosperar esse ano"/>
+          <meta property="twitter:image" content="https://ams3.digitaloceanspaces.com/efforia/mohub/sharing.jpg"/>
         </Helmet>
         <Box id="index" justify="between" background={`url(${Background})`} fill="true">
           <div className="container-fluid">
