@@ -41,7 +41,7 @@ class SubscriptionConfirmationPage extends React.Component {
         // const title = "MoHub";
         // const summary = "Uma post teste para o Mohub";
         // const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
-        const url = "http://www.mohub.com.br";
+        const url = "http://www.mohub.com.br/?id=5d6d640ef5dd0c0004ee1267";
         const quote = "Veja que negócio interessante"
         // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
         /*&p[images][0]=${image}'*/
