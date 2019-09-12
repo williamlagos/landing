@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 // import { Link } from "gatsby"
-import { Image } from 'grommet'
+// import { Image } from 'grommet'
 // import { Location } from '@react/router';
 
 import Layout from '../components/layout';
@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 // import banner from "../assets/img/banner.png";
 // import landing01 from "../assets/img/video_play.png";
 import mohublogo from "../assets/img/mohub_white.png";
-import testimonial from "../assets/img/testimonial.png"
+// import testimonial from "../assets/img/testimonial.png"
 import Background from "../assets/img/backgrounds/bg-01.png";
 const parallaxBackground = { backgroundImage: `url(${Background})` };
 // const videoplaBackground = { backgroundImage: `url(${landing01})` };
@@ -32,6 +32,7 @@ class SubscriptionConfirmationPage extends React.Component {
       // Math.floor((Date.now()/1000 - res.json()[0]['created']/1000)/84600)
       this.setState({ step: 3 });
       console.log(res.json())
+      if(id == null) window.location = '/';
       // console.log(id)
     }
 
@@ -71,7 +72,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                     {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
                                     <iframe title="player" id="ytplayer" type="text/html" width="100%" height="400"
                                       src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
-                                      frameborder="0"/>
+                                      frameBorder="0"/>
                                   </div>
                                   <div className="flex-right">
                                     <button className="block" onClick={() => this.setState({ ytid: "IesIsKMjB4Y" })}>
@@ -91,7 +92,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                             {
                                               this.state.step > 1 ? (<i class="fas fa-play"></i>) : (
                                                 <>
-                                                  <i class="fas fa-lock"></i>
+                                                  <i className="fas fa-lock"></i>
                                                   <h1>14/05</h1>
                                                 </>
                                               )
@@ -105,9 +106,9 @@ class SubscriptionConfirmationPage extends React.Component {
                                         <div className={this.state.step > 2 ? 'overlay' : 'overlay green'}>
                                           <div className="overlay-content">
                                             {
-                                              this.state.step > 2 ? (<i class="fas fa-play"></i>) : (
+                                              this.state.step > 2 ? (<i className="fas fa-play"></i>) : (
                                                 <>
-                                                  <i class="fas fa-lock"></i>
+                                                  <i className="fas fa-lock"></i>
                                                   <h1>21/05</h1>
                                                 </>
                                               )
@@ -121,9 +122,9 @@ class SubscriptionConfirmationPage extends React.Component {
                                         <div className={this.state.step > 3 ? 'overlay' : 'overlay green'}>
                                           <div className="overlay-content">
                                             {
-                                              this.state.step > 3 ? (<i class="fas fa-play"></i>) : (
+                                              this.state.step > 3 ? (<i className="fas fa-play"></i>) : (
                                                 <>
-                                                  <i class="fas fa-lock"></i>
+                                                  <i className="fas fa-lock"></i>
                                                   <h1>28/05</h1>
                                                 </>
                                               )
@@ -151,12 +152,12 @@ class SubscriptionConfirmationPage extends React.Component {
                         style={{ textDecoration: 'none' }}
                         type="icon_link"
                         onClick={() => window.open(shareDialog)}>
-                        <i class="fab fa-facebook-square"></i>
+                        <i className="fab fa-facebook-square"></i>
                         &nbsp; Compartilhar
                       </button>
                       <p/>
                       {/*<Link className="btn-share btn-whatsapp" to="#" >
-                          <i class="fab fa-whatsapp"></i>
+                          <i className="fab fa-whatsapp"></i>
                           <p>&nbsp; Compartilhar</p>
                       </Link>*/}
                     </div>
@@ -169,15 +170,15 @@ class SubscriptionConfirmationPage extends React.Component {
                   <div className="row">
                     <div className="nine columns">
                       <h3>Comente no Facebook</h3>
-                      <div class="fb-comments" data-href="https://www.facebook.com/somosmohub" data-width="100%" data-numposts="5"></div>
+                      <div className="fb-comments" data-href="https://www.facebook.com/somosmohub" data-width="100%" data-numposts="5"></div>
                     </div>
                     <div className="three columns">
                       <h3>Depoimentos</h3>
                       <div className="row top">
                         <div className="twelve columns">
-                             <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                             <iframe title="embed1" id="ytplayer" type="text/html" width="100%" height="100%"
                                       src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
-                                      frameborder="0"/>
+                                      frameBorder="0"/>
                           <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
                             eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
                           <p>Guilherme Petrickicz</p>
@@ -185,9 +186,9 @@ class SubscriptionConfirmationPage extends React.Component {
                       </div>
                       <div className="row top">
                         <div className="twelve columns">
-                             <iframe id="ytplayer" type="text/html" width="100%" height="100%"
+                             <iframe title="embed2" id="ytplayer" type="text/html" width="100%" height="100%"
                                       src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
-                                      frameborder="0"/>
+                                      frameBorder="0"/>
                           <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
                             eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
                           <p>Guilherme Petrickicz</p>

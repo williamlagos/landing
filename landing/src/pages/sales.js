@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import { Box, Image, Stack, Text, Heading, Collapsible, Button, ResponsiveContext } from 'grommet'
 
 import Footer from "../components/Footer";
@@ -8,8 +8,8 @@ import Layout from '../components/layout';
 import Container from '../components/Container';
 import Background from "../assets/img/backgrounds/bg-01.png";
 import MohubLogo from "../assets/img/mohub_white.png";
-import landing01 from "../assets/img/video.png";
-import testimonial from "../assets/img/testimonial.png"
+// import landing01 from "../assets/img/video.png";
+// import testimonial from "../assets/img/testimonial.png"
 import shield from "../assets/img/shield.png"
 import bulb from "../assets/img/bulb.png"
 import lock from "../assets/img/lock.png"
@@ -42,6 +42,11 @@ class SalesPage extends React.Component {
       collapsed5: false,
       collapsed6: false
     }
+  }
+
+  componentDidMount() {
+    const id = window.location.search.slice(1).split("&")[0].split("=")[1];
+    if(id == null) window.location = '/';
   }
 
   toggleModal(event) {
@@ -85,7 +90,7 @@ class SalesPage extends React.Component {
             <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
             <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
           </Helmet>
-          <Box id="cover2" justify="between" background={`url(${Background})`} fill="true">
+          <Box id="cover2" justify="between" background={`url(${Background})`} fill={true}>
             <Container>
                 <div className="row">
                     <div className="offset-by-one ten columns">
@@ -95,9 +100,9 @@ class SalesPage extends React.Component {
                         <br/>
                         <div className="white">
                           {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
-                          <iframe id="ytplayer" type="text/html" width="100%" height="400"
+                          <iframe title="embed1" id="ytplayer" type="text/html" width="100%" height="400"
                             src="http://www.youtube.com/embed/HzZxcfVn_08/?autoplay=0"
-                            frameborder="0"/>
+                            frameBorder="0"/>
                           <Box align="center" pad="medium">
                             <br/>
                             <a className="btn" href="#investment" >
@@ -115,34 +120,34 @@ class SalesPage extends React.Component {
                   <div className="row top">
                     <div className="four columns">
                       {/*<Image fit="contain" width="100%" src={testimonial}/>*/}
-                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                      <iframe title="embed2" id="ytplayer" type="text/html" width="100%" height="200"
                         src="http://www.youtube.com/embed/u4tq9Ef5czw/?autoplay=0"
-                        frameborder="0"/>
+                        frameBorder="0"/>
                     </div>
                     <div className="four columns">
-                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                      <iframe title="embed3" id="ytplayer" type="text/html" width="100%" height="200"
                         src="http://www.youtube.com/embed/WVQe1ZE7FtU/?autoplay=0"
-                        frameborder="0"/>
+                        frameBorder="0"/>
                     </div>
                     <div className="four columns">
-                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                      <iframe title="embed4" id="ytplayer" type="text/html" width="100%" height="200"
                         src="http://www.youtube.com/embed/2Hjodq3JdoI/?autoplay=0"
-                        frameborder="0"/>
+                        frameBorder="0"/>
                     </div>
-                    <div style={{ "margin-left" : "0" }} className="four columns">
-                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                    <div style={{ "marginLeft" : "0" }} className="four columns">
+                      <iframe title="embed5" id="ytplayer" type="text/html" width="100%" height="200"
                         src="http://www.youtube.com/embed/vB5nTx5fUXM/?autoplay=0"
-                        frameborder="0"/>
+                        frameBorder="0"/>
                     </div>
                     <div className="four columns">
-                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                      <iframe title="embed6" id="ytplayer" type="text/html" width="100%" height="200"
                         src="http://www.youtube.com/embed/Ei0no8s84EM/?autoplay=0"
-                        frameborder="0"/>
+                        frameBorder="0"/>
                     </div>
                     <div className="four columns">
-                      <iframe id="ytplayer" type="text/html" width="100%" height="200"
+                      <iframe title="embed7" id="ytplayer" type="text/html" width="100%" height="200"
                         src="http://www.youtube.com/embed/fD41AwgC_xM/?autoplay=0"
-                        frameborder="0"/>
+                        frameBorder="0"/>
                     </div>
                   </div>
             </Container>
@@ -239,7 +244,7 @@ class SalesPage extends React.Component {
                     </Box>
                   </Stack>
                 </div>
-                <div className="row" style={{ "margin-top": "40px" }}>
+                <div className="row" style={{ "marginTop": "40px" }}>
                   <Stack className="twelve columns mountain" anchor="top-left">
                     <Box pad={{ "vertical": "36px" }} className="blue-gradient">
                       <Heading textAlign="center" level={3}>Box 3</Heading>
@@ -370,7 +375,7 @@ class SalesPage extends React.Component {
                     <Text textAlign="center">Todos os 2 bônus</Text>
                     <Text textAlign="center">6h de consultoria online</Text>
                     <Text textAlign="center">Mohub bot</Text>
-                    <Box border="#e1e1e7" margin="small"/>
+                    <Box border={{ "color": "#e1e1e7" }} margin="small"/>
                     <Heading textAlign="center" color="#0266ae">R$ 55,00</Heading>
                     <a className="btn btn-block" href="#investment">
                       Fazer parte da MoHub

@@ -13,15 +13,15 @@ class Template extends Component {
   }
 
   componentDidMount () {
-    this.timeoutId = setTimeout(() => {
+    /*this.timeoutId = setTimeout(() => {
         this.setState({loading: ''});
-    }, 100);
+    }, 100);*/
   }
 
   componentWillUnmount () {
-    if (this.timeoutId) {
+    /*if (this.timeoutId) {
         clearTimeout(this.timeoutId);
-    }
+    }*/
   }
 
   render() {

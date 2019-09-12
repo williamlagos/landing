@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link, navigate } from 'gatsby'
+import { /*Link,*/ navigate } from 'gatsby'
 import { Box, /*Button,*/ Image, Heading, Layer, Form, FormField } from 'grommet'
 
 import Footer from "../components/Footer";
@@ -42,6 +42,7 @@ class HomePage extends React.Component {
       body: JSON.stringify({ email, name })
     });
     const content = await rawResponse.json()
+    window.localStorage.setItem(content._id, content.created);
     navigate(`/home?id=${content._id}`)
   }
 
@@ -67,14 +68,14 @@ class HomePage extends React.Component {
           <meta property="twitter:description" content="Saiba o que brasileiros comuns estão fazendo para prosperar esse ano"/>
           <meta property="twitter:image" content="https://ams3.digitaloceanspaces.com/efforia/mohub/sharing.jpg"/>
         </Helmet>
-        <Box id="index" justify="between" background={`url(${Background})`} fill="true">
+        <Box id="index" justify="between" background={`url(${Background})`} fill={true}>
           <div className="container-fluid">
           <Container>
             <Box className="six columns" pad="medium">
               <br/>
               <Image className="mohub-logo" alignSelf="start" fallback="MoHub Logo" fit="contain" src={MohubLogo}/>
-              <Heading level="2" style={{ "margin": "50px 0px", "font-weight": "bolder" }}> Saiba o que mais de
-              <div style={{ "color": "#0385e3", "text-transform": "uppercase" }}> 5.000 brasileiros </div> comuns estão fazendo para prosperar em 2019 </Heading>
+              <Heading level="2" style={{ "margin": "50px 0px", "fontWeight": "bolder" }}> Saiba o que mais de
+              <div style={{ "color": "#0385e3", "textTransform": "uppercase" }}> 5.000 brasileiros </div> comuns estão fazendo para prosperar em 2019 </Heading>
               <button className="btn gradient" onClick={e => this.toggleModal(e)}>Quero saber</button>
               <br/>
             </Box>
