@@ -42,7 +42,7 @@ class HomePage extends React.Component {
       body: JSON.stringify({ email, name })
     });
     const content = await rawResponse.json()
-    window.localStorage.setItem(content._id, content.created);
+    window.localStorage.setItem(content._id, content.createdAt);
     navigate(`/home?id=${content._id}`)
   }
 

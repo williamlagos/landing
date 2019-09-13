@@ -25,14 +25,32 @@ class SubscriptionConfirmationPage extends React.Component {
       }
     }
 
+    async timer(id) {
+      const res = await fetch(`http://mohub-api.herokuapp.com/leads/${id}`)
+      const lead = await res.json()
+      const day = 1000 * 60 * 60 * 24
+      const today = new Date()
+      const createdDay = new Date(lead.createdAt)
+      const result = Math.round(today.getTime() - createdDay.getTime()) / (day)
+      return result.toFixed(0)
+
+    }
+
     async componentDidMount() {
       const id = window.location.search.slice(1).split("&")[0].split("=")[1];
-      const res = await fetch(`http://api.mohub.com.br/leads?id=${id}`);
       // Controle por dias, comparativo entre datas
       // Math.floor((Date.now()/1000 - res.json()[0]['created']/1000)/84600)
-      this.setState({ step: 3 });
-      console.log(res.json())
-      if(id == null) window.location = '/';
+      const step = await this.timer(id);
+      this.setState({ step });
+      if(id == null) {
+        window.location = '/';
+      } else if(id >= 7) {
+        // Sales page
+        window.location = '/sales';
+      } else if(id >= 15) {
+        // Blacklisted
+        window.location = '/';
+      }
       // console.log(id)
     }
 
