@@ -44,9 +44,31 @@ class SalesPage extends React.Component {
     }
   }
 
-  componentDidMount() {
+  async timer(id) {
+    const res = await fetch(`http://mohub-api.herokuapp.com/leads/${id}`)
+    const lead = await res.json()
+    const day = 1000 * 60 * 60 * 24
+    const today = new Date()
+    const createdDay = new Date(lead.createdAt)
+    const result = Math.round(today.getTime() - createdDay.getTime()) / (day)
+    return result.toFixed(0)
+  }
+
+  async componentDidMount() {
     const id = window.location.search.slice(1).split("&")[0].split("=")[1];
-    if(id == null) window.location = '/';
+    if(id == null) {
+      window.location = '/';
+    } else {
+      const step = await this.timer(id);
+      this.setState({ step });
+      if(step <= 7) {
+        // Videos page
+        window.location = '/videos';
+      } else if(step >= 15) {
+        // Blacklisted
+        window.location = '/';
+      }
+    }
   }
 
   toggleModal(event) {
