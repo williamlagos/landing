@@ -109,7 +109,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                         <div className={this.state.step > 1 ? 'overlay' : 'overlay green'}>
                                           <div className="overlay-content">
                                             {
-                                              this.state.step > 1 ? (<i class="fas fa-play"></i>) : (
+                                              this.state.step > 2 ? (<i class="fas fa-play"></i>) : (
                                                 <>
                                                   <i className="fas fa-lock"></i>
                                                   <h1>14/05</h1>
@@ -125,7 +125,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                         <div className={this.state.step > 2 ? 'overlay' : 'overlay green'}>
                                           <div className="overlay-content">
                                             {
-                                              this.state.step > 2 ? (<i className="fas fa-play"></i>) : (
+                                              this.state.step > 4 ? (<i className="fas fa-play"></i>) : (
                                                 <>
                                                   <i className="fas fa-lock"></i>
                                                   <h1>21/05</h1>
@@ -141,7 +141,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                         <div className={this.state.step > 3 ? 'overlay' : 'overlay green'}>
                                           <div className="overlay-content">
                                             {
-                                              this.state.step > 3 ? (<i className="fas fa-play"></i>) : (
+                                              this.state.step > 6 ? (<i className="fas fa-play"></i>) : (
                                                 <>
                                                   <i className="fas fa-lock"></i>
                                                   <h1>28/05</h1>
