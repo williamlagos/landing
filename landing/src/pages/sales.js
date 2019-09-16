@@ -63,10 +63,10 @@ class SalesPage extends React.Component {
       this.setState({ step });
       if(step <= 7) {
         // Videos page
-        window.location = '/videos';
+         window.location = '/videos';
       } else if(step >= 15) {
         // Blacklisted
-        window.location = '/';
+         window.location = '/';
       }
     }
   }
@@ -122,7 +122,7 @@ class SalesPage extends React.Component {
                         <br/>
                         <div className="white">
                           {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
-                          <iframe title="embed1" id="ytplayer" type="text/html" width="100%" height="400"
+                          <iframe title="embed1" id="ytplayer" type="text/html" width="100%" 
                             src="http://www.youtube.com/embed/HzZxcfVn_08/?autoplay=0"
                             frameBorder="0"/>
                           <Box align="center" pad="medium">
@@ -167,7 +167,7 @@ class SalesPage extends React.Component {
                         frameBorder="0"/>
                     </div>
                     <div className="four columns">
-                      <iframe title="embed7" id="ytplayer" type="text/html" width="100%" height="200"
+                      <iframe title="embed7" id="ytplayer" type="text/html" width="100%" 
                         src="http://www.youtube.com/embed/fD41AwgC_xM/?autoplay=0"
                         frameBorder="0"/>
                     </div>
@@ -191,6 +191,9 @@ class SalesPage extends React.Component {
                     </Box>
                   </div>
                 </div>
+                <div className="founder-center hidden-desktop">
+                    <Heading level={2} margin={{"left": "20%", "top": "330px"}} color="white">Sobre o <br/>Fundador</Heading>
+                  </div>
                 <Image className="the-founder" src={sperry}/>
               </Stack>
               <Box pad="large" className="founder-bottom hidden-desktop">
@@ -218,7 +221,7 @@ class SalesPage extends React.Component {
                       </Box>
                       <Box align="center">
                         <Image fit="contain" src={shield}/>
-                        <Heading margin={size} size={size} textAlign="center" level={4}>Investimento 100% seguro</Heading>
+                        <Heading margin={size} size={size} textAlign="center" level={4}>Investimento<br/>100% seguro</Heading>
                       </Box>
                     </Box>
                     <br/>
@@ -536,7 +539,7 @@ class SalesPage extends React.Component {
                       </Box>
                       <Box align="center">
                         <Image fit="contain" src={shield}/>
-                        <Heading margin={size} size={size} textAlign="center" level={4}>Investimento 100% seguro</Heading>
+                        <Heading margin={size} size={size} textAlign="center" level={4}>Investimento<br/>100% seguro</Heading>
                       </Box>
                     </Box>
                     <br/>

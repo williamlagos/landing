@@ -453,7 +453,7 @@ button {
   border-radius: 0px;
   background: #42434e;
   color: white;
-  padding: 15px 25px;
+  padding: 15px 45px 15px 25px;
   font-weight: bold;
 }
 
@@ -472,7 +472,7 @@ button {
 }
 
 .founder {
-  min-height: 840px !important;
+  min-height: 900px !important;
 }
 
 .founder-bottom {
@@ -488,6 +488,14 @@ button {
   background-size: cover;
 }
 
+.founder-center{
+  width: 100vh;
+  height: 500px !important;
+  margin: 0px;
+  background:url('../assets/img/city.png');
+  background-size: cover;
+}
+
 .founder-right {
   min-height: 500px !important;
   max-height: 500px !important;
@@ -499,7 +507,7 @@ button {
 
 
 .the-founder {
-  /* width: 80%; */
+  height: 500px;
   margin-bottom: -5px ;
 }
 
@@ -538,9 +546,16 @@ left: 0;
   min-height: 500px;
 }
 
+#ytplayer{
+  height: 400px
+}
+
 @media (max-width: 768px) {
   .hidden-mobile{
     display: none;
+  }
+  #ytplayer{
+    height: 200px
   }
 }
 
