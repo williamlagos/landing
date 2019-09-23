@@ -18,6 +18,8 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      nameErrorMessage: '',
+      emailErrorMessage: '',
       toggledModal: false
     }
   }
@@ -42,8 +44,12 @@ class HomePage extends React.Component {
       body: JSON.stringify({ email, name })
     });
     const content = await rawResponse.json()
-    window.localStorage.setItem(content._id, content.createdAt);
-    navigate(`/home?id=${content._id}`)
+    if (content._id === 0) {
+      this.setState({ emailErrorMessage: 'E-mail inválido. Digite novamente' })
+    } else {
+      window.localStorage.setItem(content._id, content.createdAt);
+      navigate(`/home?id=${content._id}`)
+    }
   }
 
   render() {
@@ -89,8 +95,8 @@ class HomePage extends React.Component {
               <Box pad="medium">
                 <Form onSubmit={(e) => this.getLead(e)} id="email">
                   <Heading level="2">Cadastre o seu e-mail agora!</Heading>
-                  <FormField name="name" label="Nome" />
-                  <FormField name="email" label="E-mail" />
+                  <FormField name="name" error={this.state.nameErrorMessage} label="Nome" />
+                  <FormField name="email" error={this.state.emailErrorMessage} label="E-mail" />
                   <button className="btn gradient" style={{ width: '100%' }}>
                   <input type="submit" style={{ textDecoration: 'none', color: 'white', background: 'none', border: 'none'}} value="Cadastrar" />
                   </button>
