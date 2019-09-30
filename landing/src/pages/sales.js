@@ -57,7 +57,7 @@ class SalesPage extends React.Component {
   async componentDidMount() {
     const id = window.location.search.slice(1).split("&")[0].split("=")[1];
     if(id == null) {
-      window.location = '/';
+      // window.location = '/';
     } else {
       const step = await this.timer(id);
       this.setState({ step });

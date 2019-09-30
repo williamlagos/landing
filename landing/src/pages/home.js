@@ -16,7 +16,7 @@ class IndexPage extends React.Component {
     componentDidMount() {
       const id = window.location.search.slice(1).split("&")[0].split("=")[1];
       if(id == null) {
-        window.location = '/'
+        // window.location = '/'
       } else {
         console.log(window.localStorage.getItem(id))
       }
