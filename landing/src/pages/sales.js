@@ -128,7 +128,7 @@ class SalesPage extends React.Component {
                           <Box align="center" pad="medium">
                             <br/>
                             <a className="btn" href="#investment" >
-                              &nbsp; Faça parte da MoHub
+                              &nbsp; Fazer parte da MoHub
                             </a>
                           </Box>
                         </div>
@@ -224,7 +224,7 @@ class SalesPage extends React.Component {
                     <br/>
                     <Box margin={size}>
                       <a className="btn" href="#investment" >
-                        &nbsp; Faça parte da MoHub
+                        &nbsp; Fazer parte da MoHub
                       </a>
                     </Box>
                   </Box>
@@ -542,7 +542,7 @@ class SalesPage extends React.Component {
                     <br/>
                     <Box margin={size}>
                       <a className="btn" href="#investment" >
-                        &nbsp; Faça parte da MoHub
+                        &nbsp; Fazer parte da MoHub
                       </a>
                     </Box>
                   </Box>

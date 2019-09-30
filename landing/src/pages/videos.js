@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 // import { Image } from 'grommet'
 // import { Location } from '@react/router';
 
@@ -43,7 +43,8 @@ class SubscriptionConfirmationPage extends React.Component {
         window.location = '/';
       } else {
         // Controle por dias, comparativo entre datas
-        const step = await this.timer(id);
+        // const step = await this.timer(id);
+        const step = 0;
         this.setState({ step });
         if(step >= 7) {
           // Sales page
@@ -61,7 +62,7 @@ class SubscriptionConfirmationPage extends React.Component {
         // const title = "MoHub";
         // const summary = "Uma post teste para o Mohub";
         // const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
-        const url = "http://www.mohub.com.br/?id=5d6d640ef5dd0c0004ee1267";
+        const url = "http://www.mohub.com.br/?id=5d6d640ef5dd0c0004ee1267&utm_source=facebook&utm_medium=share&utm_campaign=cpl";
         const quote = "Veja que negócio interessante"
         // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
         /*&p[images][0]=${image}'*/
@@ -74,6 +75,8 @@ class SubscriptionConfirmationPage extends React.Component {
                 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
                 <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
                 <div id="fb-root"></div>
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0&appId=153246718126522&autoLogAppEvents=1"></script>
                 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=153246718126522&autoLogAppEvents=1"></script>
               </Helmet>
               <div className="page">
@@ -90,7 +93,7 @@ class SubscriptionConfirmationPage extends React.Component {
                                   <div className="flex-left">
                                     {/*<img className="fluid" src={landing01} alt="video 1"/>*/}
                                     <iframe title="player" id="ytplayer" type="text/html" width="100%" height="400"
-                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
+                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=1`}
                                       frameBorder="0"/>
                                   </div>
                                   <div className="flex-right">
@@ -165,7 +168,7 @@ class SubscriptionConfirmationPage extends React.Component {
                   <div className="full-width-container white">
                     <div className="container">
                   <div className="row top bottom">
-                    <div className="twelve columns center">
+                    <div className="six columns center">
                       <button id="fb-share"
                         className="btn-facebook"
                         style={{ textDecoration: 'none' }}
@@ -175,10 +178,15 @@ class SubscriptionConfirmationPage extends React.Component {
                         &nbsp; Compartilhar
                       </button>
                       <p/>
-                      {/*<Link className="btn-share btn-whatsapp" to="#" >
+                    </div>
+                    <div className="six columns center">
+                      <Link className="btn-share btn-whatsapp" to="#" >
                           <i className="fab fa-whatsapp"></i>
                           <p>&nbsp; Compartilhar</p>
-                      </Link>*/}
+                      </Link>
+                    </div>
+                    <div className="twelve columns center">
+                      <div class="fb-page" data-href="https://www.facebook.com/somosmohub/" data-tabs="" data-width="500px" data-height="70px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/somosmohub/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/somosmohub/">MoHub</a></blockquote></div>
                     </div>
                   </div>
                   {/*<div className="row bottom">
@@ -196,7 +204,7 @@ class SubscriptionConfirmationPage extends React.Component {
                       <div className="row top">
                         <div className="twelve columns">
                              <iframe title="embed1" id="ytplayer" type="text/html" width="100%" height="100%"
-                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
+                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=1`}
                                       frameBorder="0"/>
                           <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
                             eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
@@ -206,7 +214,7 @@ class SubscriptionConfirmationPage extends React.Component {
                       <div className="row top">
                         <div className="twelve columns">
                              <iframe title="embed2" id="ytplayer" type="text/html" width="100%" height="100%"
-                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
+                                      src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=1`}
                                       frameBorder="0"/>
                           <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
                             eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
