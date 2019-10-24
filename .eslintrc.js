@@ -5,7 +5,9 @@ module.exports = {
     node: true
   },
   extends: [
-    'standard'
+    'standard',
+    'eslint:recommended',
+    'plugin:react/recommended'
   ],
   globals: {
     Atomics: 'readonly',

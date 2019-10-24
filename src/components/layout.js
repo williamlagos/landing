@@ -1,31 +1,32 @@
 import React, { Component } from 'react'
 import { Grommet, ResponsiveContext } from 'grommet'
-import { connect } from "react-redux"
+import { connect } from 'react-redux'
+import { PropTypes } from 'prop-types'
 import '../assets/css/normalize.css'
 import '../assets/css/skeleton.css'
 import './layout.css'
 
 class Template extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       loading: 'is-loading'
     }
   }
 
   componentDidMount () {
-    /*this.timeoutId = setTimeout(() => {
+    /* this.timeoutId = setTimeout(() => {
         this.setState({loading: ''});
-    }, 100);*/
+    }, 100); */
   }
 
   componentWillUnmount () {
-    /*if (this.timeoutId) {
+    /* if (this.timeoutId) {
         clearTimeout(this.timeoutId);
-    }*/
+    } */
   }
 
-  render() {
+  render () {
     const { children } = this.props
     return (
       <Grommet full={true}>
@@ -37,12 +38,16 @@ class Template extends Component {
   }
 }
 
+Template.propTypes = {
+  children: PropTypes.element
+}
+
 const mapStateToProps = ({ count }) => {
   return { count }
 }
 
 const mapDispatchToProps = dispatch => {
-  return { increment: () => dispatch({ type: `INCREMENT` }) }
+  return { increment: () => dispatch({ type: 'INCREMENT' }) }
 }
 
 const Layout = connect(
@@ -50,4 +55,4 @@ const Layout = connect(
   mapDispatchToProps
 )(Template)
 
-export default Layout;
+export default Layout

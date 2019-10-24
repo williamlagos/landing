@@ -26,6 +26,7 @@
     "node-sass": "^4.12.0",
     "polished": "^3.4.1",
     "pretty-ms": "^5.0.0",
+    "prop-types": "^15.7.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-helmet": "^5.2.1",
@@ -43,7 +44,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run build && node app.js",
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "dev": "gatsby develop --port 4000",
     "develop": "gatsby develop",
     "deploy": "node .bin/deploy",
