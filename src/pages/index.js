@@ -1,21 +1,21 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { /*Link,*/ navigate } from 'gatsby'
-import { Box, /*Button,*/ Image, Heading, Layer, Form, FormField } from 'grommet'
+import { /* Link, */ navigate } from 'gatsby'
+import { Box, /* Button, */ Image, Heading, Layer, Form, FormField } from 'grommet'
 
-import Footer from "../components/Footer";
-import Layout from '../components/layout';
-import Container from '../components/Container';
-import Background from "../assets/img/backgrounds/bg.png";
-import MohubLogo from "../assets/img/mohub.png";
+import Footer from '../components/Footer'
+import Layout from '../components/layout'
+import Container from '../components/Container'
+import Background from '../assets/img/backgrounds/bg.png'
+import MohubLogo from '../assets/img/mohub.png'
 const parallaxBackground = {
   backgroundImage: `url(${Background})`,
   backgroundPosition: 'center',
   backgroundSize: 'cover'
-};
+}
 
 class HomePage extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       nameErrorMessage: '',
@@ -24,27 +24,27 @@ class HomePage extends React.Component {
     }
   }
 
-  toggleModal(event) {
+  toggleModal (event) {
     event.preventDefault()
     this.setState({ toggledModal: true })
   }
 
-  dismissModal() {
+  dismissModal () {
     this.setState({ toggledModal: false })
   }
 
-  async getLead(event) {
-    const { email, name } = event.value;
-    const { username, password } = Math.random().toString(36).substr(2, 10).toUpperCase();
+  async getLead (event) {
+    const { email, name } = event.value
+    const { username, password } = Math.random().toString(36).substr(2, 10).toUpperCase()
     const rawResponse = await fetch('https://mohub.com.br/wp-json/wp/v2/users/register', {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
+        Accept: 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbW9odWIuY29tLmJyIiwiaWF0IjoxNTcxMDY2MDI5LCJuYmYiOjE1NzEwNjYwMjksImV4cCI6MTU3MTY3MDgyOSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiNSJ9fX0.1D6qoY8Jsn0bBMdWPFx2zse1g6xZd3ZwIeRmksNxUeU'
+        Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbW9odWIuY29tLmJyIiwiaWF0IjoxNTcxMDY2MDI5LCJuYmYiOjE1NzEwNjYwMjksImV4cCI6MTU3MTY3MDgyOSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiNSJ9fX0.1D6qoY8Jsn0bBMdWPFx2zse1g6xZd3ZwIeRmksNxUeU'
       },
       body: JSON.stringify({ email, name, username, password })
-    });
+    })
     const content = await rawResponse.json()
     if (content.code !== 200) {
       this.setState({ emailErrorMessage: 'E-mail inválido. Digite novamente' })
@@ -52,19 +52,19 @@ class HomePage extends React.Component {
       const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/token', {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
+          Accept: 'application/json',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ username, password })
-      });
-      const res = await response.json();
-      window.localStorage.setItem(username, res.token);
+      })
+      const res = await response.json()
+      window.localStorage.setItem(username, res.token)
       navigate(`/home?id=${res.token}`)
     }
   }
 
-  render() {
-    const siteTitle = "MoHub"
+  render () {
+    const siteTitle = 'MoHub'
     return (
       <Layout style={parallaxBackground}>
         <Helmet title={siteTitle}>
@@ -87,16 +87,16 @@ class HomePage extends React.Component {
         </Helmet>
         <Box id="index" justify="between" background={`url(${Background})`} fill={true}>
           <div className="container-fluid">
-          <Container>
-            <Box className="six columns" pad="medium">
-              <br/>
-              <Image className="mohub-logo" alignSelf="start" fallback="MoHub Logo" fit="contain" src={MohubLogo}/>
-              <Heading level="2" style={{ "margin": "50px 0px", "fontWeight": "bolder" }}> Saiba o que mais de
-              <div style={{ "color": "#0385e3", "textTransform": "uppercase" }}> 5.000 brasileiros </div> comuns estão fazendo para prosperar em 2019 </Heading>
-              <button className="btn gradient" onClick={e => this.toggleModal(e)}>Quero saber</button>
-              <br/>
-            </Box>
-          </Container>
+            <Container>
+              <Box className="six columns" pad="medium">
+                <br/>
+                <Image className="mohub-logo" alignSelf="start" fallback="MoHub Logo" fit="contain" src={MohubLogo}/>
+                <Heading level="2" style={{ margin: '50px 0px', fontWeight: 'bolder' }}> Saiba o que mais de
+                  <div style={{ color: '#0385e3', textTransform: 'uppercase' }}> 5.000 brasileiros </div> comuns estão fazendo para prosperar em 2019 </Heading>
+                <button className="btn gradient" onClick={e => this.toggleModal(e)}>Quero saber</button>
+                <br/>
+              </Box>
+            </Container>
           </div>
           {this.state.toggledModal && (
             <Layer
@@ -109,25 +109,25 @@ class HomePage extends React.Component {
                   <FormField name="name" error={this.state.nameErrorMessage} label="Nome" />
                   <FormField name="email" error={this.state.emailErrorMessage} label="E-mail" />
                   <button className="btn gradient" style={{ width: '100%' }}>
-                  <input type="submit" style={{ textDecoration: 'none', color: 'white', background: 'none', border: 'none'}} value="Cadastrar" />
+                    <input type="submit" style={{ textDecoration: 'none', color: 'white', background: 'none', border: 'none' }} value="Cadastrar" />
                   </button>
                 </Form>
               </Box>
             </Layer>
           )}
           <Box>
-            {/*<button
+            {/* <button
               className="btn gradient"
               style={{ 'border-radius': 0, 'border': 0, 'margin-bottom': 0 }}
               onClick={e => this.toggleModal(e)}>
               Cadastrar e-mail
-            </button>*/}
+            </button> */}
             <Footer/>
           </Box>
         </Box>
       </Layout>
-    );
+    )
   }
 }
 
-export default HomePage;
+export default HomePage

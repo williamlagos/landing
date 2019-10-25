@@ -39,7 +39,7 @@ class Template extends Component {
 }
 
 Template.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.array
 }
 
 const mapStateToProps = ({ count }) => {

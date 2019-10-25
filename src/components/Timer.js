@@ -2,7 +2,7 @@ const React = require('react')
 const ms = require('pretty-ms')
 
 class Timer extends React.Component {
-  constructor(props){
+  constructor (props) {
     super(props)
     this.state = {
       time: 0,
@@ -15,7 +15,7 @@ class Timer extends React.Component {
     this.resetTimer = this.resetTimer.bind(this)
   }
 
-  startTimer() {
+  startTimer () {
     this.setState({
       isOn: true,
       time: this.state.time,
@@ -23,37 +23,36 @@ class Timer extends React.Component {
     })
     this.timer = setInterval(() => this.setState({
       time: Date.now() - this.state.start
-    }), 1);
+    }), 1)
   }
 
-  stopTimer() {
-    this.setState({isOn: false})
+  stopTimer () {
+    this.setState({ isOn: false })
     clearInterval(this.timer)
   }
 
-  resetTimer() {
-    this.setState({time: 0, isOn: false})
+  resetTimer () {
+    this.setState({ time: 0, isOn: false })
   }
 
-  render() {
+  render () {
+    const start = (this.state.time === 0)
+      ? <button onClick={this.startTimer}>start</button>
+      : null
 
-    let start = (this.state.time == 0) ?
-      <button onClick={this.startTimer}>start</button> :
-      null
+    const stop = (this.state.time === 0 || !this.state.isOn)
+      ? null
+      : <button onClick={this.stopTimer}>stop</button>
 
-    let stop = (this.state.time == 0 || !this.state.isOn) ?
-      null :
-      <button onClick={this.stopTimer}>stop</button>
+    const resume = (this.state.time === 0 || this.state.isOn)
+      ? null
+      : <button onClick={this.startTimer}>resume</button>
 
-    let resume = (this.state.time == 0 || this.state.isOn) ?
-      null :
-      <button onClick={this.startTimer}>resume</button>
+    const reset = (this.state.time === 0 || this.state.isOn)
+      ? null
+      : <button onClick={this.resetTimer}>reset</button>
 
-    let reset = (this.state.time == 0 || this.state.isOn) ?
-      null :
-      <button onClick={this.resetTimer}>reset</button>
-
-    return(
+    return (
       <div>
         <h3>timer: {ms(this.state.time)}</h3>
         {start}

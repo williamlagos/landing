@@ -276,9 +276,9 @@ button {
   margin: 0em .5em;
 }
 
-.btn-share p {
-  /* display:none; */
-}
+/* .btn-share p {
+   display:none; 
+} */
 
 .btn-whatsapp {
   background-color: #3cbea5;

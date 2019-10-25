@@ -64,10 +64,10 @@ class SalesPage extends React.Component {
       this.setState({ step })
       if (step <= 7) {
         // Videos page
-        window.location = '/videos'
+        // window.location = '/videos'
       } else if (step >= 15) {
         // Blacklisted
-        window.location = '/'
+        // window.location = '/'
       }
     }
   }
@@ -340,7 +340,7 @@ class SalesPage extends React.Component {
             </Box>
             <ResponsiveContext.Consumer>
               {(size) => (
-                  <>
+                <>
                   <Box pad="medium" direction={size === 'small' ? 'column' : 'row'} background="#42434e" fill="horizontal">
                     <Box className={size === 'small' ? 'bottom-gradient' : 'right-gradient'} alignSelf="center" pad="medium" basis="30%">
                       <Image margin="medium" fit="contain" src={gift}/>
@@ -377,7 +377,7 @@ class SalesPage extends React.Component {
                     </Box>
                   </Box>
                   <Box margin="medium"></Box>
-                  </>
+                </>
               )}
             </ResponsiveContext.Consumer>
           </Container>

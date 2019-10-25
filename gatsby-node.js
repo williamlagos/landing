@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require("path");
+/* const path = require("path");
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
     actions.setWebpackConfig({
@@ -13,4 +13,4 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
             modules: [path.resolve(__dirname, "src"), "node_modules"],
         },
     })
-}
+} */
