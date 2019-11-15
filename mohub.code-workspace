@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "."
+		},
+		{
+			"path": "/Users/william/Developer/mohub-api"
 		}
 	],
 	"settings": {}
