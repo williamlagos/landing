@@ -14,6 +14,14 @@ const parallaxBackground = {
   backgroundSize: 'cover'
 }
 
+if (typeof (window) === 'undefined') {
+  global.window = {
+    location: {
+      search: ''
+    }
+  }
+}
+
 class HomePage extends React.Component {
   constructor (props) {
     super(props)

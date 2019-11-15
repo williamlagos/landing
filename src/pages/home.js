@@ -11,6 +11,14 @@ import Footer from '../components/Footer'
 import mohublogo from '../assets/img/mohub_white.png'
 import Background from '../assets/img/backgrounds/bg-01.png'
 
+if (typeof (window) === 'undefined') {
+  global.window = {
+    location: {
+      search: ''
+    }
+  }
+}
+
 class IndexPage extends React.Component {
   constructor (props) {
     super(props)

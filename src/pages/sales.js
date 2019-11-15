@@ -1,8 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 // import { Link } from 'gatsby'
-import { Box, Image, Stack, Text, Heading, Collapsible, Button, ResponsiveContext } from 'grommet'
-
+import { Box, Image, Stack, Text, Heading, Meter, /* Collapsible, Button, */ ResponsiveContext } from 'grommet'
+import Countdown from '../components/Countdown'
 import Footer from '../components/Footer'
 import Layout from '../components/layout'
 import Container from '../components/Container'
@@ -19,8 +19,8 @@ import sperry from '../assets/img/sperry.png'
 import gift from '../assets/img/gift.png'
 import bag from '../assets/img/bag.png'
 import champ from '../assets/img/champ.png'
-import minus from '../assets/img/minus.png'
-import plus from '../assets/img/plus.png'
+// import minus from '../assets/img/minus.png'
+// import plus from '../assets/img/plus.png'
 // import box1 from "../assets/img/box.png"
 import triangle from '../assets/img/triangle.png'
 
@@ -29,6 +29,13 @@ import triangle from '../assets/img/triangle.png'
   backgroundPosition: 'center',
   backgroundSize: 'cover'
 }; */
+if (typeof (window) === 'undefined') {
+  global.window = {
+    location: {
+      search: ''
+    }
+  }
+}
 
 class SalesPage extends React.Component {
   constructor (props) {
@@ -154,8 +161,11 @@ class SalesPage extends React.Component {
                 <div className="white">
                   {/* <img className="fluid" src={landing01} alt="video 1"/> */}
                   <iframe title="embed1" id="ytplayer" type="text/html" width="100%" height="400"
-                    src="http://www.youtube.com/embed/HzZxcfVn_08/?autoplay=0"
+                    src="http://www.youtube.com/embed/1_wVhO7OWTw/?autoplay=0"
                     frameBorder="0"/>
+                  <br/>
+                  <h5 className="center"> Falta pouco tempo para o carrinho fechar:</h5>
+                  <div><Countdown/></div>
                   <Box align="center" pad="medium">
                     <br/>
                     <a className="btn" href="#investment" >
@@ -165,14 +175,9 @@ class SalesPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="row top">
-              <div className="twelve columns">
-                <Heading>PESSOAS JÁ IMPACTADAS</Heading>
-              </div>
-            </div>
-            <div className="row top">
+            {/* <div className="row top">
               <div className="four columns">
-                {/* <Image fit="contain" width="100%" src={testimonial}/> */}
+                <Image fit="contain" width="100%" src={testimonial}/>
                 <iframe title="embed2" id="ytplayer" type="text/html" width="100%" height="200"
                   src="http://www.youtube.com/embed/u4tq9Ef5czw/?autoplay=0"
                   frameBorder="0"/>
@@ -202,9 +207,9 @@ class SalesPage extends React.Component {
                   src="http://www.youtube.com/embed/fD41AwgC_xM/?autoplay=0"
                   frameBorder="0"/>
               </div>
-            </div>
+          </div> */}
           </Container>
-          <Box margin="large"/>
+          <Box margin="large"></Box>
           <Box className="founder" margin={{ vertical: 'medium' }} height="large">
             <Stack anchor="bottom">
               <div className="row apresentation">
@@ -411,6 +416,25 @@ class SalesPage extends React.Component {
               )}
             </ResponsiveContext.Consumer>
           </Container>
+          <Container>
+            <div className="row top">
+              <div className="twelve columns center">
+                <Heading>PESSOAS JÁ INDICADAS</Heading>
+                <Meter
+                  size='large'
+                  values={[{
+                    value: 10,
+                    label: 'one',
+                    onClick: () => {}
+                  }]}
+                  thickness='large'
+                  aria-label="meter"
+                  round
+                />
+              </div>
+            </div>
+            <Box margin='large'/>
+          </Container>
           {/* <Image margin={{ "vertical": "medium" }} src={box1}/> */}
           <Box id="investment" direction="row" justify="center" className="cover2" fill={true}>
             <ResponsiveContext.Consumer>
@@ -440,7 +464,7 @@ class SalesPage extends React.Component {
               )}
             </ResponsiveContext.Consumer>
           </Box>
-          <Container>
+          {/* <Container>
             <Box margin="medium"></Box>
             <Box>
               <Heading>PERGUNTAS FREQUENTES</Heading>
@@ -579,7 +603,7 @@ class SalesPage extends React.Component {
                 </Box>
               )}
             </ResponsiveContext.Consumer>
-          </Container>
+          </Container> */}
           <Box><Footer/></Box>
         </Box>
       </Layout>

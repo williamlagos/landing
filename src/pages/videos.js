@@ -16,6 +16,14 @@ import Background from '../assets/img/backgrounds/bg-01.png'
 const parallaxBackground = { backgroundImage: `url(${Background})` }
 // const videoplaBackground = { backgroundImage: `url(${landing01})` };
 
+if (typeof (window) === 'undefined') {
+  global.window = {
+    location: {
+      search: ''
+    }
+  }
+}
+
 class SubscriptionConfirmationPage extends React.Component {
   constructor (props) {
     super(props)
@@ -79,7 +87,7 @@ class SubscriptionConfirmationPage extends React.Component {
       } else if (step >= 15) {
         // Blacklisted
         window.location = '/'
-      } 
+      }
       */
     }
   }
@@ -186,8 +194,6 @@ class SubscriptionConfirmationPage extends React.Component {
                             </div>
                           </div>
                         </button>
-                        {/* <h5>  Tempo para acessar o restante das landings:</h5>
-                                    <div style={{ 'display': 'none' }}><Countdown/></div> */}
                       </div>
                     </div>
                   </div>
@@ -199,7 +205,7 @@ class SubscriptionConfirmationPage extends React.Component {
           <div className="full-width-container white">
             <div className="container">
               <div className="row top bottom">
-                <div className="four columns center">
+                <div className="twelve columns center">
                   {/* <button id="fb-share"
                     className="btn-share btn-facebook"
                     style={{ textDecoration: 'none' }}
@@ -208,10 +214,12 @@ class SubscriptionConfirmationPage extends React.Component {
                     <i className="fab fa-facebook-square"></i>
                         &nbsp; Curtir
                   </button> */}
-                  <div className="fb-like" data-href="https://facebook.com/somosmohub/" data-width="" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                  <div className="fb-like" data-href="https://facebook.com/somosmohub/" data-width="" data-layout="button" data-action="like" data-size="large" data-show-faces="false" data-share="false"></div>
                   <p/>
                 </div>
-                <div className="four columns center">
+              </div>
+              <div className="row top bottom">
+                <div className="six columns center">
                   <button id="fb-share"
                     className="btn-share btn-facebook"
                     style={{ textDecoration: 'none' }}
@@ -222,7 +230,7 @@ class SubscriptionConfirmationPage extends React.Component {
                   </button>
                   <p/>
                 </div>
-                <div className="four columns center">
+                <div className="six columns center">
                   <button id="ws-share"
                     className="btn-share btn-whatsapp"
                     style={{ textDecoration: 'none' }}
@@ -233,7 +241,6 @@ class SubscriptionConfirmationPage extends React.Component {
                   </button>
                 </div>
                 <div className="twelve columns center">
-                  
                   {/* <div className="fb-page" data-href="https://www.facebook.com/somosmohub/" data-tabs="" data-width="500px" data-height="70px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/somosmohub/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/somosmohub/">MoHub</a></blockquote></div> */}
                 </div>
               </div>
