@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 // import { Image } from 'grommet'
 // import { Location } from '@react/router';
 
@@ -20,8 +20,9 @@ class SubscriptionConfirmationPage extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      ytid: '-it-OH7pxK4',
-      step: 2
+      id: window.location.search.slice(1).split('&')[0].split('=')[1] || '',
+      ytid: 'A8dl1fOzMXs',
+      step: 0
     }
   }
 
@@ -38,12 +39,38 @@ class SubscriptionConfirmationPage extends React.Component {
   }
 
   async componentDidMount () {
-    const id = window.location.search.slice(1).split('&')[0].split('=')[1]
-    if (id == null) {
-      // window.location = '/';
+    // const id = window.location.search.slice(1).split('&')[0].split('=')[1]
+    if (this.state.id.length === 0) {
+      window.location = '/'
     } else {
+      const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/v1/token', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: 'william', password: 'OSZiSE!FcK!YARL7N3oOPaih' })
+      })
+      const res = await response.json()
+      // console.log(res)
+      const rawResponse = await fetch(`https://mohub.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${res.token}`
+        }
+      })
+      const users = await rawResponse.json()
+      if (users.length === 0) {
+        window.location = '/'
+      } else {
+        const time = users[0].registered_date
+        console.log(time)
+      }
       // Controle por dias, comparativo entre datas
       // const step = await this.timer(id);
+      /*
       const step = 0
       this.setState({ step })
       if (step >= 7) {
@@ -52,7 +79,8 @@ class SubscriptionConfirmationPage extends React.Component {
       } else if (step >= 15) {
         // Blacklisted
         window.location = '/'
-      }
+      } 
+      */
     }
   }
 
@@ -62,7 +90,8 @@ class SubscriptionConfirmationPage extends React.Component {
     // const title = "MoHub";
     // const summary = "Uma post teste para o Mohub";
     // const url = "https://www.facebook.com/somosmohub/videos/2562218477149895/";
-    const url = 'http://www.mohub.com.br/?id=5d6d640ef5dd0c0004ee1267&utm_source=facebook&utm_medium=share&utm_campaign=cpl'
+    const url = `https://www.mohub.com.br/lancamento/?id=${this.state.id}&utm_source=facebook&utm_medium=share&utm_campaign=cpl`
+    const wsUrl = `https://www.mohub.com.br/lancamento/?id=${this.state.id}`
     const quote = 'Veja que negócio interessante'
     // const image = "https://efforia.ams3.digitaloceanspaces.com/fretefacil/5b75d00d5ab5c60da7116276_bg.png"
     /* &p[images][0]=${image}' */
@@ -78,6 +107,8 @@ class SubscriptionConfirmationPage extends React.Component {
           <div id="fb-root"></div>
           <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0&appId=153246718126522&autoLogAppEvents=1"></script>
           <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.3&appId=153246718126522&autoLogAppEvents=1"></script>
+          <div id="fb-root"></div>
+          <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v4.0&appId=153246718126522&autoLogAppEvents=1"></script>
         </Helmet>
         <div className="page">
           <div className="full-width-container" style={parallaxBackground}>
@@ -97,8 +128,8 @@ class SubscriptionConfirmationPage extends React.Component {
                           frameBorder="0"/>
                       </div>
                       <div className="flex-right">
-                        <button className="block" onClick={() => this.setState({ ytid: 'IesIsKMjB4Y' })}>
-                          <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/IesIsKMjB4Y/0.jpg')", backgroundSize: 'auto' }}>
+                        <button className="block" onClick={() => this.setState({ ytid: 'A8dl1fOzMXs' })}>
+                          <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/A8dl1fOzMXs/0.jpg')", backgroundSize: 'auto' }}>
                             <div className="overlay">
                               <div className="overlay-content">
                                 <i className="fas fa-play"></i>
@@ -107,8 +138,8 @@ class SubscriptionConfirmationPage extends React.Component {
                             </div>
                           </div>
                         </button>
-                        <button className="block" onClick={() => this.setState({ ytid: '4dwjS_eI-lQ' })}>
-                          <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/4dwjS_eI-lQ/0.jpg')", backgroundSize: 'auto' }}>
+                        <button className="block" onClick={() => this.setState({ ytid: 'yxm0dNfa9eg' })}>
+                          <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/yxm0dNfa9eg/0.jpg')", backgroundSize: 'auto' }}>
                             <div className={this.state.step > 1 ? 'overlay' : 'overlay green'}>
                               <div className="overlay-content">
                                 {
@@ -123,8 +154,8 @@ class SubscriptionConfirmationPage extends React.Component {
                             </div>
                           </div>
                         </button>
-                        <button className="block" onClick={() => this.setState({ ytid: 'RRuovINxpPc' })}>
-                          <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/RRuovINxpPc/0.jpg')", backgroundSize: 'auto' }}>
+                        <button className="block" onClick={() => this.setState({ ytid: 'wyb54zzE8cI' })}>
+                          <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/wyb54zzE8cI/0.jpg')", backgroundSize: 'auto' }}>
                             <div className={this.state.step > 2 ? 'overlay' : 'overlay green'}>
                               <div className="overlay-content">
                                 {
@@ -139,8 +170,8 @@ class SubscriptionConfirmationPage extends React.Component {
                             </div>
                           </div>
                         </button>
-                        <button className="block last" onClick={() => this.setState({ ytid: 'YgVyPwhkoJs' })}>
-                          <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/YgVyPwhkoJs/0.jpg')", backgroundSize: 'auto' }}>
+                        <button className="block last" onClick={() => this.setState({ ytid: '1_wVhO7OWTw' })}>
+                          <div className="video" style={{ backgroundImage: "url('https://img.youtube.com/vi/1_wVhO7OWTw/0.jpg')", backgroundSize: 'auto' }}>
                             <div className={this.state.step > 3 ? 'overlay' : 'overlay green'}>
                               <div className="overlay-content">
                                 {
@@ -168,9 +199,21 @@ class SubscriptionConfirmationPage extends React.Component {
           <div className="full-width-container white">
             <div className="container">
               <div className="row top bottom">
-                <div className="six columns center">
+                <div className="four columns center">
+                  {/* <button id="fb-share"
+                    className="btn-share btn-facebook"
+                    style={{ textDecoration: 'none' }}
+                    type="icon_link"
+                    onClick={() => window.open(shareDialog)}>
+                    <i className="fab fa-facebook-square"></i>
+                        &nbsp; Curtir
+                  </button> */}
+                  <div className="fb-like" data-href="https://facebook.com/somosmohub/" data-width="" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+                  <p/>
+                </div>
+                <div className="four columns center">
                   <button id="fb-share"
-                    className="btn-facebook"
+                    className="btn-share btn-facebook"
                     style={{ textDecoration: 'none' }}
                     type="icon_link"
                     onClick={() => window.open(shareDialog)}>
@@ -179,14 +222,19 @@ class SubscriptionConfirmationPage extends React.Component {
                   </button>
                   <p/>
                 </div>
-                <div className="six columns center">
-                  <Link className="btn-share btn-whatsapp" to="#" >
+                <div className="four columns center">
+                  <button id="ws-share"
+                    className="btn-share btn-whatsapp"
+                    style={{ textDecoration: 'none' }}
+                    type="icon_link"
+                    onClick={() => { window.location = `https://api.whatsapp.com/send?text=${encodeURIComponent(wsUrl)}` }}>
                     <i className="fab fa-whatsapp"></i>
-                    <p>&nbsp; Compartilhar</p>
-                  </Link>
+                    &nbsp; Compartilhar
+                  </button>
                 </div>
                 <div className="twelve columns center">
-                  <div className="fb-page" data-href="https://www.facebook.com/somosmohub/" data-tabs="" data-width="500px" data-height="70px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/somosmohub/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/somosmohub/">MoHub</a></blockquote></div>
+                  
+                  {/* <div className="fb-page" data-href="https://www.facebook.com/somosmohub/" data-tabs="" data-width="500px" data-height="70px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/somosmohub/" className="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/somosmohub/">MoHub</a></blockquote></div> */}
                 </div>
               </div>
               {/* <div className="row bottom">
@@ -204,7 +252,7 @@ class SubscriptionConfirmationPage extends React.Component {
                   <div className="row top">
                     <div className="twelve columns">
                       <iframe title="embed1" id="ytplayer" type="text/html" width="100%" height="100%"
-                        src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=1`}
+                        src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
                         frameBorder="0"/>
                       <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
                             eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>
@@ -214,7 +262,7 @@ class SubscriptionConfirmationPage extends React.Component {
                   <div className="row top">
                     <div className="twelve columns">
                       <iframe title="embed2" id="ytplayer" type="text/html" width="100%" height="100%"
-                        src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=1`}
+                        src={`http://www.youtube.com/embed/${this.state.ytid}/?autoplay=0`}
                         frameBorder="0"/>
                       <p>O negócio é fantástico. Foi a primeira coisa que eu fiz quando
                             eu completei 18 anos. O Sperry ocupou o espaço que era do Érico Rocha.</p>

@@ -34,6 +34,7 @@ class SalesPage extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      id: window.location.search.slice(1).split('&')[0].split('=')[1] || '',
       toggledModal: false,
       collapsed1: false,
       collapsed2: false,
@@ -56,7 +57,36 @@ class SalesPage extends React.Component {
   }
 
   async componentDidMount () {
-    const id = window.location.search.slice(1).split('&')[0].split('=')[1]
+    if (this.state.id.length === 0) {
+      window.location = '/'
+    } else {
+      const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/v1/token', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: 'william', password: 'OSZiSE!FcK!YARL7N3oOPaih' })
+      })
+      const res = await response.json()
+      // console.log(res)
+      const rawResponse = await fetch(`https://mohub.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${res.token}`
+        }
+      })
+      const users = await rawResponse.json()
+      if (users.length === 0) {
+        window.location = '/'
+      } else {
+        const u = users[0]
+        console.log(u)
+      }
+    }
+    /* const id = window.location.search.slice(1).split('&')[0].split('=')[1]
     if (id == null) {
       // window.location = '/';
     } else {
@@ -69,7 +99,7 @@ class SalesPage extends React.Component {
         // Blacklisted
         // window.location = '/'
       }
-    }
+    } */
   }
 
   toggleModal (event) {

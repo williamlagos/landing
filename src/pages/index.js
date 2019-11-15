@@ -35,31 +35,35 @@ class HomePage extends React.Component {
 
   async getLead (event) {
     const { email, name } = event.value
-    const { username, password } = Math.random().toString(36).substr(2, 10).toUpperCase()
-    const rawResponse = await fetch('https://mohub.com.br/wp-json/wp/v2/users/register', {
+    const id = Math.random().toString(36).substr(2, 10).toUpperCase()
+    const [firstName, ...lastName] = name.split(' ')
+    const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/v1/token', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ username: 'william', password: 'OSZiSE!FcK!YARL7N3oOPaih' })
+    })
+    const res = await response.json()
+    console.log(res)
+    const rawResponse = await fetch('https://mohub.com.br/wp-json/wp/v2/users/', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvbW9odWIuY29tLmJyIiwiaWF0IjoxNTcxMDY2MDI5LCJuYmYiOjE1NzEwNjYwMjksImV4cCI6MTU3MTY3MDgyOSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiNSJ9fX0.1D6qoY8Jsn0bBMdWPFx2zse1g6xZd3ZwIeRmksNxUeU'
+        Authorization: `Bearer ${res.token}`
       },
-      body: JSON.stringify({ email, name, username, password })
+      body: JSON.stringify({ email, first_name: firstName, last_name: lastName.join(' '), username: id, password: id })
     })
     const content = await rawResponse.json()
-    if (content.code !== 200) {
+    if (content.code === 'existing_user_email') {
+      this.setState({ emailErrorMessage: 'E-mail já cadastrado na base. Digite outro' })
+    } else if (content.code === 'rest_invalid_param') {
       this.setState({ emailErrorMessage: 'E-mail inválido. Digite novamente' })
     } else {
-      const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/token', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
-      })
-      const res = await response.json()
-      window.localStorage.setItem(username, res.token)
-      navigate(`/home?id=${res.token}`)
+      window.localStorage.setItem('mohub_id', id)
+      navigate(`/home?id=${id}`)
     }
   }
 

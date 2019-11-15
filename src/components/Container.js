@@ -9,7 +9,7 @@ class Container extends React.Component {
 }
 
 Container.propTypes = {
-  children: PropTypes.array
+  children: PropTypes.object
 }
 
 export default Container

@@ -45,7 +45,7 @@
   "scripts": {
     "start": "npm run build && node app.js",
     "build": "gatsby build --prefix-paths",
-    "dev": "gatsby develop --port 4000",
+    "dev": "gatsby develop -H 0.0.0.0 --port 4000",
     "develop": "gatsby develop",
     "deploy": "node .bin/deploy",
     "format": "prettier --write '**/*.js'",

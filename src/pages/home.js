@@ -12,13 +12,49 @@ import mohublogo from '../assets/img/mohub_white.png'
 import Background from '../assets/img/backgrounds/bg-01.png'
 
 class IndexPage extends React.Component {
-  componentDidMount () {
-    const id = window.location.search.slice(1).split('&')[0].split('=')[1]
+  constructor (props) {
+    super(props)
+    this.state = {
+      id: window.location.search.slice(1).split('&')[0].split('=')[1] || ''
+    }
+  }
+
+  async componentDidMount () {
+    if (this.state.id.length === 0) {
+      window.location = '/'
+    } else {
+      const response = await fetch('https://mohub.com.br/wp-json/jwt-auth/v1/token', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ username: 'william', password: 'OSZiSE!FcK!YARL7N3oOPaih' })
+      })
+      const res = await response.json()
+      // console.log(res)
+      const rawResponse = await fetch(`https://mohub.com.br/wp-json/wp/v2/users/?slug=${this.state.id}&context=edit`, {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${res.token}`
+        }
+      })
+      const users = await rawResponse.json()
+      if (users.length === 0) {
+        window.location = '/'
+      } else {
+        const u = users[0]
+        console.log(u)
+      }
+    }
+    /* const id = this.state.id
     if (id == null) {
       // window.location = '/'
     } else {
       console.log(window.localStorage.getItem(id))
-    }
+    } */
   }
 
   render () {
@@ -48,13 +84,13 @@ class IndexPage extends React.Component {
                     <img src={mohublogo} alt="mohub logo"/>
                   </div>
                   <div className="white">
-                    <div className="red">Importante! Assista ao vídeo abaixo!</div>
-                    {/* <img className="fluid" src={landing01} alt="video 1"/> */}
-                    <div className="fluid video-container">
+                    <div className="red">Importante! Siga as instruções abaixo</div>
+                    {/* <div className="fluid video-container">
                       <iframe title="embed1" id="ytplayer" className="main-player" type="text/html" width="100%" height="100%"
                         src="http://www.youtube.com/embed/fa5p19APgd8/?autoplay=0"
                         frameBorder="0"/>
-                    </div>
+                    </div> */}
+                    {/* <div style={{ minHeight: '100px' }}></div> */}
                     <div className="row top">
                       <h1 className="two columns big">1</h1>
                       <div className="ten columns">
