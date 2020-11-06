@@ -1,3 +1,6 @@
 [submodule "web"]
 	path = web
 	url = git@github.com:williamlagos/landing-web.git
+[submodule "api"]
+	path = api
+	url = git@github.com:williamlagos/landing-api.git
