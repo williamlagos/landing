@@ -1,0 +1,22 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "Landing Pages for Lead Capture",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/williamlagos/landing.git"
+  },
+  "author": "William Oliveira de Lagos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/williamlagos/landing/issues"
+  },
+  "homepage": "https://github.com/williamlagos/landing#readme",
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
+  }
+}
