@@ -4,6 +4,8 @@
   "description": "Landing Pages for Lead Capture",
   "main": "index.js",
   "scripts": {
+    "predeploy": "cd web && npm i && npm run build",
+    "deploy": "gh-pages -d web/public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
